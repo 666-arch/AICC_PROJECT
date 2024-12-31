@@ -1,0 +1,374 @@
+{
+    "data": [
+        {
+            "id": "35da6bd9-431d-4f25-a2b7-2442a849ae50",
+            "rate": "MONTH",
+            "rateTime": "202204",
+            "valueFactMon": "10962866.731599998",
+            "growthOnMonth": 0.06597403,
+            "valueFactYear": "43364708.6996",
+            "growthOnYear": 7.337662,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "2b184233-2209-40b5-b23b-b0cdbec9074f",
+            "rate": "MONTH",
+            "rateTime": "202205",
+            "valueFactMon": "11140989.293099998",
+            "growthOnMonth": -2.8792207,
+            "valueFactYear": "54505697.99270001",
+            "growthOnYear": 5.067013,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "13b37e3a-ccf7-4892-9cc0-22bf68cd3e97",
+            "rate": "MONTH",
+            "rateTime": "202206",
+            "valueFactMon": "12320693.5158",
+            "growthOnMonth": 0.028051948,
+            "valueFactYear": "66826391.508499995",
+            "growthOnYear": 4.0862336,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "229747f4-c19d-4e9f-812b-efbe81a82d86",
+            "rate": "MONTH",
+            "rateTime": "202207",
+            "valueFactMon": "15875295.390299996",
+            "growthOnMonth": 10.654415,
+            "valueFactYear": "82701686.89879997",
+            "growthOnYear": 5.273247,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "d16e5899-f944-4f39-842b-a4d1014e0423",
+            "rate": "MONTH",
+            "rateTime": "202208",
+            "valueFactMon": "15911538.958800005",
+            "growthOnMonth": 10.990649,
+            "valueFactYear": "98613225.86839996",
+            "growthOnYear": 6.1533766,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "2d09ec47-ad22-411e-ba29-849efab60fde",
+            "rate": "MONTH",
+            "rateTime": "202209",
+            "valueFactMon": "12221528.401199996",
+            "growthOnMonth": -6.4393506,
+            "valueFactYear": "110834754.25820005",
+            "growthOnYear": 4.565325,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "106b7514-0287-4947-a789-15e3872e1381",
+            "rate": "MONTH",
+            "rateTime": "202305",
+            "valueFactMon": "12392441.287100002",
+            "growthOnMonth": 10.844487,
+            "valueFactYear": "56895258.41059999",
+            "growthOnYear": 4.071282,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "9ebda1e9-6c36-4b55-92fb-0efacddcb1a2",
+            "rate": "MONTH",
+            "rateTime": "202210",
+            "valueFactMon": "11782346.687700005",
+            "growthOnMonth": 9.812987,
+            "valueFactYear": "122617100.95729998",
+            "growthOnYear": 4.948831,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "6e623d3d-b8b3-4244-846b-57e02736adee",
+            "rate": "MONTH",
+            "rateTime": "202307",
+            "valueFactMon": "16687769.820000002",
+            "growthOnMonth": 5.950641,
+            "valueFactYear": "87088469.89999999",
+            "growthOnYear": 5.3626924,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "cdb47a1a-f86f-41d7-9900-a0eed75ca02a",
+            "rate": "MONTH",
+            "rateTime": "202211",
+            "valueFactMon": "11412390.055400003",
+            "growthOnMonth": 2.3603897,
+            "valueFactYear": "134029491.01269998",
+            "growthOnYear": 4.684156,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "2438b687-107d-48bb-84a7-d45e4bd92ed0",
+            "rate": "MONTH",
+            "rateTime": "202309",
+            "valueFactMon": null,
+            "growthOnMonth": null,
+            "valueFactYear": null,
+            "growthOnYear": null,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "5e5d2658-e884-45fa-b226-87045591b859",
+            "rate": "MONTH",
+            "rateTime": "202212",
+            "valueFactMon": "13050427.924",
+            "growthOnMonth": 6.652727,
+            "valueFactYear": "147079918.9299",
+            "growthOnYear": 4.78974,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "21ad71c6-5a26-4e60-877a-ff3d24f52af0",
+            "rate": "MONTH",
+            "rateTime": "202009",
+            "valueFactMon": "11218545.210000003",
+            "growthOnMonth": 9.9326315,
+            "valueFactYear": "89552598.97999997",
+            "growthOnYear": 6.573158,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "34e0ab9e-37ff-4562-94be-06689175c9e4",
+            "rate": "MONTH",
+            "rateTime": "202301",
+            "valueFactMon": "8512860.409999996",
+            "growthOnMonth": -21.32359,
+            "valueFactYear": "8512860.409999996",
+            "growthOnYear": -21.32359,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "5bb44113-ddeb-4613-aa77-6c4e0d8b8836",
+            "rate": "MONTH",
+            "rateTime": "202012",
+            "valueFactMon": "11805981.931199998",
+            "growthOnMonth": 9.826579,
+            "valueFactYear": "122581312.50050008",
+            "growthOnYear": 7.1907897,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "f240eb14-bbcd-4e78-990b-57ddfb5d74d5",
+            "rate": "MONTH",
+            "rateTime": "202102",
+            "valueFactMon": "6337505.832300001",
+            "growthOnMonth": 30.448816,
+            "valueFactYear": "18136784.788500004",
+            "growthOnYear": 46.16658,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "5fe2c77f-d95e-4e4c-a82f-9febccfed1eb",
+            "rate": "MONTH",
+            "rateTime": "202302",
+            "valueFactMon": "11200324.3096",
+            "growthOnMonth": 17.132051,
+            "valueFactYear": "19713184.695699994",
+            "growthOnYear": -3.5502565,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "fcae7462-415f-46bb-9963-53c65dc7d82d",
+            "rate": "MONTH",
+            "rateTime": "202104",
+            "valueFactMon": "11060729.255300006",
+            "growthOnMonth": 14.19921,
+            "valueFactYear": "40614782.57099998",
+            "growthOnYear": 29.336578,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "9f4f72bc-a5e7-4bc8-a477-ddabf0c4e963",
+            "rate": "MONTH",
+            "rateTime": "202303",
+            "valueFactMon": "12884978.910000002",
+            "growthOnMonth": 7.217949,
+            "valueFactYear": "32598163.619999994",
+            "growthOnYear": 0.45115384,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "a338b4a3-cfc5-43cf-86f2-19be0a909b2e",
+            "rate": "MONTH",
+            "rateTime": "202106",
+            "valueFactMon": "12152601.942200001",
+            "growthOnMonth": 9.886579,
+            "valueFactYear": "64291277.872499995",
+            "growthOnYear": 22.78829,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "e409c623-86a8-4f4a-b8fa-0260c2a95ff5",
+            "rate": "MONTH",
+            "rateTime": "202304",
+            "valueFactMon": "11904653.5341",
+            "growthOnMonth": 8.178333,
+            "valueFactYear": "44502817.12349998",
+            "growthOnYear": 2.407436,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "95b2f592-9fff-40d8-92dc-d658677c9f29",
+            "rate": "MONTH",
+            "rateTime": "202109",
+            "valueFactMon": "13005451.675099999",
+            "growthOnMonth": 15.842105,
+            "valueFactYear": "105899428.98439999",
+            "growthOnYear": 17.472763,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "5fa6b88f-e2fb-400b-bc84-9b2e5421bfd6",
+            "rate": "MONTH",
+            "rateTime": "202306",
+            "valueFactMon": "13505441.599400003",
+            "growthOnMonth": 11.052052,
+            "valueFactYear": "70400700.00999998",
+            "growthOnYear": 5.2989745,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "d6208f0b-0a24-4d18-b8c4-309a7a809eeb",
+            "rate": "MONTH",
+            "rateTime": "202111",
+            "valueFactMon": "11119875.9472",
+            "growthOnMonth": 4.011316,
+            "valueFactYear": "127892737.03909999",
+            "growthOnYear": 14.818158,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "a048e55a-d14e-426e-aa7a-4aef4b39f907",
+            "rate": "MONTH",
+            "rateTime": "202308",
+            "valueFactMon": "16189510.615900004",
+            "growthOnMonth": 1.7439743,
+            "valueFactYear": "103277980.47389998",
+            "growthOnYear": 4.743718,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "186f90d4-1469-4910-b564-86602702a2a4",
+            "rate": "MONTH",
+            "rateTime": "202201",
+            "valueFactMon": "10817922.912400005",
+            "growthOnMonth": -8.545455,
+            "valueFactYear": "10817922.912400005",
+            "growthOnYear": -8.545455,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "0ddcf3b1-2085-4935-8f34-ce1526d5b6ef",
+            "rate": "MONTH",
+            "rateTime": "202310",
+            "valueFactMon": null,
+            "growthOnMonth": null,
+            "valueFactYear": null,
+            "growthOnYear": null,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "2c7e6ef0-6144-439b-83c9-a40037bf42d0",
+            "rate": "MONTH",
+            "rateTime": "202203",
+            "valueFactMon": "12069101.9703",
+            "growthOnMonth": 6.408077,
+            "valueFactYear": "32401841.968",
+            "growthOnYear": 10.005128,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "a9b7afca-f29a-469e-b1ea-1888484081d3",
+            "rate": "MONTH",
+            "rateTime": "202010",
+            "valueFactMon": "10526185.504100002",
+            "growthOnMonth": 9.056447,
+            "valueFactYear": "100078784.54920001",
+            "growthOnYear": 6.7210526,
+            "appItemName": null
+        },
+        {
+            "id": "f0cb3c2b-eb86-4609-af2a-229a485768ab",
+            "rate": "MONTH",
+            "rateTime": "202101",
+            "valueFactMon": "11799278.956200004",
+            "growthOnMonth": 58.297764,
+            "valueFactYear": "11799278.956200004",
+            "growthOnYear": 58.297764,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "fb57dbac-a1c5-4a9a-9eb2-21e4516ac9e0",
+            "rate": "MONTH",
+            "rateTime": "202103",
+            "valueFactMon": "11380689.832600005",
+            "growthOnMonth": 25.206623,
+            "valueFactYear": "29554053.315700006",
+            "growthOnYear": 36.14039,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "288a44d9-4453-4b49-a372-04bf3ab3ae72",
+            "rate": "MONTH",
+            "rateTime": "202105",
+            "valueFactMon": "11523893.359300002",
+            "growthOnMonth": 17.198816,
+            "valueFactYear": "52138675.930300005",
+            "growthOnYear": 26.33329,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "1ecff907-a639-4ddf-a1db-5a721a9578fe",
+            "rate": "MONTH",
+            "rateTime": "202107",
+            "valueFactMon": "14307598.797199998",
+            "growthOnMonth": 16.192236,
+            "valueFactYear": "78598876.6697",
+            "growthOnYear": 21.4425,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "4d9604df-ad05-4395-9e66-cfa50e7314a1",
+            "rate": "MONTH",
+            "rateTime": "202108",
+            "valueFactMon": "14295100.639600003",
+            "growthOnMonth": 1.1665789,
+            "valueFactYear": "92893977.30929999",
+            "growthOnYear": 17.752369,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "51660935-294b-4432-8e84-23eb02721dc0",
+            "rate": "MONTH",
+            "rateTime": "202110",
+            "valueFactMon": "10873432.107500006",
+            "growthOnMonth": 4.0063157,
+            "valueFactYear": "116772861.0919",
+            "growthOnYear": 16.00921,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "79779b6c-9284-4de4-b09c-00e14b6cb23b",
+            "rate": "MONTH",
+            "rateTime": "202112",
+            "valueFactMon": "12157618.039000005",
+            "growthOnMonth": 5.393553,
+            "valueFactYear": "140050355.0781",
+            "growthOnYear": 13.864868,
+            "appItemName": "全社会用电量"
+        },
+        {
+            "id": "321affd2-4d66-44ad-bac4-196df57d1b0f",
+            "rate": "MONTH",
+            "rateTime": "202202",
+            "valueFactMon": "9411392.235499997",
+            "growthOnMonth": 54.94182,
+            "valueFactYear": "20229315.147899993",
+            "growthOnYear": 12.352208,
+            "appItemName": "全社会用电量"
+        }
+    ]
+}

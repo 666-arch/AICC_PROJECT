@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "author": "",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.2.6",
+    "airt-socket-client": "^0.1.0",
+    "antd": "^5.12.7",
+    "autofit.js": "^3.0.1",
+    "axios": "^1.6.2",
+    "dayjs": "^1.11.10",
+    "dva": "^2.4.1",
+    "echarts": "^5.4.3",
+    "mitt": "^3.0.1",
+    "path-to-regexp": "^6.2.1",
+    "socket.io-client": "^4.6.2",
+    "umi": "^4.0.73"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "@umijs/plugins": "^4.0.73",
+    "typescript": "^5.1.6"
+  }
+}

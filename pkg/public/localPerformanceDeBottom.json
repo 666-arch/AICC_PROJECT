@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": "1764587824154353680",
+            "name": "企业总数",
+            "categoryName": null,
+            "category": null,
+            "unit": "个",
+            "data": "494"
+        },
+        {
+            "id": "1764587824154353681",
+            "name": "设备数",
+            "categoryName": null,
+            "category": null,
+            "unit": "个",
+            "data": "3747"
+        },
+        {
+            "id": "1764587824154353682",
+            "name": "点位总数",
+            "categoryName": null,
+            "category": null,
+            "unit": "个",
+            "data": "3254"
+        }
+    ]
+}

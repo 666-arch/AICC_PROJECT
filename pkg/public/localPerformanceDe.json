@@ -1,0 +1,81 @@
+{
+    "data": [
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "专用设备制造业",
+            "category": "数量",
+            "unit": "个",
+            "data": "69"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "其他服务业",
+            "category": "数量",
+            "unit": "个",
+            "data": "1"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "其他",
+            "category": "数量",
+            "unit": "个",
+            "data": "2"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "农副食品加工业",
+            "category": "数量",
+            "unit": "个",
+            "data": "3"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "化学原料和化学制造",
+            "category": "数量",
+            "unit": "个",
+            "data": "21"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "化学纤维制造业",
+            "category": "数量",
+            "unit": "个",
+            "data": "2"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "医药制造业",
+            "category": "数量",
+            "unit": "个",
+            "data": "56"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "废弃资源综合利用",
+            "category": "数量",
+            "unit": "个",
+            "data": "0"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "批发业",
+            "category": "数量",
+            "unit": "个",
+            "data": "0"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "有色金属治炼",
+            "category": "数量",
+            "unit": "个",
+            "data": "0"
+        },
+        {
+            "name": "企业行业分布情况(环保用电)",
+            "categoryName": "橡胶和塑料制品业",
+            "category": "数量",
+            "unit": "个",
+            "data": "0"
+        }
+    ]
+}

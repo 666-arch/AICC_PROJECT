@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "name": "产业电量分布",
+            "categoryName": "第一产业",
+            "category": null,
+            "unit": "万千瓦时",
+            "data": "2005"
+        },
+        {
+            "name": "产业电量分布",
+            "categoryName": "第二产业",
+            "category": null,
+            "unit": "万千瓦时",
+            "data": "49925.09"
+        },
+        {
+            "name": "产业电量分布",
+            "categoryName": "第三产业",
+            "category": null,
+            "unit": "万千瓦时",
+            "data": "237499.44"
+        },
+        {
+            "name": "产业电量分布",
+            "categoryName": "总用电量",
+            "category": null,
+            "unit": "万千瓦时",
+            "data": "289,429.53"
+        }
+    ]
+}

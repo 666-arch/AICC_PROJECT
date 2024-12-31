@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "name": "台州市景气度概览",
+            "categoryName": "中小微企业",
+            "category": "数量",
+            "unit": "户",
+            "data": "266302"
+        },
+        {
+            "name": "台州市景气度概览",
+            "categoryName": "总电量",
+            "category": "指数",
+            "unit": "万千瓦时",
+            "data": "1043.26"
+        },
+        {
+            "name": "台州市景气度概览",
+            "categoryName": "复工率",
+            "category": "百分比",
+            "unit": "%",
+            "data": "79.61"
+        },
+        {
+            "name": "台州市景气度概览",
+            "categoryName": "达产用户率",
+            "category": "百分比",
+            "unit": "%",
+            "data": "65.15"
+        },
+        {
+            "name": "台州市景气度概览",
+            "categoryName": "企业景气度",
+            "category": "百分比",
+            "unit": "%",
+            "data": "92.32"
+        }
+    ]
+}

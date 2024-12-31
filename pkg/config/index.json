@@ -1,0 +1,13 @@
+{
+  "port": 9801,
+  "open": false,
+  "proxy": {
+    "/api": {
+      "target": "http://192.168.2.117:9801",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+}

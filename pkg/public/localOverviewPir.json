@@ -1,0 +1,162 @@
+{
+    "data": {
+        "list1": [
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202311",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.85"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202310",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.87"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202309",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.9"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202308",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.93"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202307",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.91"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202306",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.9"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202305",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.92"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202304",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.92"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202303",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.92"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202302",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "0.96"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202301",
+                "category": "电力价格指数",
+                "unit": "无",
+                "data": "1.12"
+            }
+        ],
+        "list2": [
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202311",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.76"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202310",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.77"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202309",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.8"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202308",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.83"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202307",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.81"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202306",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.8"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202305",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.82"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202304",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.82"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202303",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.82"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202302",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.85"
+            },
+            {
+                "name": "电力价格指数趋势",
+                "categoryName": "202301",
+                "category": "电度电价",
+                "unit": "元/每千瓦时",
+                "data": "0.99"
+            }
+        ]
+    }
+}

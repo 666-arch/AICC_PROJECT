@@ -1,0 +1,25 @@
+import { Entity } from "./Entity";
+import { AirtSocketClient } from "./AirtSocketClient";
+export declare type AirtSocket = {
+    socket: AirtSocketClient["socket"];
+    entity: AirtSocketClient["entities"];
+    config: AirtSocketClient["config"];
+    apis: Entity["apis"];
+    manager: Entity["manager"];
+    setAPI: Entity["setAPI"];
+    registerAPI: Entity["registerAPI"];
+    unregisterAPI: Entity["unregisterAPI"];
+    onConnect: AirtSocketClient["onConnect"];
+    onDisconnect: AirtSocketClient["onDisconnect"];
+    onQueryResponse: AirtSocketClient["onQueryResponse"];
+    onNativeAPIResponse: AirtSocketClient["onNativeAPIResponse"];
+    onNativeAPIResponseAsync: AirtSocketClient["onNativeAPIResponseAsync"];
+    onWebAPIResponse: AirtSocketClient["onWebAPIResponse"];
+    query: AirtSocketClient["query"];
+    airtEmit: AirtSocketClient["airtEmit"];
+    onMsg: AirtSocketClient["onMsg"];
+    onMsgOnce: AirtSocketClient["onMsgOnce"];
+    on: AirtSocketClient["on"];
+};
+declare const useSocket: () => AirtSocket | null;
+export default useSocket;

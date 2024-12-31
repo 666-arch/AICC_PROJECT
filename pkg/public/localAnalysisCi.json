@@ -1,0 +1,81 @@
+{
+    "data": [
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "农、林、牧、渔业",
+            "category": "指数",
+            "unit": "无",
+            "data": "110.39"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "工业",
+            "category": "指数",
+            "unit": "无",
+            "data": "107.83"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "建筑业",
+            "category": "指数",
+            "unit": "无",
+            "data": "110.33"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "交通运输,仓储和邮政业",
+            "category": "指数",
+            "unit": "无",
+            "data": "114.54"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "信息传输、软件和信息技术服务业",
+            "category": "指数",
+            "unit": "无",
+            "data": "104.38"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "批发和零售业",
+            "category": "指数",
+            "unit": "无",
+            "data": "130.76"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "住宿和餐饮业",
+            "category": "指数",
+            "unit": "无",
+            "data": "123.32"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "金融业",
+            "category": "指数",
+            "unit": "无",
+            "data": "105.37"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "房地产业",
+            "category": "指数",
+            "unit": "无",
+            "data": "133.10"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "租赁和商务服务业",
+            "category": "指数",
+            "unit": "无",
+            "data": "112.00"
+        },
+        {
+            "name": "电力消费指数[台州市]各行业指数",
+            "categoryName": "公共服务及管理组织",
+            "category": "指数",
+            "unit": "无",
+            "data": "107.12"
+        }
+    ]
+}
