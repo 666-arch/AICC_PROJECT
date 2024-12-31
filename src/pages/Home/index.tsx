@@ -2,6 +2,7 @@ import "./index.less";
 import PanelWrapper from "./../../components/PanelWrapper/index";
 import MemoryStatistics from "@/businessComponents/MemoryStatistics";
 import CpuStatistics from "@/businessComponents/CpuStatistics";
+import GpuStatistics from "@/businessComponents/GpuStatistics";
 const HomePage = () => {
   return (
     <div className="home-page-content">
@@ -22,7 +23,8 @@ const HomePage = () => {
           <MemoryStatistics/>
           {/* CPU统计数据 */}
           <CpuStatistics/>
-          
+          {/* GPU统计数据 */}
+          <GpuStatistics/>
         </div>
 
         <div className="home-page-main-right">
