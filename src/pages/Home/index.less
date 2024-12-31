@@ -122,6 +122,44 @@
                                 padding-left: 1px;
                             }
                         }
+                        .statistics-mid{
+                            height: 21px;
+                            display: flex;
+                            align-items: center;
+                            gap: 50px;
+                            margin-top: 20px;
+                            position: relative;
+                            & :nth-child(1){
+                                font-family: Source Han Sans CN;
+                                font-size: 13px;
+                                font-weight: 400;
+                                line-height: 19.5px;
+                                color: #333748;
+                            }
+                            & :nth-child(2){
+                                font-family: Source Han Sans CN;
+                                font-size: 16px;
+                                font-weight: 700;
+                                line-height: 17.17px;
+                                color: #415DFF;
+                            }
+                            & :nth-child(2)::after{
+                                content: '%';
+                                font-family: Source Han Sans CN;
+                                font-size: 12px;
+                                font-weight: 400;
+                                line-height: 17.17px;
+                            }
+                            .statistics-mid-line{
+                                position: absolute;
+                                width: 164px;
+                                height: 10px;
+                                top: 10px;
+                                left: 25px;
+                                background: url('/images/sub_line.svg') no-repeat;
+                                background-size: contain;
+                            }
+                        }
                     }
                 }
             }

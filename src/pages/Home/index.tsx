@@ -20,17 +20,29 @@ const HomePage = () => {
             <div>
               <PanelWrapper width={362} height={27} content="CPU统计数据" />
             </div>
-
             <div className="memory-statistics-main">
               <div className="memory-statistics-left"></div>
               <div className="memory-statistics-right">
+
                 <div className="statistics-top">
                   <div>提供</div>
                   <div>3555</div>
                 </div>
+
+                <div className="statistics-mid">
+                    <div>已分配</div>
+                    <div>44.85</div>
+                    <div className="statistics-mid-line"></div>
+                </div>
+
+                <div className="statistics-mid">
+                    <div>未分配</div>
+                    <div>55.15</div>
+                    <div className="statistics-mid-line"></div>
+                </div>
+
               </div>
             </div>
-
           </div>
 
           <div></div>

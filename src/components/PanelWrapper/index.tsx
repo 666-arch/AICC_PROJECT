@@ -9,7 +9,6 @@ const PanelWrapper: React.FC<IProps> = ({ width, height, content }) => {
   return <div className="panel-wrapper" style={{ width, height }}>
     <div className="panel-wrapper-icon"></div>
     <div className="panel-wrapper-content">{content}</div>
-    <div className="panel-wrapper-line"></div>
   </div>;
 };
 
