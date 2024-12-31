@@ -25,6 +25,9 @@ const HomePage = () => {
           <CpuStatistics/>
           {/* GPU统计数据 */}
           <GpuStatistics/>
+
+          {/* 储存数据 */}
+          
         </div>
 
         <div className="home-page-main-right">
