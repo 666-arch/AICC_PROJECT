@@ -3,6 +3,8 @@ import PanelWrapper from "./../../components/PanelWrapper/index";
 import MemoryStatistics from "@/businessComponents/MemoryStatistics";
 import CpuStatistics from "@/businessComponents/CpuStatistics";
 import GpuStatistics from "@/businessComponents/GpuStatistics";
+import StoreSource from "@/businessComponents/StoreSource";
+import StoreCapacity from "@/businessComponents/StoreCapacity";
 const HomePage = () => {
   return (
     <div className="home-page-content">
@@ -28,6 +30,10 @@ const HomePage = () => {
 
           {/* 储存数据 */}
           
+          <div style={{display:'flex', gap:'15px'}}>
+            <StoreSource/>
+            <StoreCapacity/>
+          </div>          
         </div>
 
         <div className="home-page-main-right">
