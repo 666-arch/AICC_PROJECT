@@ -7,6 +7,8 @@ import StoreSource from "@/businessComponents/StoreSource";
 import StoreCapacity from "@/businessComponents/StoreCapacity";
 import RightCpuStatistics from "@/businessComponents/RightCpuStatistics";
 import RightGpuStatistics from "@/businessComponents/RightGpuStatistics";
+import RightStoreSouce from "@/businessComponents/RightStoreSouce";
+import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
 const HomePage = () => {
   return (
     <div className="home-page-content">
@@ -54,13 +56,19 @@ const HomePage = () => {
 
             {/* GPU统计数据 */}
             <RightGpuStatistics/>
-            
+
+            <div style={{display:'flex', gap:'20px'}}>
+              <RightStoreSouce/>
+              <RightStoreCapacity/>
+            </div>
+
           </div>
 
-          <div className="home-page-main-right-bot"></div>
+          <div className="home-page-main-right-bot">
+
+          </div>
 
         </div>
-        
       </div>
     </div>
   );
