@@ -26,23 +26,22 @@ const HomePage = () => {
           </div>
 
           {/* 内存统计数据 */}
-          <MemoryStatistics/>
+          <MemoryStatistics />
           {/* CPU统计数据 */}
-          <CpuStatistics/>
+          <CpuStatistics />
           {/* GPU统计数据 */}
-          <GpuStatistics/>
+          <GpuStatistics />
 
-          <div style={{display:'flex', gap:'15px'}}>
+          <div style={{ display: "flex", gap: "15px" }}>
             {/* 储存数据 */}
-            <StoreSource/>
+            <StoreSource />
             {/* 储存容量 */}
-            <StoreCapacity/>
-          </div>          
+            <StoreCapacity />
+          </div>
         </div>
 
         <div className="home-page-main-right">
           <div className="home-page-main-right-top">
-
             <div className="main-right-AI-platform">
               <div className="main-right-title-box">
                 <div className="title-box-icon"></div>
@@ -52,22 +51,26 @@ const HomePage = () => {
             </div>
 
             {/* CPU统计数据 */}
-            <RightCpuStatistics/>
+            <RightCpuStatistics />
 
             {/* GPU统计数据 */}
-            <RightGpuStatistics/>
+            <RightGpuStatistics />
 
-            <div style={{display:'flex', gap:'20px'}}>
-              <RightStoreSouce/>
-              <RightStoreCapacity/>
+            <div style={{ display: "flex", gap: "20px" }}>
+              <RightStoreSouce />
+              <RightStoreCapacity />
             </div>
-
           </div>
 
           <div className="home-page-main-right-bot">
-
+            <div className="main-right-customer-platform">
+              <div className="main-right-title-box">
+                <div className="title-box-icon"></div>
+                <div>客户资源算力使用</div>
+              </div>
+              <div className="main-right-title-line"></div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
