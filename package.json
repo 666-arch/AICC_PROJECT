@@ -17,6 +17,8 @@
     "dayjs": "^1.11.10",
     "dva": "^2.4.1",
     "echarts": "^5.4.3",
+    "echarts-for-react": "^3.0.2",
+    "echarts-gl": "^2.0.9",
     "mitt": "^3.0.1",
     "path-to-regexp": "^6.2.1",
     "socket.io-client": "^4.6.2",

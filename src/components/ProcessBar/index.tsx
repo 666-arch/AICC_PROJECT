@@ -55,10 +55,8 @@ const ProcessBar: React.FC<IProps> = ({ width, height, value }) => {
             },
             axisLabel: {
               margin: 20,
-              textStyle: {
-                fontSize: 18,
-                color: "#fff",
-              },
+              fontSize: 18,
+              color: "#fff",
             },
             axisLine: {
               show: false,
@@ -85,38 +83,34 @@ const ProcessBar: React.FC<IProps> = ({ width, height, value }) => {
             barWidth: height,
             data: [value],
             label: {
-              normal: {
-                show: true,
-                position: "insideBottomRight",
-                formatter: "{c}",
-                distance: 0,
-                offset: [125, -20],
-                color: "#fff",
-                fontSize: 16,
-                padding: [5, 15, 10, 15],
-              },
+              show: true,
+              position: "insideBottomRight",
+              formatter: "{c}",
+              distance: 0,
+              offset: [125, -20],
+              color: "#fff",
+              fontSize: 16,
+              padding: [5, 15, 10, 15],
             },
             itemStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(
-                  1,
-                  0,
-                  0,
-                  0,
-                  [
-                    {
-                      offset: 0,
-                      color: "#295BD3", // 0% 处的颜色
-                    },
-                    {
-                      offset: 1,
-                      color: "#80A4FF", // 100% 处的颜色
-                    },
-                  ],
-                  false
-                ),
-                borderRadius: 29,
-              },
+              color: new echarts.graphic.LinearGradient(
+                1,
+                0,
+                0,
+                0,
+                [
+                  {
+                    offset: 0,
+                    color: "#295BD3", // 0% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: "#80A4FF", // 100% 处的颜色
+                  },
+                ],
+                false
+              ),
+              borderRadius: 29,
             },
           },
           {
@@ -126,10 +120,8 @@ const ProcessBar: React.FC<IProps> = ({ width, height, value }) => {
             barGap: "-100%",
             data: [100],
             itemStyle: {
-              normal: {
-                color: "#ffffff4b",
-                borderRadius: 29,
-              },
+              color: "#ffffff4b",
+              borderRadius: 29,
             },
             zlevel: -1,
           },

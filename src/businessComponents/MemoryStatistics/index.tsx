@@ -1,5 +1,22 @@
 import PanelWrapper from "@/components/PanelWrapper";
 import "./index.less";
+import Pie3d from "@/components/Pie3d";
+const optionsData = [
+  {
+    name: "未分配",
+    value: 260,
+    itemStyle: {
+      color: "#E9E9E9",
+    },
+  },
+  {
+    name: "已分配",
+    value: 300,
+    itemStyle: {
+      color: "#98B6FF",
+    },
+  },
+];
 function MemoryStatistics() {
   return (
     <div className="main-left-memory-statistics">
@@ -7,7 +24,10 @@ function MemoryStatistics() {
         <PanelWrapper width={362} height={27} content="内存统计数据" />
       </div>
       <div className="memory-statistics-main">
-        <div className="memory-statistics-left"></div>
+        <div className="memory-statistics-left">
+          <Pie3d width={250} height={215} data={optionsData} />
+        </div>
+
         <div className="memory-statistics-right">
           <div className="statistics-top">
             <div>提供</div>
