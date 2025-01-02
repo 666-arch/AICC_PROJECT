@@ -9,6 +9,28 @@ import RightCpuStatistics from "@/businessComponents/RightCpuStatistics";
 import RightGpuStatistics from "@/businessComponents/RightGpuStatistics";
 import RightStoreSouce from "@/businessComponents/RightStoreSouce";
 import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
+const legendList = [
+  {
+    content: '神州同学：',
+    value: 57,
+    color: '#415DFF'
+  },
+  {
+    content: '科技公司：',
+    value: 57,
+    color: '#4187CB'
+  },
+  {
+    content: '科研机构：',
+    value: 57,
+    color: '#7A56E3'
+  },
+  {
+    content: '制造业：',
+    value: 57,
+    color: '#2B60E0'
+  }
+]
 const HomePage = () => {
   return (
     <div className="home-page-content">
@@ -74,7 +96,16 @@ const HomePage = () => {
             <div className="main-right-bot-chart">
               <div className="chart-left"></div>
               <div className="chart-right">
-                
+                {
+                  legendList.map((item, index)=> {
+                    return <div className="chart-item" key={item.content}>
+                      <div>{item.content}</div>
+                      <div style={{
+                        color: item.color
+                      }}>{item.value}</div>
+                    </div>
+                  })
+                }
               </div>
             </div>
           </div>

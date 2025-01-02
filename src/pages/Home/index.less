@@ -168,6 +168,34 @@
                     width: 371px;
                     height: 135px;
                     border: 1px solid;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 25px;
+                    .chart-left{
+                        width: 172px;
+                    }
+                    .chart-right{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 17px;
+                        .chart-item{
+                            display: flex;
+                            & :nth-child(1){
+                                font-family: Source Han Sans CN;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 21px;
+                                color: #333333;
+                                opacity: 0.8;
+                            }
+                            & :nth-child(2){
+                                font-family: Source Han Sans CN;
+                                font-size: 22px;
+                                font-weight: 700;
+                                line-height: 17.17px;
+                            }
+                        }
+                    }
                 }
             }
         }
