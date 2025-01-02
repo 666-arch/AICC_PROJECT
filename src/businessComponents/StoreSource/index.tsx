@@ -5,7 +5,8 @@ import PanelWrapper from '@/components/PanelWrapper'
 function StoreSource() {
   return (
     <div className='main-left-store-source'>
-        <PanelWrapper width={170.5} height={27} content="储存数据" />
+      <PanelWrapper width={170.5} height={27} content="储存数据" />
+      
     </div>
   )
 }

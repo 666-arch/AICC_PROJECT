@@ -31,7 +31,9 @@ const HomePage = () => {
           {/* 储存数据 */}
           
           <div style={{display:'flex', gap:'15px'}}>
+            {/* 储存数据 */}
             <StoreSource/>
+            {/* 储存容量 */}
             <StoreCapacity/>
           </div>          
         </div>

@@ -1,4 +1,3 @@
-import React from 'react'
 import './index.less'
 import PanelWrapper from '@/components/PanelWrapper'
 function GpuStatistics() {
@@ -15,7 +14,10 @@ function GpuStatistics() {
       </div>
 
       <div className='gpu-statistics-card'>
-        <div className='card-left'></div>
+        <div className='card-left'>
+          <div className='card-left-icon'></div>
+          <div className='card-left-bot'></div>
+        </div>
         <div className='card-right'>
             <div className='card-right-content-1'>
                 <div>提供L40sGPU卡</div>

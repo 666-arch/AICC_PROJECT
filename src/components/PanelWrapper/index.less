@@ -18,14 +18,25 @@
         letter-spacing: 0.05em;
         color: #333333;
         display: flex;
-        gap: 8px;
+        align-items: center;
+        gap: 6px;
+        &::before{
+            content: "";
+            width: 6.45px;
+            height: 6.45px;
+            border-radius: 1.5px;
+            background-color: #6687FF;
+            transform: rotate(45deg);
+        }
         &::after{
             content: "";
-            display: block;
-            width: 220px;
+            // display: block;
             height: 27px;
+            width: calc(var(--wrapper-width) - var(--content-width));
             background: url('/images/panel_line.svg') no-repeat;
             background-size: contain;
+            background-position: center;
+            // line-height: 27px;
         }
     }
 }
