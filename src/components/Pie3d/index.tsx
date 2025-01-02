@@ -11,6 +11,8 @@ interface IOptionsData {
   data: Array<dataType>;
   width: React.CSSProperties['width'];
   height: React.CSSProperties['height'];
+  left?: number;
+  top?: number;
 }
 // 生成扇形的曲面参数方程
 function getParametricEquation(
@@ -78,7 +80,7 @@ function getParametricEquation(
     },
   };
 }
-const Pie3d: React.FC<IOptionsData> = ({ data, width, height }) => {
+const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -60 }) => {
   // 生成模拟 3D 饼图的配置项
   function getPie3D(pieData: string | any[], internalDiameterRatio: number) {
     let series = [];
@@ -175,8 +177,8 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height }) => {
       grid3D: {
         show: false,
         boxHeight: 1,
-        left: -50,
-        top: -60,
+        left,
+        top,
         width,
         height,
         viewControl: {
