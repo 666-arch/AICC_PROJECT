@@ -70,7 +70,15 @@ const HomePage = () => {
               </div>
               <div className="main-right-title-line"></div>
             </div>
+
+            <div className="main-right-bot-chart">
+              <div className="chart-left"></div>
+              <div className="chart-right">
+                
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
     </div>
