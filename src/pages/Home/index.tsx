@@ -28,8 +28,6 @@ const HomePage = () => {
           {/* GPU统计数据 */}
           <GpuStatistics/>
 
-          {/* 储存数据 */}
-          
           <div style={{display:'flex', gap:'15px'}}>
             {/* 储存数据 */}
             <StoreSource/>
@@ -39,9 +37,21 @@ const HomePage = () => {
         </div>
 
         <div className="home-page-main-right">
-          <div className="home-page-main-right-top"></div>
+          <div className="home-page-main-right-top">
+
+            <div className="main-right-AI-platform">
+              <div className="main-right-title-box">
+                <div className="title-box-icon"></div>
+                <div>HPC&AI平台</div>
+              </div>
+              <div className="main-right-title-line"></div>
+            </div>
+            
+          </div>
           <div className="home-page-main-right-bot"></div>
+
         </div>
+        
       </div>
     </div>
   );
