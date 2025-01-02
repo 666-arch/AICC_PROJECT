@@ -15,6 +15,22 @@ function RightGpuStatistics() {
         <ProcessBar width={362} height={8} value={10} />
       </div>
       
+      <div className="right-gpu-statistics-card">
+        <div className="card-gpu-left">
+          <div className="card-gpu-left-icon"></div>
+          <div className="card-gpu-left-bot"></div>
+        </div>
+        <div className="card-gpu-right">
+          <div className="card-right-gpu-content-1">
+            <div>提供L40sGPU卡</div>
+            <div>120</div>
+          </div>
+          <div className="card-right-gpu-content-2">
+            <div>计算能力约</div>
+            <div>84</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
