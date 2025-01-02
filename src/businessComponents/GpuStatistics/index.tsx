@@ -1,36 +1,37 @@
-import './index.less'
-import PanelWrapper from '@/components/PanelWrapper'
+import ProcessBar from "@/components/ProcessBar";
+import "./index.less";
+import PanelWrapper from "@/components/PanelWrapper";
 function GpuStatistics() {
   return (
-    <div className='main-left-gpu-statistics'>
+    <div className="main-left-gpu-statistics">
       <PanelWrapper width={362} height={27} content="GPU统计数据" />
 
-      <div className='gpu-statistics-bar'>
-        <div className='gpu-statistics-top'>
-            <div className='bar-content-1'>L40sGPU卡</div>
-            <div className='bar-content-2'>84</div>
+      <div className="gpu-statistics-bar">
+        <div className="gpu-statistics-top">
+          <div className="bar-content-1">L40sGPU卡</div>
+          <div className="bar-content-2">84</div>
         </div>
-        <div className='gpu-statistics-bot'></div>
+        <ProcessBar width={339} height={8} value={10} />
       </div>
 
-      <div className='gpu-statistics-card'>
-        <div className='card-left'>
-          <div className='card-left-icon'></div>
-          <div className='card-left-bot'></div>
+      <div className="gpu-statistics-card">
+        <div className="card-left">
+          <div className="card-left-icon"></div>
+          <div className="card-left-bot"></div>
         </div>
-        <div className='card-right'>
-            <div className='card-right-content-1'>
-                <div>提供L40sGPU卡</div>
-                <div>120</div>
-            </div>
-            <div className='card-right-content-2'>
-                <div>计算能力约</div>
-                <div>84</div>
-            </div>
+        <div className="card-right">
+          <div className="card-right-content-1">
+            <div>提供L40sGPU卡</div>
+            <div>120</div>
+          </div>
+          <div className="card-right-content-2">
+            <div>计算能力约</div>
+            <div>84</div>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default GpuStatistics
+export default GpuStatistics;
