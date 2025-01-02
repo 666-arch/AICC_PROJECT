@@ -4,9 +4,7 @@ import './index.less'
 function CpuStatistics() {
   return (
     <div className="main-left-cpu-statistics">
-      <div>
-        <PanelWrapper width={362} height={27} content="CPU统计数据" />
-      </div>
+      <PanelWrapper width={362} height={27} content="CPU统计数据" />
       <div className="cpu-statistics-main">
         <div className="cpu-statistics-left"></div>
         <div className="cpu-statistics-right">
