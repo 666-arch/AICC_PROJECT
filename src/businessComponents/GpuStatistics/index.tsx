@@ -30,6 +30,8 @@ function GpuStatistics() {
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 }
