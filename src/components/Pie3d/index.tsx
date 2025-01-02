@@ -197,7 +197,9 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height }) => {
   useEffect(() => {
     if (chartRef && chartRef.current) {
       const options: any = getPie3D(data, 0.8);
-      chartInstance.current = echarts.init(chartRef.current);
+      chartInstance.current = echarts.init(chartRef.current, null, {
+        devicePixelRatio: window.devicePixelRatio
+      });
       chartInstance.current.setOption(options);
     }
     return () => {

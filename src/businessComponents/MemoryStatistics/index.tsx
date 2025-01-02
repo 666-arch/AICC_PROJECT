@@ -26,6 +26,10 @@ function MemoryStatistics() {
       <div className="memory-statistics-main">
         <div className="memory-statistics-left">
           <Pie3d width={250} height={215} data={optionsData} />
+          <div className="legend-box">
+            <div>未分配</div>
+            <div>已分配</div>
+          </div>
         </div>
 
         <div className="memory-statistics-right">
