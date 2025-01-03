@@ -8,7 +8,6 @@
     border-radius: 20px;
     background: linear-gradient(90.13deg, #3F99FF 0.11%, #ffffffbe 131.08%, #ffffff81 131.1%);
     cursor: pointer; 
-
     .button-base-inner{
         width: 175px;
         height: 49px;
@@ -16,7 +15,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
         font-family: Source Han Sans CN;
         font-size: 22px;
         font-weight: 700;
@@ -25,12 +23,16 @@
         color: #FFFFFF;
         background: linear-gradient(90.13deg, #3F99FF 0.11%, rgba(255, 255, 255, 0) 131.08%, rgba(255, 255, 255, 0) 131.1%);
         text-shadow: 0.96px 0.96px 4.32px #00000033;
-
-        & ::before{
-            width: 33px;
+        &::before{
+            content: '';
+            width: 31px;
             height: 31px;
             background: url('/images/btn_icon.svg') no-repeat;
-            background-size: cover;
+            background-size: contain;
+            padding-right: 12px;
+        }
+        &:hover{
+            background: linear-gradient(90.13deg, #2787f5 0.11%, rgba(255, 255, 255, 0) 131.08%, rgba(255, 255, 255, 0) 131.1%);
         }
     }
 }
