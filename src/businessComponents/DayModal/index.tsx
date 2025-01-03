@@ -5,22 +5,22 @@ function DayModal() {
     {
       content: "温度",
       value: 10,
-      rate: '℃',
+      rate: "℃",
     },
     {
       content: "湿度",
       value: 10,
-      rate: 'RH',
+      rate: "RH",
     },
     {
       content: "电流/机柜",
       value: 10,
-      rate: 'A',
+      rate: "A",
     },
     {
       content: "电量",
       value: 10,
-      rate: 'KWh',
+      rate: "KWh",
     },
   ];
   return (
@@ -34,8 +34,8 @@ function DayModal() {
               <div className="day-item-data">
                 <div>{item.content}</div>
                 <div className="data-desc">
-                    <NumberTween value={item.value}/>
-                    <div>{item.rate}</div>
+                  <NumberTween value={item.value} />
+                  <div className={`rate-${index+1}`}>{item.rate}</div>
                 </div>
               </div>
             </div>
