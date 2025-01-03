@@ -10,6 +10,7 @@ import RightGpuStatistics from "@/businessComponents/RightGpuStatistics";
 import RightStoreSouce from "@/businessComponents/RightStoreSouce";
 import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
 import Pie3d from "@/components/Pie3d";
+import NumberTween from "@/components/NumberTween";
 const legendList = [
   {
     content: "神州同学：",
@@ -126,7 +127,13 @@ const HomePage = () => {
 
             <div className="main-right-bot-chart">
               <div className="chart-left">
-                <Pie3d width={290} height={255} data={optionsData} left={-60} top={-70}/>
+                <Pie3d
+                  width={290}
+                  height={255}
+                  data={optionsData}
+                  left={-60}
+                  top={-70}
+                />
                 <div className="pie-base-bg"></div>
               </div>
               <div className="chart-right">
@@ -148,16 +155,20 @@ const HomePage = () => {
                           color: item.color,
                         }}
                       >
-                        {item.value}
+                        <NumberTween value={item.value} />
                       </div>
-                      <div style={{
-                        color: item.color,
-                        fontFamily: ' Source Han Sans CN',
-                        fontSize: '13px',
-                        fontWeight: '350',
-                        lineHeight: '11px',
-                        marginTop:'8px'
-                      }}>%</div>
+                      <div
+                        style={{
+                          color: item.color,
+                          fontFamily: " Source Han Sans CN",
+                          fontSize: "13px",
+                          fontWeight: "350",
+                          lineHeight: "11px",
+                          marginTop: "8px",
+                        }}
+                      >
+                        %
+                      </div>
                     </div>
                   );
                 })}

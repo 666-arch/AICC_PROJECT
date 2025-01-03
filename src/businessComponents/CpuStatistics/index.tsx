@@ -35,18 +35,18 @@ function CpuStatistics() {
         <div className="cpu-statistics-right">
           <div className="statistics-top">
             <div>提供</div>
-            <div><NumberTween value={3555}/></div>
+            <NumberTween value={3555}/>
           </div>
 
           <div className="statistics-mid-1">
             <div>已分配</div>
-            <div>44.85</div>
+            <NumberTween value={44.85}/>
             <div className="statistics-mid-line"></div>
           </div>
 
           <div className="statistics-mid-2">
             <div>未分配</div>
-            <div>55.15</div>
+            <NumberTween value={55.15}/>
             <div className="statistics-mid-line"></div>
           </div>
         </div>

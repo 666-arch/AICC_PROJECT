@@ -1,6 +1,7 @@
 import PanelWrapper from "@/components/PanelWrapper";
 import "./index.less";
 import Pie3d from "@/components/Pie3d";
+import NumberTween from "@/components/NumberTween";
 const optionsData = [
   {
     name: "未分配",
@@ -36,18 +37,18 @@ function MemoryStatistics() {
         <div className="memory-statistics-right">
           <div className="statistics-top">
             <div>提供</div>
-            <div>3555</div>
+            <NumberTween value={3555}/>
           </div>
 
           <div className="statistics-mid-1">
             <div>已分配</div>
-            <div>44.85</div>
+            <NumberTween value={44.85}/>
             <div className="statistics-mid-line"></div>
           </div>
 
           <div className="statistics-mid-2">
             <div>未分配</div>
-            <div>55.15</div>
+            <NumberTween value={55.15}/>
             <div className="statistics-mid-line"></div>
           </div>
         </div>
