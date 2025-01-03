@@ -11,26 +11,26 @@ import RightStoreSouce from "@/businessComponents/RightStoreSouce";
 import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
 const legendList = [
   {
-    content: '神州同学：',
+    content: "神州同学：",
     value: 57,
-    color: '#415DFF'
+    color: "#415DFF",
   },
   {
-    content: '科技公司：',
+    content: "科技公司：",
     value: 57,
-    color: '#4187CB'
+    color: "#4187CB",
   },
   {
-    content: '科研机构：',
+    content: "科研机构：",
     value: 57,
-    color: '#7A56E3'
+    color: "#7A56E3",
   },
   {
-    content: '制造业：',
+    content: "制造业：",
     value: 57,
-    color: '#2B60E0'
-  }
-]
+    color: "#2B60E0",
+  },
+];
 const HomePage = () => {
   return (
     <div className="home-page-content">
@@ -96,20 +96,40 @@ const HomePage = () => {
             <div className="main-right-bot-chart">
               <div className="chart-left"></div>
               <div className="chart-right">
-                {
-                  legendList.map((item, index)=> {
-                    return <div className="chart-item" key={item.content}>
+                {legendList.map((item, index) => {
+                  return (
+                    <div className="chart-item" key={item.content}>
+                      <div
+                        style={{
+                          width: "5px",
+                          height: "5px",
+                          borderRadius: "50%",
+                          marginRight: "8px",
+                          backgroundColor: item.color,
+                        }}
+                      ></div>
                       <div>{item.content}</div>
+                      <div
+                        style={{
+                          color: item.color,
+                        }}
+                      >
+                        {item.value}
+                      </div>
                       <div style={{
-                        color: item.color
-                      }}>{item.value}</div>
+                        color: item.color,
+                        fontFamily: ' Source Han Sans CN',
+                        fontSize: '13px',
+                        fontWeight: '350',
+                        lineHeight: '11px',
+                        marginTop:'8px'
+                      }}>%</div>
                     </div>
-                  })
-                }
+                  );
+                })}
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
