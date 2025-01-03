@@ -12,6 +12,7 @@ import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
 import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
 import DayModal from "@/businessComponents/DayModal";
+import ButtonBase from "@/components/ButtonBase";
 const legendList = [
   {
     content: "神州同学：",
@@ -182,6 +183,8 @@ const HomePage = () => {
         <div className="home-page-main-modal">
           <DayModal/>
         </div>
+
+        <ButtonBase/>
       </div>
     </div>
   );
