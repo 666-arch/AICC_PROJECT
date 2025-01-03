@@ -11,6 +11,7 @@ import RightStoreSouce from "@/businessComponents/RightStoreSouce";
 import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
 import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
+import DayModal from "@/businessComponents/DayModal";
 const legendList = [
   {
     content: "神州同学：",
@@ -175,6 +176,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* 弹窗 */}
+        <div className="home-page-main-modal">
+          <DayModal/>
         </div>
       </div>
     </div>

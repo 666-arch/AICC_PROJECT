@@ -1,36 +1,48 @@
-import React from 'react'
-
+import NumberTween from "@/components/NumberTween";
+import "./index.less";
 function DayModal() {
   const list = [
     {
-        icon: '',
-        content: '温度',
-        value: ''
+      content: "温度",
+      value: 10,
+      rate: '℃',
     },
     {
-        icon: '',
-        content: '湿度',
-        value: ''
+      content: "湿度",
+      value: 10,
+      rate: 'RH',
     },
     {
-        icon: '',
-        content: '电流/机柜',
-        value: ''
+      content: "电流/机柜",
+      value: 10,
+      rate: 'A',
     },
     {
-        icon: '',
-        content: '电量',
-        value: ''
+      content: "电量",
+      value: 10,
+      rate: 'KWh',
     },
-  ]
+  ];
   return (
-    <div className='day-modal'>
-      <div className='day-modal-title'></div>
-      <div className='day-modal-main'>
-        <div></div>
+    <div className="day-modal">
+      <div className="day-modal-title">日均</div>
+      <div className="day-modal-main">
+        {list.map((item, index) => {
+          return (
+            <div className="day-item" key={item.content}>
+              <div className={`icon-${index + 1}`}></div>
+              <div className="day-item-data">
+                <div>{item.content}</div>
+                <div className="data-desc">
+                    <NumberTween value={item.value}/>
+                    <div>{item.rate}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
-  )
+  );
 }
-
-export default DayModal
+export default DayModal;
