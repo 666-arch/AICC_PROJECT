@@ -23,7 +23,8 @@
     "path-to-regexp": "^6.2.1",
     "socket.io-client": "^4.6.2",
     "umi": "^4.0.73",
-    "@tweenjs/tween.js": "^21.0.0"
+    "@tweenjs/tween.js": "^21.0.0",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.18",
