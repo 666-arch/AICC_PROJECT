@@ -9,6 +9,7 @@ import RightCpuStatistics from "@/businessComponents/RightCpuStatistics";
 import RightGpuStatistics from "@/businessComponents/RightGpuStatistics";
 import RightStoreSouce from "@/businessComponents/RightStoreSouce";
 import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
+import Pie3d from "@/components/Pie3d";
 const legendList = [
   {
     content: "神州同学：",
@@ -29,6 +30,36 @@ const legendList = [
     content: "制造业：",
     value: 57,
     color: "#2B60E0",
+  },
+];
+const optionsData = [
+  {
+    name: "神州同学：",
+    value: 260,
+    itemStyle: {
+      color: "#365AB2",
+    },
+  },
+  {
+    name: "科技公司：",
+    value: 130,
+    itemStyle: {
+      color: "#4187CB",
+    },
+  },
+  {
+    name: "科研机构：",
+    value: 200,
+    itemStyle: {
+      color: "#A096FF",
+    },
+  },
+  {
+    name: "制造业：",
+    value: 100,
+    itemStyle: {
+      color: "#3659b2a6",
+    },
   },
 ];
 const HomePage = () => {
@@ -94,7 +125,10 @@ const HomePage = () => {
             </div>
 
             <div className="main-right-bot-chart">
-              <div className="chart-left"></div>
+              <div className="chart-left">
+              <Pie3d width={250} height={215} data={optionsData} left={0} top={-45}/>
+
+              </div>
               <div className="chart-right">
                 {legendList.map((item, index) => {
                   return (
