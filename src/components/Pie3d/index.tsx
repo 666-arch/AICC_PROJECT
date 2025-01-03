@@ -209,6 +209,6 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -
     };
   }, []);
 
-  return <div ref={chartRef} style={{ height: "100%", width: "100%" }} />;
+  return <div ref={chartRef} style={{ height: "100%", width: "100%"}} />;
 };
 export default Pie3d;
