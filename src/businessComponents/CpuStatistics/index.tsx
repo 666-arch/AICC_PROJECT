@@ -2,6 +2,7 @@ import PanelWrapper from "@/components/PanelWrapper";
 import React from "react";
 import './index.less'
 import Pie3d from "@/components/Pie3d";
+import NumberTween from "@/components/NumberTween";
 const optionsData = [
   {
     name: "未分配",
@@ -34,7 +35,7 @@ function CpuStatistics() {
         <div className="cpu-statistics-right">
           <div className="statistics-top">
             <div>提供</div>
-            <div>3555</div>
+            <div><NumberTween value={3555}/></div>
           </div>
 
           <div className="statistics-mid-1">

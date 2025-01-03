@@ -1,6 +1,6 @@
 import PanelWrapper from '@/components/PanelWrapper'
-import './index.less'
 import Pie3d from '@/components/Pie3d'
+import './index.less'
 const optionsData = [
   {
     name: "未分配",
