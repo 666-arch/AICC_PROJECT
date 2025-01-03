@@ -1,6 +1,7 @@
 import NumberTween from "@/components/NumberTween";
 import "./index.less";
 import { useEffect, useRef } from "react";
+import useGlobalStore from "@/store";
 function DayModal() {
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -26,18 +27,18 @@ function DayModal() {
       rate: "KWh",
     },
   ];
-  useEffect(()=>{
-    const handleClickOutside = (event: any) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        console.log('dddddd');
+  // useEffect(()=>{
+  //   const handleClickOutside = (event: any) => {
+  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
+  //       console.log('dddddd');
         
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  },[])
+  //     }
+  //   };
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // },[])
   return (
     <div className="day-modal" ref={modalRef}>
       <div className="day-modal-title">日均</div>

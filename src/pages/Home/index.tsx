@@ -13,6 +13,8 @@ import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
 import DayModal from "@/businessComponents/DayModal";
 import ButtonBase from "@/components/ButtonBase";
+import useGlobalStore from "@/store";
+import { useEffect, useState } from "react";
 const legendList = [
   {
     content: "神州同学：",
@@ -66,6 +68,7 @@ const optionsData = [
   },
 ];
 const HomePage = () => {
+  const [isShowModal, setIsShowModal] = useState<boolean>(false);
   return (
     <div className="home-page-content">
       <div className="home-page-header">
@@ -180,12 +183,12 @@ const HomePage = () => {
         </div>
 
         {/* 弹窗 */}
-        <div className="home-page-main-modal">
-          <DayModal/>
-        </div>
-
-        <ButtonBase/>
-
+        {isShowModal ? (
+          <div className="home-page-main-modal">
+            <DayModal />
+          </div>
+        ) : null}
+        <ButtonBase setIsShowModal={setIsShowModal} />
       </div>
     </div>
   );

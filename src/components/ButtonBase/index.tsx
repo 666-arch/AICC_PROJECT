@@ -1,14 +1,15 @@
-import React from 'react'
-import './index.less'
- const ButtonBase = () => {
-  const handleClick = () => {
-    console.log('aaa');
-  }
-  return (
-    <div className='button-base' onClick={handleClick}>
-      <div className='button-base-inner'>动环数据</div>
-    </div>
-  )
+import React from "react";
+import "./index.less";
+import useGlobalStore from "@/store";
+interface IProps {
+  setIsShowModal: (isShow: boolean) => void;
 }
+const ButtonBase: React.FC<IProps> = ({ setIsShowModal }) => {
+  return (
+    <div className="button-base" onClick={() => setIsShowModal(true)}>
+      <div className="button-base-inner">动环数据</div>
+    </div>
+  );
+};
 
-export default ButtonBase
+export default ButtonBase;

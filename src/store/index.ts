@@ -1,13 +1,13 @@
 import { create, StoreApi, UseBoundStore } from "zustand";
 interface GlobalState {
     showModalState: boolean;
-    setShowModalState: (value: boolean) => void;
+    setShowModalState: (state: boolean) =>void;
 }
 const useGlobalStore: UseBoundStore<StoreApi<GlobalState>> = create((set) => ({
     showModalState: false,
-    setShowModalState(state: boolean) {
+    setShowModalState(value) {
         set({
-            showModalState: state
+            showModalState: value
         })
     }
 }));
