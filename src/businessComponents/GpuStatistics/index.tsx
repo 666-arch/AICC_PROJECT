@@ -11,7 +11,7 @@ function GpuStatistics() {
           <div className="bar-content-1">L40sGPU卡</div>
           <div className="bar-content-2">84</div>
         </div>
-        <ProcessBar width={339} height={8} value={10} />
+        <ProcessBar width={339} height={8} value={90} />
       </div>
 
       <div className="gpu-statistics-card">

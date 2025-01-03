@@ -126,8 +126,8 @@ const HomePage = () => {
 
             <div className="main-right-bot-chart">
               <div className="chart-left">
-              <Pie3d width={250} height={215} data={optionsData} left={0} top={-45}/>
-
+                <Pie3d width={290} height={255} data={optionsData} left={-60} top={-70}/>
+                <div className="pie-base-bg"></div>
               </div>
               <div className="chart-right">
                 {legendList.map((item, index) => {

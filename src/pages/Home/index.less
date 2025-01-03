@@ -29,7 +29,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: 21px;
-
+        position: relative;
         .home-page-main-left,
         .home-page-main-right {
             width: 405px;
@@ -45,6 +45,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            // animation: animationShowLeft linear 0.9s;
+            // animation-fill-mode: backwards;
+            // animation-delay: 0.5s;
 
             .main-left-cloud-platform {
                 width: 371px;
@@ -87,6 +91,10 @@
         .home-page-main-right {
             display: flex;
             flex-direction: column;
+
+            // animation: animationShowRight linear 0.9s;
+            // animation-fill-mode: backwards;
+            // animation-delay: 0.5s;
 
             .home-page-main-right-top {
                 width: 405px;
@@ -136,7 +144,6 @@
                 }
 
             }
-
             .home-page-main-right-bot {
                 width: 405px;
                 height: 278px;
@@ -188,13 +195,22 @@
                 .main-right-bot-chart {
                     width: 371px;
                     height: 135px;
-                    border: 1px solid;
                     display: flex;
                     justify-content: space-between;
                     padding: 0 25px;
-
                     .chart-left {
                         width: 172px;
+                        position: relative;
+                        top: 15px;
+                        .pie-base-bg{
+                            width: 172px;
+                            height: 92px;
+                            background: url('/images/max_base_bg.svg') no-repeat;
+                            background-size: cover;
+                            position: absolute;
+                            top: 0px;
+                            z-index: -1;
+                        }
                     }
 
                     .chart-right {

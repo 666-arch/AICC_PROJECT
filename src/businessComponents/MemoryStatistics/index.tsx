@@ -21,7 +21,7 @@ function MemoryStatistics() {
   return (
     <div className="main-left-memory-statistics">
       <div>
-        <PanelWrapper width={362} height={27} content="内存统计数据" />
+        <PanelWrapper width={382} height={27} content="内存统计数据" />
       </div>
       <div className="memory-statistics-main">
         <div className="memory-statistics-left">

@@ -34,3 +34,28 @@ body {
 //     font-family: "AlibabaPuHuiTi";
 //     src: url("../assets/font/AlibabaPuHuiTi-3-55-Regular.otf");
 // }
+
+
+
+@keyframes animationShowLeft {
+    0%,
+    67% {
+      transform: translateX(-100%) rotateY(2.6deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%) rotateY(2.6deg);
+      opacity: 1;
+    }
+  }
+  @keyframes animationShowRight {
+    0%,
+    67% {
+      transform: translateX(100%) rotateY(2.6deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%) rotateY(2.6deg);
+      opacity: 1;
+    }
+  }
