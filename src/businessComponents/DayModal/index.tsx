@@ -1,8 +1,11 @@
 import NumberTween from "@/components/NumberTween";
 import "./index.less";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import useGlobalStore from "@/store";
-function DayModal() {
+interface IProps {
+  setIsShowModal: (isShow: boolean) => void;
+}
+const DayModal: React.FC<IProps> = ({ setIsShowModal }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const list = [
@@ -27,18 +30,17 @@ function DayModal() {
       rate: "KWh",
     },
   ];
-  // useEffect(()=>{
-  //   const handleClickOutside = (event: any) => {
-  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
-  //       console.log('dddddd');
-        
-  //     }
-  //   };
-  //   document.addEventListener('mousedown', handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   };
-  // },[])
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsShowModal(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="day-modal" ref={modalRef}>
       <div className="day-modal-title">日均</div>
@@ -51,7 +53,7 @@ function DayModal() {
                 <div>{item.content}</div>
                 <div className="data-desc">
                   <NumberTween value={item.value} />
-                  <div className={`rate-${index+1}`}>{item.rate}</div>
+                  <div className={`rate-${index + 1}`}>{item.rate}</div>
                 </div>
               </div>
             </div>
@@ -60,5 +62,5 @@ function DayModal() {
       </div>
     </div>
   );
-}
+};
 export default DayModal;

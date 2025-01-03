@@ -15,6 +15,7 @@ import DayModal from "@/businessComponents/DayModal";
 import ButtonBase from "@/components/ButtonBase";
 import useGlobalStore from "@/store";
 import { useEffect, useState } from "react";
+import SvgLine from "@/components/SvgLine";
 const legendList = [
   {
     content: "神州同学：",
@@ -185,10 +186,12 @@ const HomePage = () => {
         {/* 弹窗 */}
         {isShowModal ? (
           <div className="home-page-main-modal">
-            <DayModal />
+            <DayModal setIsShowModal={setIsShowModal}/>
           </div>
         ) : null}
         <ButtonBase setIsShowModal={setIsShowModal} />
+
+        <SvgLine/>
       </div>
     </div>
   );

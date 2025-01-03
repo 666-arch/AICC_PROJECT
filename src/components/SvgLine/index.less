@@ -1,0 +1,21 @@
+.svg-anim-box {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    svg {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .animated-path {
+      stroke-dasharray: 1000; /* 根据实际路径长度调整 */
+      stroke-dashoffset: 1000;
+      animation: drawPath 5s linear forwards;
+    }
+  }
+  
+  @keyframes drawPath {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
