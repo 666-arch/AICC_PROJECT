@@ -24,6 +24,7 @@ function RightStoreSouce() {
       <PanelWrapper width={170.5} height={27} content="储存数据" />
       <div className='right-source-num'>19</div>
       <Pie3d width={165} height={157} data={optionsData} left={6} top={-45}/>
+      <div className="pie-base-bg"></div>
       <div className='right-source-desc'>提供1.27P并行文件存储容量</div>
     </div>
   )
