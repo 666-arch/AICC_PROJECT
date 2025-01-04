@@ -43,14 +43,14 @@ const optionsData = [
     name: "神州同学：",
     value: 260,
     itemStyle: {
-      color: "#365AB2",
+      color: "#80A4FF",
     },
   },
   {
     name: "科技公司：",
-    value: 130,
+    value: 330,
     itemStyle: {
-      color: "#4187CB",
+      color: "#5E9AD3",
     },
   },
   {
@@ -62,9 +62,9 @@ const optionsData = [
   },
   {
     name: "制造业：",
-    value: 100,
+    value: 500,
     itemStyle: {
-      color: "#3659b2a6",
+      color: "#4170E3",
     },
   },
 ];
@@ -182,17 +182,14 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
         {/* 弹窗 */}
         {isShowModal ? (
           <div className="home-page-main-modal">
-            <DayModal setIsShowModal={setIsShowModal}/>
+            <DayModal setIsShowModal={setIsShowModal} />
           </div>
         ) : null}
         <ButtonBase setIsShowModal={setIsShowModal} />
-        {
-          isShowModal && <SvgLine/>
-        }
+        {isShowModal && <SvgLine />}
       </div>
     </div>
   );
