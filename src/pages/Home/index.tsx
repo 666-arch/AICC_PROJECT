@@ -190,8 +190,10 @@ const HomePage = () => {
           </div>
         ) : null}
         <ButtonBase setIsShowModal={setIsShowModal} />
-
-        <SvgLine/>
+        {
+          isShowModal && <SvgLine/>
+        }
+        
       </div>
     </div>
   );
