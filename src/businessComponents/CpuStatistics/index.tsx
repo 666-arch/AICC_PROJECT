@@ -35,7 +35,7 @@ function CpuStatistics() {
         <div className="cpu-statistics-right">
           <div className="statistics-top">
             <div>提供</div>
-            <NumberTween value={3555} isCpu={true}/>
+            <NumberTween value={3555}/>
           </div>
 
           <div className="statistics-mid-1">

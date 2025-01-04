@@ -37,7 +37,7 @@ function MemoryStatistics() {
         <div className="memory-statistics-right">
           <div className="statistics-top">
             <div>提供</div>
-            <NumberTween value={3555}/>
+            <NumberTween value={3555} isCpu={true}/>
           </div>
 
           <div className="statistics-mid-1">
