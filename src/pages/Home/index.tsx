@@ -193,7 +193,6 @@ const HomePage = () => {
         {
           isShowModal && <SvgLine/>
         }
-        
       </div>
     </div>
   );
