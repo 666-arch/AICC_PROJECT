@@ -85,10 +85,10 @@ const HomePage = () => {
             <div className="main-left-title-line"></div>
           </div>
 
-          {/* 内存统计数据 */}
-          <MemoryStatistics />
           {/* CPU统计数据 */}
           <CpuStatistics />
+          {/* 内存统计数据 */}
+          <MemoryStatistics />
           {/* GPU统计数据 */}
           <GpuStatistics />
 
