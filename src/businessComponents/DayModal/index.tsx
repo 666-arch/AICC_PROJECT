@@ -1,7 +1,6 @@
 import NumberTween from "@/components/NumberTween";
-import "./index.less";
 import React, { useEffect, useRef } from "react";
-import useGlobalStore from "@/store";
+import "./index.less";
 interface IProps {
   setIsShowModal: (isShow: boolean) => void;
 }
