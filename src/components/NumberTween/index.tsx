@@ -19,6 +19,7 @@ interface IProps extends React.AllHTMLAttributes<HTMLDivElement> {
    * @default true
    */
   positive?: boolean;
+  isCpu?: boolean;
 }
 const NumberTween: React.FC<IProps> = ({
   value = 0,
@@ -27,6 +28,7 @@ const NumberTween: React.FC<IProps> = ({
   decimal,
   floor = false,
   positive = false,
+  isCpu = false,
   ...rest
 }) => {
   const [innerValue, setInnerValue] = useState<string>("0");
@@ -83,7 +85,7 @@ const NumberTween: React.FC<IProps> = ({
     animate();
   };
 
-  return <div {...rest}>{innerValue}</div>;
+  return <div {...rest}>{innerValue}{isCpu ? 'G' : ''}</div>;
 };
 
 export default NumberTween;
