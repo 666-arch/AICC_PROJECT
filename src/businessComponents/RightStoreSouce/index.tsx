@@ -28,7 +28,7 @@ function RightStoreSouce() {
       </div>
       <Pie3d width={165} height={157} data={optionsData} left={6} top={-45} />
       <div className="pie-base-bg"></div>
-      <div className="right-source-desc">提供1.27P并行文件存储容量</div>
+      <div className="right-source-desc">提供1.2P并行文件存储容量</div>
     </div>
   );
 }
