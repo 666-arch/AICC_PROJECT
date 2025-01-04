@@ -3,7 +3,7 @@ import "./index.less";
 
 function SvgLine() {
   useEffect(() => {
-    const path = document.querySelector(".animated-path");
+    const path: any = document.querySelector(".animated-path");
     if (path) {
       const pathLength = path.getTotalLength();
       path.style.strokeDasharray = pathLength;
