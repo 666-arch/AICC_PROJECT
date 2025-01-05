@@ -15,7 +15,7 @@ const optionsData = [
     name: "已分配",
     value: 300,
     itemStyle: {
-      color: "#98B6FF",
+      color: "#6a94fd",
     },
   },
 ];
