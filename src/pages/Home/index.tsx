@@ -18,32 +18,34 @@ import { useEffect, useState } from "react";
 import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
-const legendList = [
-  {
-    content: "神州同学：",
-    value: 57,
-    color: "#415DFF",
-  },
-  {
-    content: "科技公司：",
-    value: 57,
-    color: "#4187CB",
-  },
-  {
-    content: "科研机构：",
-    value: 57,
-    color: "#7A56E3",
-  },
-  {
-    content: "制造业：",
-    value: 57,
-    color: "#2B60E0",
-  },
-];
+// const legendList = [
+//   {
+//     content: "神州同学：",
+//     value: 260,
+//     color: "#415DFF",
+//   },
+//   {
+//     content: "科技公司：",
+//     value: 330,
+//     color: "#4187CB",
+//   },
+//   {
+//     content: "科研机构：",
+//     value: 200,
+//     color: "#7A56E3",
+//   },
+//   {
+//     content: "制造业：",
+//     value: 500,
+//     color: "#2B60E0",
+//   },
+// ];
 const optionsData = [
   {
     name: "神州同学：",
     value: 260,
+    perValue: 0,
+    textColor: "#415DFF",
     itemStyle: {
       color: "#80A4FF",
     },
@@ -51,6 +53,8 @@ const optionsData = [
   {
     name: "科技公司：",
     value: 330,
+    perValue: 0,
+    textColor: "#4187CB",
     itemStyle: {
       color: "#5E9AD3",
     },
@@ -58,6 +62,8 @@ const optionsData = [
   {
     name: "科研机构：",
     value: 200,
+    perValue: 0,
+    textColor: "#7A56E3",
     itemStyle: {
       color: "#A096FF",
     },
@@ -65,6 +71,8 @@ const optionsData = [
   {
     name: "制造业：",
     value: 500,
+    perValue: 0,
+    textColor: "#2B60E0",
     itemStyle: {
       color: "#4170E3",
     },
@@ -72,6 +80,19 @@ const optionsData = [
 ];
 const HomePage = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
+  const totalLengendNum = optionsData.reduce((sum, item) => sum + item.value, 0);
+  let totalPercentage = 0;
+  optionsData.forEach((item, index) => {
+    let percentage;
+    if (index < optionsData.length - 1) {
+      percentage = Math.floor((item.value / totalLengendNum) * 100);
+      totalPercentage += percentage;
+    } else {
+      percentage = 100 - totalPercentage;
+    }
+    item.perValue = percentage;
+  });
+
   return (
     <div className="home-page-content">
       <div className="home-page-header">
@@ -145,29 +166,31 @@ const HomePage = () => {
                 <div className="pie-base-bg"></div>
               </div>
               <div className="chart-right">
-                {legendList.map((item, index) => {
+                {optionsData.map((item, index) => {
                   return (
-                    <div className="chart-item" key={item.content}>
+                    <div className="chart-item" key={item.itemStyle.color}>
                       <div
                         style={{
                           width: "5px",
                           height: "5px",
                           borderRadius: "50%",
                           marginRight: "8px",
-                          backgroundColor: item.color,
+                          backgroundColor: item.textColor,
                         }}
                       ></div>
-                      <div>{item.content}</div>
+                      <div>{item.name}</div>
                       <div
                         style={{
-                          color: item.color,
+                          color: item.textColor,
                         }}
                       >
-                        <NumberTween value={item.value} />
+                        <NumberTween
+                          value={item.perValue}
+                        />
                       </div>
                       <div
                         style={{
-                          color: item.color,
+                          color: item.textColor,
                           fontFamily: " Source Han Sans CN",
                           fontSize: "13px",
                           fontWeight: "350",
@@ -193,10 +216,9 @@ const HomePage = () => {
         {isShowModal && <SvgLine />}
 
         <ButtonBase setIsShowModal={setIsShowModal} />
-        <BtnSvgLine/>
-
+        <BtnSvgLine />
       </div>
-      <BackgroundVideo/>
+      <BackgroundVideo />
     </div>
   );
 };
