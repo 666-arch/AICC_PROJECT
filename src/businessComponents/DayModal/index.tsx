@@ -10,22 +10,22 @@ const DayModal: React.FC<IProps> = ({ setIsShowModal }) => {
   const list = [
     {
       content: "温度",
-      value: 10,
+      value: 22.89,
       rate: "℃",
     },
     {
       content: "湿度",
-      value: 10,
+      value: 50.67,
       rate: "RH",
     },
     {
       content: "电流/机柜",
-      value: 10,
+      value: 12.31,
       rate: "A",
     },
     {
       content: "电量",
-      value: 10,
+      value: 2190,
       rate: "KWh",
     },
   ];
@@ -43,6 +43,7 @@ const DayModal: React.FC<IProps> = ({ setIsShowModal }) => {
   return (
     <div className="day-modal" ref={modalRef}>
       <div className="day-modal-title">日均</div>
+      <div className="day-modal-line"></div>
       <div className="day-modal-main">
         {list.map((item, index) => {
           return (
