@@ -12,7 +12,7 @@ function SvgLine() {
   }, []);
   return (
     <div className="svg-anim-box">
-      <svg viewBox="0 0 93 260" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 33 260" xmlns="http://www.w3.org/2000/svg">
         <path
           className="animated-path"
           d="M10 190 L10 10 Q 10 5 15 5 L190 5"
