@@ -1,0 +1,21 @@
+.btn-svg-line{
+    position: absolute;
+    left: 660px;
+    top: 470px;
+    .line {
+        stroke: #D6FFEA80;
+        stroke-width: 2;
+        stroke-dasharray: 134;
+        stroke-dashoffset: 134;
+        animation: drawLine 2s linear forwards;
+    }
+    
+    @keyframes drawLine {
+        0% {
+            stroke-dashoffset: 134;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+}

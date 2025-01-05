@@ -17,6 +17,7 @@ import useGlobalStore from "@/store";
 import { useEffect, useState } from "react";
 import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
+import BtnSvgLine from "@/components/BtnSvgLine";
 const legendList = [
   {
     content: "神州同学：",
@@ -189,8 +190,11 @@ const HomePage = () => {
             <DayModal setIsShowModal={setIsShowModal} />
           </div>
         ) : null}
-        <ButtonBase setIsShowModal={setIsShowModal} />
         {isShowModal && <SvgLine />}
+
+        <ButtonBase setIsShowModal={setIsShowModal} />
+        <BtnSvgLine/>
+
       </div>
       <BackgroundVideo/>
     </div>
