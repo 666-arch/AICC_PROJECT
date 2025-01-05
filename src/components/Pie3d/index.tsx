@@ -184,7 +184,7 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -
         viewControl: {
           distance: 280,
           alpha: 18,
-          autoRotate: false,
+          autoRotate: true,
           rotateSensitivity: [1, 0],
           zoomSensitivity: 0,
           panSensitivity: 0,

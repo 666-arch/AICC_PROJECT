@@ -8,9 +8,7 @@ const ButtonBase: React.FC <IProps>= ({
     onClick && onClick(event);
   };
   return (
-    <div className="button-base" onClick={handleClick}>
-      <div className="button-base-inner">动环数据</div>
-    </div>
+      <div className="button-base-inner" onClick={handleClick}>动环数据</div>
   );
 };
 

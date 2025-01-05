@@ -27,7 +27,7 @@ const BackgroundVideo: React.FC = () => {
         zIndex: -1,
       }}
     >
-      <source src="/video/AICC_1-3S绿色框出现_3-13s循环.mp4" type="video/mp4" />
+      <source src="/video/AICC_VIDEO.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );

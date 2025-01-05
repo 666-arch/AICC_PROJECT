@@ -18,7 +18,7 @@ import { useEffect, useRef, useState } from "react";
 import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
-// import { useClickAway } from 'ahooks';
+import { useClickAway } from "ahooks";
 // const legendList = [
 //   {
 //     content: "神州同学：",
@@ -117,39 +117,21 @@ const HomePage = () => {
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  // 使用弹窗 DOM
-  const popupRef = useRef<HTMLDivElement>(null);
-
-  const togglePopup = (event: any) => {
-    debugger;
+  const togglePopup = () => {
+    console.log('togglePopup',togglePopup);
     setIsPopupVisible(!isPopupVisible);
-
-    console.log("togglePopup", isPopupVisible);
   };
 
-  // const handleClickOutside = (event: any) => {
-  //   if (popupRef.current && !popupRef.current.contains(event.target)) {
-  //     debugger;
-  //     event.stopPropagation();
-  //     setIsPopupVisible(false);
-  //     console.log("handleClickOutside", isPopupVisible);
-  //   }
-  // };
-
-  // // 添加事件监听器，监听点击事件
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, []);
-
-  // useClickAway(() => {
-  //   setIsPopupVisible(false)
-  // }, popupRef);
+  // 使用弹窗 DOM
+  const popupRef = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLDivElement>(null);
+  useClickAway(() => {
+    setIsPopupVisible(false);
+  }, [popupRef, btnRef]);
 
   return (
     <div className="home-page-content">
+      
       <div className="home-page-header">
         <div className="home-page-title">AICC算力数据监测系统</div>
       </div>
@@ -273,14 +255,16 @@ const HomePage = () => {
           </div>
         </div>
 
-        <ButtonBase onClick={togglePopup} />
-        {isPopupVisible && (
+        <div className="button-base " ref={btnRef}><ButtonBase onClick={togglePopup} /></div>
+
+        {isPopupVisible ? (
           <div className="home-page-main-modal" ref={popupRef}>
             <DayModal />
           </div>
-        )}
+        ) : <></>}
 
         {isPopupVisible && <SvgLine />}
+
         <BtnSvgLine />
       </div>
       <BackgroundVideo />
