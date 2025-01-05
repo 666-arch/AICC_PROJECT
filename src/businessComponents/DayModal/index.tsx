@@ -1,11 +1,11 @@
 import NumberTween from "@/components/NumberTween";
 import React, { useEffect, useRef, useState } from "react";
 import "./index.less";
-interface IProps {
-  setIsShowModal: (isShow: boolean) => void;
-  isShowModal: boolean;
-}
-const DayModal: React.FC<IProps> = ({ setIsShowModal,isShowModal }) => {
+// interface IProps {
+//   setIsShowModal: (isShow: boolean) => void;
+//   isShowModal: boolean;
+// }
+const DayModal: React.FC = () => {
   const modalRef = useRef<HTMLDivElement>(null);
   const list = [
     {
@@ -29,19 +29,19 @@ const DayModal: React.FC<IProps> = ({ setIsShowModal,isShowModal }) => {
       rate: "KWh",
     },
   ];
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        modalRef.current.style.display = 'none';
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isShowModal, setIsShowModal]);
+  // useEffect(() => {
+  //   const handleClickOutside = (event: any) => {
+  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
+  //       modalRef.current.style.display = 'none';
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
   return (
-    <div className="day-modal" ref={modalRef}>
+    <div className="day-modal" ref={modalRef} >
       <div className="day-modal-title">日均</div>
       <div className="day-modal-line"></div>
       <div className="day-modal-main">

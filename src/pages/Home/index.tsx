@@ -14,10 +14,11 @@ import NumberTween from "@/components/NumberTween";
 import DayModal from "@/businessComponents/DayModal";
 import ButtonBase from "@/components/ButtonBase";
 import useGlobalStore from "@/store";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
+// import { useClickAway } from 'ahooks';
 // const legendList = [
 //   {
 //     content: "神州同学：",
@@ -113,6 +114,40 @@ const HomePage = () => {
         break;
     }
   });
+
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  // 使用弹窗 DOM
+  const popupRef = useRef<HTMLDivElement>(null);
+
+  const togglePopup = (event: any) => {
+    debugger;
+    setIsPopupVisible(!isPopupVisible);
+
+    console.log("togglePopup", isPopupVisible);
+  };
+
+  // const handleClickOutside = (event: any) => {
+  //   if (popupRef.current && !popupRef.current.contains(event.target)) {
+  //     debugger;
+  //     event.stopPropagation();
+  //     setIsPopupVisible(false);
+  //     console.log("handleClickOutside", isPopupVisible);
+  //   }
+  // };
+
+  // // 添加事件监听器，监听点击事件
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
+
+  // useClickAway(() => {
+  //   setIsPopupVisible(false)
+  // }, popupRef);
+
   return (
     <div className="home-page-content">
       <div className="home-page-header">
@@ -190,15 +225,27 @@ const HomePage = () => {
                   return (
                     <div className="chart-item" key={item.itemStyle.color}>
                       <div
-                        style={{
-                          width: "5px",
-                          height: "5px",
-                          borderRadius: "50%",
-                          marginRight: "8px",
-                          backgroundColor: item.textColor,
-                        }}
+                        style={
+                          index !== 3
+                            ? {
+                                width: "5px",
+                                height: "5px",
+                                borderRadius: "50%",
+                                marginRight: "8px",
+                                backgroundColor: item.textColor,
+                              }
+                            : {
+                                width: "5px",
+                                height: "5px",
+                                borderRadius: "50%",
+                                marginLeft: "7px",
+                                backgroundColor: item.textColor,
+                              }
+                        }
                       ></div>
-                      <div>{item.name}</div>
+                      <div style={index === 3 ? { paddingLeft: "14px" } : {}}>
+                        {item.name}
+                      </div>
                       <div
                         style={{
                           color: item.textColor,
@@ -226,19 +273,14 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* 弹窗 */}
-        {isShowModal ? (
-          <div className="home-page-main-modal">
-            <DayModal
-              setIsShowModal={setIsShowModal}
-              isShowModal={isShowModal}
-            />
+        <ButtonBase onClick={togglePopup} />
+        {isPopupVisible && (
+          <div className="home-page-main-modal" ref={popupRef}>
+            <DayModal />
           </div>
-        ) : null}
+        )}
 
-        {isShowModal && <SvgLine />}
-
-        <ButtonBase setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
+        {isPopupVisible && <SvgLine />}
         <BtnSvgLine />
       </div>
       <BackgroundVideo />
