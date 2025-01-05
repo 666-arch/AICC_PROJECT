@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./index.less";
 
 function SvgLine() {
@@ -10,8 +10,22 @@ function SvgLine() {
       path.style.strokeDashoffset = pathLength;
     }
   }, []);
+  
+  const svgRef = useRef<HTMLDivElement>(null)
+  
+  useEffect(() => {
+    const handleClickSvgOutside = (event: any) => {
+      if (svgRef.current && !svgRef.current.contains(event.target)) {
+        svgRef.current.style.display = 'none';
+      }
+    };
+    document.addEventListener("mousedown", handleClickSvgOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickSvgOutside);
+    };
+  }, []);
   return (
-    <div className="svg-anim-box">
+    <div className="svg-anim-box" ref={svgRef}>
       <svg viewBox="0 0 33 260" xmlns="http://www.w3.org/2000/svg">
         <path
           className="animated-path"

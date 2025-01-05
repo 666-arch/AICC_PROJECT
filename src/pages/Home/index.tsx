@@ -80,19 +80,39 @@ const optionsData = [
 ];
 const HomePage = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
-  const totalLengendNum = optionsData.reduce((sum, item) => sum + item.value, 0);
+  const [isShow, setIsShow] = useState<boolean>(false);
+  const totalLengendNum = optionsData.reduce(
+    (sum, item) => sum + item.value,
+    0
+  );
   let totalPercentage = 0;
   optionsData.forEach((item, index) => {
-    let percentage;
-    if (index < optionsData.length - 1) {
-      percentage = Math.floor((item.value / totalLengendNum) * 100);
-      totalPercentage += percentage;
-    } else {
-      percentage = 100 - totalPercentage;
-    }
-    item.perValue = percentage;
-  });
+    // let percentage;
+    // if (index < optionsData.length - 1) {
+    //   percentage = Math.floor((item.value / totalLengendNum) * 100);
+    //   totalPercentage += percentage;
+    // } else {
+    //   percentage = 100 - totalPercentage;
+    // }
+    // item.perValue = percentage;
+    switch (index) {
+      case 0:
+        item.perValue = 57;
+        break;
 
+      case 1:
+        item.perValue = 21;
+        break;
+      case 2:
+        item.perValue = 14;
+        break;
+      case 3:
+        item.perValue = 8;
+        break;
+      default:
+        break;
+    }
+  });
   return (
     <div className="home-page-content">
       <div className="home-page-header">
@@ -184,9 +204,7 @@ const HomePage = () => {
                           color: item.textColor,
                         }}
                       >
-                        <NumberTween
-                          value={item.perValue}
-                        />
+                        <NumberTween value={item.perValue} />
                       </div>
                       <div
                         style={{
@@ -207,15 +225,20 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+
         {/* 弹窗 */}
         {isShowModal ? (
           <div className="home-page-main-modal">
-            <DayModal setIsShowModal={setIsShowModal} />
+            <DayModal
+              setIsShowModal={setIsShowModal}
+              isShowModal={isShowModal}
+            />
           </div>
         ) : null}
+
         {isShowModal && <SvgLine />}
 
-        <ButtonBase setIsShowModal={setIsShowModal} />
+        <ButtonBase setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
         <BtnSvgLine />
       </div>
       <BackgroundVideo />

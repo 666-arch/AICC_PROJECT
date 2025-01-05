@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.less";
-import useGlobalStore from "@/store";
 interface IProps {
   setIsShowModal: (isShow: boolean) => void;
+  isShowModal: boolean;
 }
-const ButtonBase: React.FC<IProps> = ({ setIsShowModal }) => {
+const ButtonBase: React.FC<IProps> = ({ setIsShowModal, isShowModal }) => {
   return (
-    <div className="button-base" onClick={() => setIsShowModal(true)}>
+    <div className="button-base" onClick={() => setIsShowModal(!isShowModal)}>
       <div className="button-base-inner">动环数据</div>
     </div>
   );

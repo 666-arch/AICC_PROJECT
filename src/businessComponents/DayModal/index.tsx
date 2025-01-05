@@ -1,12 +1,12 @@
 import NumberTween from "@/components/NumberTween";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./index.less";
 interface IProps {
   setIsShowModal: (isShow: boolean) => void;
+  isShowModal: boolean;
 }
-const DayModal: React.FC<IProps> = ({ setIsShowModal }) => {
+const DayModal: React.FC<IProps> = ({ setIsShowModal,isShowModal }) => {
   const modalRef = useRef<HTMLDivElement>(null);
-
   const list = [
     {
       content: "温度",
@@ -32,14 +32,14 @@ const DayModal: React.FC<IProps> = ({ setIsShowModal }) => {
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setIsShowModal(false);
+        modalRef.current.style.display = 'none';
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isShowModal, setIsShowModal]);
   return (
     <div className="day-modal" ref={modalRef}>
       <div className="day-modal-title">日均</div>
