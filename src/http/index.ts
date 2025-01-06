@@ -8,7 +8,7 @@ import axios, {
 import { ResultData } from './interface'
 const axiosConfig = {
     baseURL: '/api',
-    timeout: 4000,
+    timeout: 50000,
     headers: {
         "Content-Type": "application/json",
     },
