@@ -24,11 +24,11 @@ function RightGpuStatistics() {
         <div className="card-gpu-right">
           <div className="card-right-gpu-content-1">
             <div>提供L40sGPU卡</div>
-            <NumberTween value={120}/>
+            <NumberTween value={160}/>
           </div>
           <div className="card-right-gpu-content-2">
             <div>计算能力约</div>
-            <NumberTween value={84}/>
+            <NumberTween value={112}/>
           </div>
         </div>
       </div>

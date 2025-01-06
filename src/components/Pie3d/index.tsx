@@ -188,6 +188,7 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -
           rotateSensitivity: [1, 0],
           zoomSensitivity: 0,
           panSensitivity: 0,
+          // projection: 'orthographic'
         },
       },
       series: series,

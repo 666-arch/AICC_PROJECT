@@ -24,7 +24,7 @@ function RightStoreSouce() {
     <div className="main-right-store-source">
       <PanelWrapper width={170.5} height={27} content="储存数据" />
       <div className="right-source-num">
-        <NumberTween value={84} />
+        <NumberTween value={19} />
       </div>
       <Pie3d width={165} height={157} data={optionsData} left={6} top={-45} />
       <div className="pie-base-bg"></div>
