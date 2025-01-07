@@ -19,28 +19,6 @@ import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
-// const legendList = [
-//   {
-//     content: "神州同学：",
-//     value: 260,
-//     color: "#415DFF",
-//   },
-//   {
-//     content: "科技公司：",
-//     value: 330,
-//     color: "#4187CB",
-//   },
-//   {
-//     content: "科研机构：",
-//     value: 200,
-//     color: "#7A56E3",
-//   },
-//   {
-//     content: "制造业：",
-//     value: 500,
-//     color: "#2B60E0",
-//   },
-// ];
 const optionsData = [
   {
     name: "神州同学：",
@@ -251,6 +229,8 @@ const HomePage = () => {
                   );
                 })}
               </div>
+
+
             </div>
           </div>
         </div>
