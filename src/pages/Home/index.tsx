@@ -1,5 +1,4 @@
 import "./index.less";
-import PanelWrapper from "./../../components/PanelWrapper/index";
 import MemoryStatistics from "@/businessComponents/MemoryStatistics";
 import CpuStatistics from "@/businessComponents/CpuStatistics";
 import GpuStatistics from "@/businessComponents/GpuStatistics";
@@ -13,7 +12,6 @@ import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
 import DayModal from "@/businessComponents/DayModal";
 import ButtonBase from "@/components/ButtonBase";
-import useGlobalStore from "@/store";
 import { useEffect, useRef, useState } from "react";
 import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
