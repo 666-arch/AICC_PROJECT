@@ -198,12 +198,12 @@ const HomePage = () => {
                                 width: "5px",
                                 height: "5px",
                                 borderRadius: "50%",
-                                marginLeft: "7px",
+                                marginLeft: "14px",
                                 backgroundColor: item.textColor,
                               }
                         }
                       ></div>
-                      <div style={index === 3 ? { paddingLeft: "14px" } : {}}>
+                      <div style={index === 3 ? { paddingLeft: "8px" } : {}}>
                         {item.name}
                       </div>
                       <div
@@ -229,7 +229,6 @@ const HomePage = () => {
                   );
                 })}
               </div>
-
 
             </div>
           </div>
