@@ -94,7 +94,6 @@ const HomePage = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const togglePopup = () => {
-    console.log('togglePopup',togglePopup);
     setIsPopupVisible(!isPopupVisible);
   };
 
@@ -104,7 +103,7 @@ const HomePage = () => {
   useClickAway(() => {
     setIsPopupVisible(false);
   }, [popupRef, btnRef]);
-
+  
   return (
     <div className="home-page-content">
       
