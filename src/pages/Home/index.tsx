@@ -20,7 +20,8 @@ import { useClickAway } from "ahooks";
 const optionsData = [
   {
     name: "神州同学：",
-    value: 260,
+    // value: 260,
+    value: 570,
     perValue: 0,
     textColor: "#415DFF",
     itemStyle: {
@@ -29,7 +30,8 @@ const optionsData = [
   },
   {
     name: "科技公司：",
-    value: 330,
+    // value: 330,
+    value: 210,
     perValue: 0,
     textColor: "#4187CB",
     itemStyle: {
@@ -38,7 +40,8 @@ const optionsData = [
   },
   {
     name: "科研机构：",
-    value: 200,
+    // value: 200,
+    value: 140,
     perValue: 0,
     textColor: "#7A56E3",
     itemStyle: {
@@ -47,7 +50,8 @@ const optionsData = [
   },
   {
     name: "制造业：",
-    value: 500,
+    // value: 500,
+    value: 80,
     perValue: 0,
     textColor: "#2B60E0",
     itemStyle: {

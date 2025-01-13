@@ -11,9 +11,9 @@ function RightGpuStatistics() {
       <div className="right-gpu-statistics-bar">
         <div className="right-gpu-statistics-top">
           <div className="right-bar-content-1">L40sGPU卡</div>
-          <div className="right-bar-content-2"><NumberTween value={84}/></div>
+          <div className="right-bar-content-2"><NumberTween value={144}/></div>
         </div>
-        <ProcessBar width={339} height={8} value={10} />
+        <ProcessBar width={339} height={8} value={144} />
       </div>
       
       <div className="right-gpu-statistics-card">

@@ -5,14 +5,14 @@ import NumberTween from "@/components/NumberTween";
 const optionsData = [
   {
     name: "未分配",
-    value: 260,
+    value: 435,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
     name: "已分配",
-    value: 300,
+    value: 217,
     itemStyle: {
       color: "#6a94fd",
     },
@@ -42,13 +42,13 @@ function MemoryStatistics() {
 
           <div className="statistics-mid-1">
             <div>已分配</div>
-            <NumberTween value={44.85}/>
+            <NumberTween value={33.50}/>
             <div className="statistics-mid-line"></div>
           </div>
 
           <div className="statistics-mid-2">
             <div>未分配</div>
-            <NumberTween value={55.15}/>
+            <NumberTween value={66.50}/>
             <div className="statistics-mid-line"></div>
           </div>
         </div>

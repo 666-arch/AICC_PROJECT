@@ -118,7 +118,7 @@ const ProcessBar: React.FC<IProps> = ({ width, height, value }) => {
             barWidth: height,
             xAxisIndex: 0,
             barGap: "-100%",
-            data: [100],
+            data: [200],
             itemStyle: {
               color: "#ffffff4b",
               borderRadius: 29,
