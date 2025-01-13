@@ -1,75 +1,89 @@
 * {
-    box-sizing: border-box;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
+
 body {
-    margin: 0;
-    padding: 0;
-    // background-color: rgb(194, 194, 194);
-    background-color: transparent;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
 }
+
 #root {
-    width: 100vw;
-    height: 100vh;
-    .global-layout {
-        width: 1920px;
-        height: 1080px;
-        position: relative;
-        // background: url('/images/main_base_bg_1.svg') no-repeat;
-        // background-size: contain;
-        // background-position: center center;
-        // z-index: -99;
-    }
+  width: 100vw;
+  height: 100vh;
+  .global-layout {
+    max-width: 1920px;
+    max-height: 1080px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: scaleX(1.075) scaleY(1.116);
+    transform-origin: top left;
+  }
 }
-canvas{
+
+canvas {
   z-index: 99;
   background: transparent;
 }
+
 @font-face {
   font-family: SourceHanSansCN;
   src: url("/fonts/SourceHanSansCN-Normal.otf");
 }
+
 @keyframes jump {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
+
 @keyframes animationShowLeft {
-    0%,
-    67% {
-      transform: translateX(-100%) rotateY(2.6deg);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0%) rotateY(2.6deg);
-      opacity: 1;
-    }
+
+  0%,
+  67% {
+    transform: translateX(-100%) rotateY(2.6deg);
+    opacity: 0;
   }
-  @keyframes animationShowRight {
-    0%,
-    67% {
-      transform: translateX(100%) rotateY(2.6deg);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0%) rotateY(2.6deg);
-      opacity: 1;
-    }
+
+  100% {
+    transform: translateX(0%) rotateY(2.6deg);
+    opacity: 1;
   }
-  
+}
+
+@keyframes animationShowRight {
+
+  0%,
+  67% {
+    transform: translateX(100%) rotateY(2.6deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%) rotateY(2.6deg);
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
-    opacity: 1; 
+    opacity: 1;
   }
 }
