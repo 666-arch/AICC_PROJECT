@@ -42,13 +42,13 @@ function MemoryStatistics() {
 
           <div className="statistics-mid-1">
             <div>已分配</div>
-            <NumberTween value={33.50}/>
+            <NumberTween value={33.50} decimal={2}/>
             <div className="statistics-mid-line"></div>
           </div>
 
           <div className="statistics-mid-2">
             <div>未分配</div>
-            <NumberTween value={66.50}/>
+            <NumberTween value={66.50} decimal={2}/>
             <div className="statistics-mid-line"></div>
           </div>
         </div>

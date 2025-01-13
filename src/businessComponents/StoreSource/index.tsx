@@ -5,14 +5,14 @@ import Pie3d from '@/components/Pie3d'
 const optionsData = [
   {
     name: "未分配",
-    value: 260,
+    value: 460,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
     name: "已分配",
-    value: 300,
+    value: 120,
     itemStyle: {
       color: "#6a94fd",
     },

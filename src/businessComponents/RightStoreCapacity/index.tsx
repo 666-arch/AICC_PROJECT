@@ -5,7 +5,7 @@ import NumberTween from '@/components/NumberTween';
 const optionsData = [
   {
     name: "未分配",
-    value: 260,
+    value: 600,
     itemStyle: {
       color: "#E9E9E9",
     },

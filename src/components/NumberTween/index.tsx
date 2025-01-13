@@ -21,6 +21,7 @@ interface IProps extends React.AllHTMLAttributes<HTMLDivElement> {
   positive?: boolean;
   isCpu?: boolean;
 }
+
 const NumberTween: React.FC<IProps> = ({
   value = 0,
   duration = 1000,
@@ -32,25 +33,25 @@ const NumberTween: React.FC<IProps> = ({
   ...rest
 }) => {
   const [innerValue, setInnerValue] = useState<string>("0");
+
   useEffect(() => {
     const timer = setTimeout(() => {
       let baseDecimal = 1;
       if (decimal) {
         for (let i = 0; i < decimal; i++) {
-          baseDecimal = baseDecimal * 10;
+          baseDecimal *= 10;
         }
       }
       const num = Number(value);
       let realNum = isNaN(num)
         ? 0
         : decimal
-        ? Number(Math.round(num * 10) / 10)
-        : // ? Number(Math.floor(num * baseDecimal) / baseDecimal)
-        floor
-        ? Math.round(num)
-        : num;
+          ? Number((num * baseDecimal) / baseDecimal)
+          : floor
+            ? Math.floor(num)
+            : num;
       positive && num < 0 && (realNum = 0);
-      tweenNumber(realNum, setInnerValue, duration);
+      tweenNumber(realNum, setInnerValue, duration, decimal);
     }, delay);
     return () => clearTimeout(timer);
   }, [value, delay, floor, decimal, positive]);
@@ -64,11 +65,10 @@ const NumberTween: React.FC<IProps> = ({
   const tweenNumber = (
     value: number,
     setState: React.Dispatch<React.SetStateAction<string>>,
-    duration: number
+    duration: number,
+    decimal?: number
   ) => {
-    // 切分整数与小数部分
-    const valueArr = `${value}`.split(".");
-    const fixedNumber = valueArr.length === 2 ? valueArr[1].length : 0;
+    const fixedNumber = decimal || 0;
     new Tween({
       number: 0,
     })

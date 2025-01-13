@@ -6,14 +6,14 @@ import NumberTween from "@/components/NumberTween";
 const optionsData = [
   {
     name: "未分配",
-    value: 260,
+    value: 600,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
     name: "已分配",
-    value: 300,
+    value:210,
     itemStyle: {
       color: "#6a94fd",
     },
@@ -28,7 +28,7 @@ function RightStoreSouce() {
       </div>
       <Pie3d width={165} height={157} data={optionsData} left={6} top={-45} />
       <div className="pie-base-bg"></div>
-      <div className="right-source-desc">提供1.2P并行文件存储容量</div>
+      <div className="right-source-desc">提供1.27P并行文件存储容量</div>
     </div>
   );
 }

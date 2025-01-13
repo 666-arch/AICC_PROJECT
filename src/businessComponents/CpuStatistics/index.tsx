@@ -40,13 +40,13 @@ function CpuStatistics() {
 
           <div className="statistics-mid-1">
             <div>已分配</div>
-            <NumberTween value={44.85}/>
+            <NumberTween value={44.85} decimal={2}/>
             <div className="statistics-mid-line"></div>
           </div>
 
           <div className="statistics-mid-2">
             <div>未分配</div>
-            <NumberTween value={55.15}/>
+            <NumberTween value={55.15} decimal={2}/>
             <div className="statistics-mid-line"></div>
           </div>
         </div>

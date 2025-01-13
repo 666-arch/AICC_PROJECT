@@ -52,7 +52,7 @@ const DayModal: React.FC = () => {
               <div className="day-item-data">
                 <div>{item.content}</div>
                 <div className="data-desc">
-                  <NumberTween value={item.value} />
+                  <NumberTween value={item.value} decimal={ item.content !== '电量'? 2 : 0}/>
                   <div className={`rate-${index + 1}`}>{item.rate}</div>
                 </div>
               </div>
