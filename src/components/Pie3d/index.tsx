@@ -143,24 +143,6 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -
     }
 
     let option = {
-      // legend: {
-      //   show: true,
-      //   tooltip: {
-      //     show: true,
-      //   },
-      //   orient: "horizontal",
-      //   data: data.map((item: { name: any; }) => item.name),
-      //   top: "center",
-      //   itemGap: 13,
-      //   itemHeight: 25,
-      //   itemWidth: 25,
-      //   icon: "circle",
-      //   right: "57%",
-      //   textStyle: {
-      //     color: "#FFF",
-      //     fontSize: 12,
-      //   },
-      // },
       animation: true,
       xAxis3D: {
         min: -1,
@@ -188,7 +170,7 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -
           rotateSensitivity: [1, 0],
           zoomSensitivity: 0,
           panSensitivity: 0,
-          // projection: 'orthographic'
+          projection: 'perspective'
         },
       },
       series: series,
