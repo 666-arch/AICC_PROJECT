@@ -19,7 +19,7 @@ function RightCpuStatistics() {
           </div>
           <div className="card-right-cpu-content-2">
             <div>计算能力约</div>
-            <NumberTween value={39.94} decimal={2}/>
+            <NumberTween value={356.87} decimal={2}/>
           </div>
         </div>
       </div>
