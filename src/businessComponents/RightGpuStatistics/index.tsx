@@ -8,12 +8,13 @@ function RightGpuStatistics() {
     <div className='main-right-gpu-statistics'>
       <PanelWrapper width={362} height={27} content="GPU统计数据" />
       
-      <div className="right-gpu-statistics-bar">
-        <div className="right-gpu-statistics-top">
-          <div className="right-bar-content-1">L40sGPU卡</div>
-          <div className="right-bar-content-2"><NumberTween value={144}/></div>
+      
+      <div className="gpu-statistics-bar">
+        <div className="gpu-statistics-top">
+          <div className="bar-content-1">L40sGPU卡</div>
+          <div className="bar-content-2"><NumberTween value={144}/></div>
         </div>
-        <ProcessBar width={339} height={8} value={144} />
+        <ProcessBar width={339} height={8} value={144} data={160} left='-20' right='-40'/>
       </div>
       
       <div className="right-gpu-statistics-card">

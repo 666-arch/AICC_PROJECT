@@ -19,7 +19,7 @@ import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
 const optionsData = [
   {
-    name: "神州同学：",
+    name: "神州问学：",
     // value: 260,
     value: 570,
     perValue: 0,

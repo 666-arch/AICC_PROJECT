@@ -27,8 +27,11 @@ interface IProps {
   width: React.CSSProperties["width"];
   height: React.CSSProperties["height"];
   value: number;
+  data: number;
+  left?: string;
+  right?: string;
 }
-const ProcessBar: React.FC<IProps> = ({ width, height, value }) => {
+const ProcessBar: React.FC<IProps> = ({ width, height, value, data, left="-20", right="0" }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<echarts.EChartsType | null>(null);
   useEffect(() => {
@@ -40,8 +43,8 @@ const ProcessBar: React.FC<IProps> = ({ width, height, value }) => {
       chartRef.current.setOption({
         grid: {
           top: "0",
-          left: "-20",
-          right: "0",
+          left,
+          right,
           bottom: "0",
           containLabel: true,
         },
@@ -118,7 +121,7 @@ const ProcessBar: React.FC<IProps> = ({ width, height, value }) => {
             barWidth: height,
             xAxisIndex: 0,
             barGap: "-100%",
-            data: [200],
+            data: [data],
             itemStyle: {
               color: "#ffffff4b",
               borderRadius: 29,
