@@ -17,7 +17,7 @@ export default defineConfig({
     },
   ],
   outputPath: "./pkg/public",
-  hash: false,
+  hash: true,
   npmClient: "pnpm",
   proxy,
   copy: [
