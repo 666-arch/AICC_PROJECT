@@ -8,7 +8,6 @@ function RightGpuStatistics() {
     <div className='main-right-gpu-statistics'>
       <PanelWrapper width={362} height={27} content="GPU统计数据" />
       
-      
       <div className="gpu-statistics-bar">
         <div className="gpu-statistics-top">
           <div className="bar-content-1">L40sGPU卡</div>
