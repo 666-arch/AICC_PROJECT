@@ -29,7 +29,6 @@ class HttpRequest {
                 const { response } = error
                 console.log('error', error)
                 if (response) {
-                    // defaultStatus(response.status)
                 }
                 return Promise.reject(error)
             }
