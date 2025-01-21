@@ -1,8 +1,10 @@
 import PanelWrapper from "@/components/PanelWrapper";
-import React from "react";
+import React, { useEffect } from "react";
 import './index.less'
 import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
+import { getCustomerService } from "@/api";
+import { boxId, ip, port } from "@/util";
 const optionsData = [
   {
     name: "未分配",
@@ -20,6 +22,19 @@ const optionsData = [
   },
 ];
 function CpuStatistics() {
+  const initData = async () => {
+    const params = new FormData();
+    params.append("ip", ip);
+    params.append("port", port);
+    params.append("boxId", boxId);
+    const response = await getCustomerService(params);
+    if(response.code === 200){
+
+    }
+  };
+  useEffect(() => {
+    initData();
+  }, []);
   return (
     <div className="main-left-cpu-statistics">
       <PanelWrapper width={362} height={27} content="CPU统计数据" />

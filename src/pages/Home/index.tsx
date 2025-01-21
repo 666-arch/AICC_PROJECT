@@ -62,8 +62,6 @@ const optionsData = [
   },
 ];
 const HomePage = () => {
-  const [isShowModal, setIsShowModal] = useState<boolean>(false);
-  const [isShow, setIsShow] = useState<boolean>(false);
   const totalLengendNum = optionsData.reduce(
     (sum, item) => sum + item.value,
     0
@@ -98,7 +96,6 @@ const HomePage = () => {
   });
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
   };
@@ -110,16 +107,6 @@ const HomePage = () => {
     setIsPopupVisible(false);
   }, [popupRef, btnRef]);
 
-  const initData = async () => {
-    const params = new FormData();
-    params.append("ip", ip);
-    params.append("port", port);
-    params.append("boxId", boxId);
-    const response = await getCustomerService(params);
-  };
-  useEffect(() => {
-    initData();
-  }, []);
 
   return (
     <div className="home-page-content">
