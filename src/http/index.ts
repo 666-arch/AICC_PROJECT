@@ -40,22 +40,6 @@ class HttpRequest {
     post<T>(url: string, params?: FormData, _object = {}): Promise<ResultData<T>> {
         return this.service.post(url, params, _object)
     }
-    // post<T>(url: string, params?: any, config?: AxiosRequestConfig): Promise<ResultData<T>> {
-    //     let contentType: string | undefined;
-    //     if(params instanceof FormData){
-    //         contentType = "multipart/form-data";
-    //     }else{
-    //         contentType = "application/json";
-    //     }
-    //     const requsetConfig: AxiosRequestConfig = {
-    //         ...config,
-    //         headers: {
-    //             ...config?.headers,
-    //             'Content-Type': contentType
-    //         }
-    //     };
-    //     return this.service.post(url, params, requsetConfig)
-    // }
 }
 
 export default new HttpRequest(axiosConfig)

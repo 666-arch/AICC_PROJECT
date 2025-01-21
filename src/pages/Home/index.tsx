@@ -18,6 +18,7 @@ import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
 import { getCustomerService } from "@/api";
+import { boxId, ip, port } from "@/util";
 const optionsData = [
   {
     name: "神州问学：",
@@ -111,18 +112,17 @@ const HomePage = () => {
 
   const initData = async () => {
     const params = new FormData();
-    params.append("ip","192.168.2.178")
-    params.append("port","8000")
-    params.append("boxId","339")
-    const response = await getCustomerService(params)
-  }
-  useEffect(()=>{
-    initData()
-  },[])
-  
+    params.append("ip", ip);
+    params.append("port", port);
+    params.append("boxId", boxId);
+    const response = await getCustomerService(params);
+  };
+  useEffect(() => {
+    initData();
+  }, []);
+
   return (
     <div className="home-page-content">
-      
       <div className="home-page-header">
         <div className="home-page-title">AICC算力数据监测系统</div>
       </div>
@@ -242,18 +242,21 @@ const HomePage = () => {
                   );
                 })}
               </div>
-
             </div>
           </div>
         </div>
 
-        <div className="button-base " ref={btnRef}><ButtonBase onClick={togglePopup} /></div>
+        <div className="button-base " ref={btnRef}>
+          <ButtonBase onClick={togglePopup} />
+        </div>
 
         {isPopupVisible ? (
           <div className="home-page-main-modal" ref={popupRef}>
             <DayModal />
           </div>
-        ) : <></>}
+        ) : (
+          <></>
+        )}
 
         {isPopupVisible && <SvgLine />}
 
