@@ -113,7 +113,7 @@ const HomePage = () => {
     const params = new FormData();
     params.append("ip","192.168.2.178")
     params.append("port","8000")
-    params.append("id","339")
+    params.append("boxId","339")
     const response = await getCustomerService(params)
   }
   useEffect(()=>{
