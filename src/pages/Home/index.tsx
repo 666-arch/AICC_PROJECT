@@ -17,6 +17,7 @@ import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
+import { getCustomerService } from "@/api";
 const optionsData = [
   {
     name: "神州问学：",
@@ -107,6 +108,17 @@ const HomePage = () => {
   useClickAway(() => {
     setIsPopupVisible(false);
   }, [popupRef, btnRef]);
+
+  const initData = async () => {
+    const params = new FormData();
+    params.append("ip","192.168.2.178")
+    params.append("port","8000")
+    params.append("id","339")
+    const response = await getCustomerService(params)
+  }
+  useEffect(()=>{
+    initData()
+  },[])
   
   return (
     <div className="home-page-content">
