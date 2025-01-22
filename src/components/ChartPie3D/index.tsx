@@ -123,8 +123,7 @@ const ChartPie3D: React.FC<IProps> = ({
       grid3D: {
         show: false,
         boxHeight: 2,
-        left: 0,
-        bottom: 0,
+        right: 50,
         width, 
         height,
         viewControl: {
