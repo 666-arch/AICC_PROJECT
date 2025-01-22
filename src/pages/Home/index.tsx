@@ -17,8 +17,6 @@ import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
-import { getCustomerService } from "@/api";
-import { boxId, ip, port } from "@/util";
 const optionsData = [
   {
     name: "神州问学：",
@@ -106,7 +104,6 @@ const HomePage = () => {
   useClickAway(() => {
     setIsPopupVisible(false);
   }, [popupRef, btnRef]);
-
 
   return (
     <div className="home-page-content">

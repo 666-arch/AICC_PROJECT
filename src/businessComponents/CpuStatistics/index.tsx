@@ -3,19 +3,19 @@ import React, { useEffect } from "react";
 import './index.less'
 import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
-import { getCustomerService } from "@/api";
+import { getLeftCPU } from "@/api";
 import { boxId, ip, port } from "@/util";
 const optionsData = [
   {
     name: "未分配",
-    value: 363,
+    value: 1961,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
     name: "已分配",
-    value: 290,
+    value: 1594,
     itemStyle: {
       color: "#6a94fd",
     },
@@ -27,7 +27,7 @@ function CpuStatistics() {
     params.append("ip", ip);
     params.append("port", port);
     params.append("boxId", boxId);
-    const response = await getCustomerService(params);
+    const response = await getLeftCPU(params);
     if(response.code === 200){
 
     }

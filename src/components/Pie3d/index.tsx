@@ -170,8 +170,25 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -
           rotateSensitivity: [1, 0],
           zoomSensitivity: 0,
           panSensitivity: 0,
-          projection: 'perspective'
+          // projection: 'perspective'
         },
+        //后处理特效可以为画面添加高光、景深、环境光遮蔽（SSAO）、调色等效果。可以让整个画面更富有质感。
+        postEffect: {
+            //配置这项会出现锯齿，请自己去查看官方配置有办法解决
+            enable: true,
+            bloom: {
+                enable: true,
+                bloomIntensity: 0,
+            },
+            SSAO: {
+                enable: false,
+                quality: 'medium',
+                radius: 2,
+            },
+        },
+        temporalSuperSampling:{
+          enable: 'auto',
+        }
       },
       series: series,
     };
@@ -183,7 +200,7 @@ const Pie3d: React.FC<IOptionsData> = ({ data, width, height,left = -50, top = -
     if (chartRef && chartRef.current) {
       const options: any = getPie3D(data, 0.8);
       chartInstance.current = echarts.init(chartRef.current, null, {
-        devicePixelRatio: window.devicePixelRatio
+        devicePixelRatio: 3
       });
       chartInstance.current.setOption(options);
     }
