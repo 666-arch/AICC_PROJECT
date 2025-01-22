@@ -3,23 +3,28 @@ import * as echarts from "echarts/core";
 import "echarts-gl";
 const optionsData = [
   {
-    name: "正常",
+    name: "未分配",
     value: 98,
     itemStyle: {
-      //   opacity: 0.5,
       color: "#2A71FF",
     },
   },
   {
-    name: "停机",
+    name: "已分配",
     value: 5,
     itemStyle: {
-      //   opacity: 0.5,
       color: "#00EDFE",
     },
   },
 ];
-function ChartPie3D() {
+interface IProps {
+  width: React.CSSProperties['width'];
+  height: React.CSSProperties['height'];
+}
+const ChartPie3D: React.FC<IProps> = ({
+  width,
+  height
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<echarts.EChartsType | null>(null);
   function getPie3D(pieData: string | any[], internalDiameterRatio: number) {
@@ -118,10 +123,10 @@ function ChartPie3D() {
       grid3D: {
         show: false,
         boxHeight: 2,
-        //top: '30%',
-        left: "5%",
-        bottom: "50%",
-        // environment: "rgba(255,255,255,0)",
+        left: 0,
+        bottom: 0,
+        width, 
+        height,
         viewControl: {
           distance: 280,
           alpha: 18,
@@ -129,7 +134,6 @@ function ChartPie3D() {
           rotateSensitivity: [1, 0],
           zoomSensitivity: 0,
           panSensitivity: 0,
-          // projection: 'perspective'
         },
         //后处理特效可以为画面添加高光、景深、环境光遮蔽（SSAO）、调色等效果。可以让整个画面更富有质感。
         // postEffect: {
@@ -250,7 +254,7 @@ function ChartPie3D() {
       chartInstance && chartInstance.current?.dispose();
     };
   }, []);
-  return <div ref={chartRef} style={{ width: "250px", height: "215px" }}></div>;
+  return <div ref={chartRef} style={{ width: "100%", height: "100%" }}></div>;
 }
 
 export default ChartPie3D;

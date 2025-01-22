@@ -42,7 +42,7 @@ function CpuStatistics() {
       <div className="cpu-statistics-main">
         <div className="cpu-statistics-left">
           {/* <Pie3d width={250} height={215} data={optionsData} /> */}
-          <ChartPie3D/>
+          <ChartPie3D width={250} height={215} />
           <div className="pie-base-bg"></div>
           <div className="legend-box">
             <div>未分配</div>
