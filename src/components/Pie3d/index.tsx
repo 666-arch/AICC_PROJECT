@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts/core";
-// import { SVGRenderer } from "echarts/renderers";
 import "echarts-gl";
-// echarts.use([SVGRenderer]);
 type dataType = {
   name: string;
   value: number;

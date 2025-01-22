@@ -5,6 +5,7 @@ import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
 import { getLeftCPU } from "@/api";
 import { boxId, ip, port } from "@/util";
+import ChartPie3D from "@/components/ChartPie3D";
 const optionsData = [
   {
     name: "未分配",
@@ -40,7 +41,8 @@ function CpuStatistics() {
       <PanelWrapper width={362} height={27} content="CPU统计数据" />
       <div className="cpu-statistics-main">
         <div className="cpu-statistics-left">
-          <Pie3d width={250} height={215} data={optionsData} />
+          {/* <Pie3d width={250} height={215} data={optionsData} /> */}
+          <ChartPie3D/>
           <div className="pie-base-bg"></div>
           <div className="legend-box">
             <div>未分配</div>
