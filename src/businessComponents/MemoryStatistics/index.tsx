@@ -2,17 +2,18 @@ import PanelWrapper from "@/components/PanelWrapper";
 import "./index.less";
 import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
+import ChartPie3D from "@/components/ChartPie3D";
 const optionsData = [
   {
     name: "未分配",
-    value: 435,
+    value: 55.15,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
     name: "已分配",
-    value: 217,
+    value: 44.85,
     itemStyle: {
       color: "#6a94fd",
     },
@@ -26,7 +27,8 @@ function MemoryStatistics() {
       </div>
       <div className="memory-statistics-main">
         <div className="memory-statistics-left">
-          <Pie3d width={250} height={215} data={optionsData} />
+          {/* <Pie3d width={250} height={215} data={optionsData} /> */}
+          <ChartPie3D width={250} height={215} data={optionsData}/>
           <div className="pie-base-bg"></div>
           <div className="legend-box">
             <div>未分配</div>
