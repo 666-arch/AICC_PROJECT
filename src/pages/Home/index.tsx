@@ -17,48 +17,83 @@ import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
+import ChartPie3D from "@/components/ChartPie3D";
 const optionsData = [
   {
     name: "神州问学：",
-    // value: 260,
-    value: 570,
-    perValue: 0,
+    value: 57,
     textColor: "#415DFF",
     itemStyle: {
-      color: "#80A4FF",
+      color: "#E9E9E9",
     },
   },
   {
     name: "科技公司：",
-    // value: 330,
-    value: 210,
-    perValue: 0,
+    value: 21,
     textColor: "#4187CB",
     itemStyle: {
-      color: "#5E9AD3",
+      color: "#6a94fd",
     },
   },
   {
     name: "科研机构：",
-    // value: 200,
-    value: 140,
-    perValue: 0,
+    value: 14,
     textColor: "#7A56E3",
     itemStyle: {
-      color: "#A096FF",
+      color: "#6a94fd",
     },
   },
   {
     name: "制造业：",
-    // value: 500,
-    value: 80,
-    perValue: 0,
+    value: 8,
     textColor: "#2B60E0",
     itemStyle: {
-      color: "#4170E3",
+      color: "#6a94fd",
     },
   },
 ];
+// const optionsData = [
+//   {
+//     name: "神州问学：",
+//     // value: 260,
+//     value: 570,
+//     perValue: 0,
+//     textColor: "#415DFF",
+//     itemStyle: {
+//       color: "#80A4FF",
+//     },
+//   },
+//   {
+//     name: "科技公司：",
+//     // value: 330,
+//     value: 210,
+//     perValue: 0,
+//     textColor: "#4187CB",
+//     itemStyle: {
+//       color: "#5E9AD3",
+//     },
+//   },
+//   {
+//     name: "科研机构：",
+//     // value: 200,
+//     value: 140,
+//     perValue: 0,
+//     textColor: "#7A56E3",
+//     itemStyle: {
+//       color: "#A096FF",
+//     },
+//   },
+//   {
+//     name: "制造业：",
+//     // value: 500,
+//     value: 80,
+//     perValue: 0,
+//     textColor: "#2B60E0",
+//     itemStyle: {
+//       color: "#4170E3",
+//     },
+//   },
+// ];
 const HomePage = () => {
   const totalLengendNum = optionsData.reduce(
     (sum, item) => sum + item.value,
@@ -74,23 +109,23 @@ const HomePage = () => {
     //   percentage = 100 - totalPercentage;
     // }
     // item.perValue = percentage;
-    switch (index) {
-      case 0:
-        item.perValue = 57;
-        break;
+    // switch (index) {
+    //   case 0:
+    //     item.value = 57;
+    //     break;
 
-      case 1:
-        item.perValue = 21;
-        break;
-      case 2:
-        item.perValue = 14;
-        break;
-      case 3:
-        item.perValue = 8;
-        break;
-      default:
-        break;
-    }
+    //   case 1:
+    //     item.value = 21;
+    //     break;
+    //   case 2:
+    //     item.value = 14;
+    //     break;
+    //   case 3:
+    //     item.value = 8;
+    //     break;
+    //   default:
+    //     break;
+    // }
   });
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -168,7 +203,7 @@ const HomePage = () => {
 
             <div className="main-right-bot-chart">
               <div className="chart-left">
-                <Pie3d
+                <ChartPie3D
                   width={290}
                   height={255}
                   data={optionsData}
@@ -208,7 +243,7 @@ const HomePage = () => {
                           color: item.textColor,
                         }}
                       >
-                        <NumberTween value={item.perValue} />
+                        <NumberTween value={item.value} />
                       </div>
                       <div
                         style={{

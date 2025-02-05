@@ -24,7 +24,7 @@ interface IProps extends React.AllHTMLAttributes<HTMLDivElement> {
 
 const NumberTween: React.FC<IProps> = ({
   value = 0,
-  duration = 1000,
+  duration = 1600,
   delay = 0,
   decimal,
   floor = false,
