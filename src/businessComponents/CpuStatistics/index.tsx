@@ -24,10 +24,10 @@ import ChartPie3D from "@/components/ChartPie3D";
 //     },
 //   },
 // ];
-
 const optionsData = [
   {
     name: "未分配",
+    number: 1961,
     value: 55.15,
     itemStyle: {
       color: "#E9E9E9",
@@ -35,6 +35,7 @@ const optionsData = [
   },
   {
     name: "已分配",
+    number: 1594,
     value: 44.85,
     itemStyle: {
       color: "#6a94fd",
@@ -49,6 +50,7 @@ function CpuStatistics() {
     params.append("boxId", boxId);
     const response = await getLeftCPU(params);
     if(response.code === 200){
+      console.log('data',response.data);
       
     }
   };

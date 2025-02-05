@@ -18,6 +18,9 @@ import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
 import ChartPie3D from "@/components/ChartPie3D";
+import { getBoxId } from "@/api";
+import { ip, port } from "@/util";
+import useGlobalStore, { IdOptions } from "@/store";
 const optionsData = [
   {
     name: "神州问学：",
@@ -113,7 +116,6 @@ const HomePage = () => {
     //   case 0:
     //     item.value = 57;
     //     break;
-
     //   case 1:
     //     item.value = 21;
     //     break;
@@ -139,6 +141,22 @@ const HomePage = () => {
   useClickAway(() => {
     setIsPopupVisible(false);
   }, [popupRef, btnRef]);
+
+  const initBoxId = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("ip", ip);
+      formData.append("port", port);
+      const response = await getBoxId(formData);
+      if (response.code === 200) {
+        const dataList = response.data as IdOptions[];
+        useGlobalStore.getState().setIdList(dataList);
+      }
+    } catch (error) {}
+  };
+  useEffect(() => {
+    initBoxId();
+  }, []);
 
   return (
     <div className="home-page-content">

@@ -72,7 +72,7 @@ const ChartPie3D: React.FC<IProps> = ({
     // 向每个 series-surface 传入不同的参数方程 series-surface.parametricEquation，也就是实现每一个扇形。
     for (let i = 0; i < series.length; i++) {
       endValue = startValue + series[i].pieData.value;
-      console.log(series[i]);
+      // console.log(series[i]);
       series[i].pieData.startRatio = startValue / sumValue;
       series[i].pieData.endRatio = endValue / sumValue;
       series[i].parametricEquation = getParametricEquation(
