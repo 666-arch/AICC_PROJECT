@@ -156,6 +156,8 @@ const HomePage = () => {
   };
   useEffect(() => {
     initBoxId();
+    // console.log('home');
+    
   }, []);
 
   return (
@@ -174,7 +176,7 @@ const HomePage = () => {
           </div>
 
           {/* CPU统计数据 */}
-          <CpuStatistics />
+          <CpuStatistics id={useGlobalStore.getState().idList.find(id=>id.name === '云平台CPU数据统计')?.id!}/>
           {/* 内存统计数据 */}
           <MemoryStatistics />
           {/* GPU统计数据 */}
