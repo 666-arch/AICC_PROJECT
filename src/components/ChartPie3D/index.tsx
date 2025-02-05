@@ -16,7 +16,8 @@ const ChartPie3D: React.FC<IProps> = ({
   width,
   height,
   data,
-  top
+  left = -50,
+  top = -60
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<echarts.EChartsType | null>(null);
@@ -117,8 +118,8 @@ const ChartPie3D: React.FC<IProps> = ({
         show: false,
         boxHeight: 2,
         right: -50,
-        left:-50,
-        top: -60,
+        left,
+        top,
         width, 
         height,
         viewControl: {
