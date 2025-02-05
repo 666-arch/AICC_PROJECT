@@ -142,6 +142,7 @@ const HomePage = () => {
     setIsPopupVisible(false);
   }, [popupRef, btnRef]);
 
+  const [boxIds, setBoxIds] = useState<Array<IdOptions>>([]);
   const initBoxId = async () => {
     try {
       const formData = new FormData();
@@ -150,14 +151,12 @@ const HomePage = () => {
       const response = await getBoxId(formData);
       if (response.code === 200) {
         const dataList = response.data as IdOptions[];
-        useGlobalStore.getState().setIdList(dataList);
+        setBoxIds(dataList)
       }
     } catch (error) {}
   };
   useEffect(() => {
     initBoxId();
-    // console.log('home');
-    
   }, []);
 
   return (
@@ -176,7 +175,7 @@ const HomePage = () => {
           </div>
 
           {/* CPU统计数据 */}
-          <CpuStatistics id={useGlobalStore.getState().idList.find(id=>id.name === '云平台CPU数据统计')?.id!}/>
+          <CpuStatistics id={boxIds.find(id=>id.name === '云平台CPU数据统计')?.id!}/>
           {/* 内存统计数据 */}
           <MemoryStatistics />
           {/* GPU统计数据 */}

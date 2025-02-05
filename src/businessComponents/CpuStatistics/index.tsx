@@ -29,17 +29,11 @@ interface IProps {
   id: string;
 }
 const CpuStatistics: React.FC<IProps> = ({ id }) => {
-  const boxIds = useGlobalStore.getState().idList;
-  console.log("id", id);
-
   const initData = async () => {
     const params = new FormData();
     params.append("ip", ip);
     params.append("port", port);
-    params.append(
-      "boxId",
-      id
-    );
+    params.append("boxId", id);
     const response = await getLeftCPU(params);
     if (response.code === 200) {
       console.log("data", response.data);
@@ -47,7 +41,7 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
   };
   useEffect(() => {
     initData();
-  }, []);
+  }, [id]);
   return (
     <div className="main-left-cpu-statistics">
       <PanelWrapper width={362} height={27} content="CPU统计数据" />
