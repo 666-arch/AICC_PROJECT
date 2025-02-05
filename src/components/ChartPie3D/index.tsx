@@ -1,29 +1,19 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts/core";
 import "echarts-gl";
-const optionsData = [
-  {
-    name: "未分配",
-    value: 98,
-    itemStyle: {
-      color: "#2A71FF",
-    },
-  },
-  {
-    name: "已分配",
-    value: 5,
-    itemStyle: {
-      color: "#00EDFE",
-    },
-  },
-];
+type dataType = {
+  name: string;
+  value: number;
+};
 interface IProps {
   width: React.CSSProperties['width'];
   height: React.CSSProperties['height'];
+  data: Array<dataType>
 }
 const ChartPie3D: React.FC<IProps> = ({
   width,
-  height
+  height,
+  data
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<echarts.EChartsType | null>(null);
@@ -101,7 +91,7 @@ const ChartPie3D: React.FC<IProps> = ({
       clockwise: false, //饼图的扇区是否是顺时针排布。上述这两项配置主要是为了对齐3d的样式
       radius: ["50%", "60%"],
       center: ["58%", "50%"],
-      data: optionsData,
+      data,
       itemStyle: {
         opacity: 0,
       },
@@ -123,7 +113,9 @@ const ChartPie3D: React.FC<IProps> = ({
       grid3D: {
         show: false,
         boxHeight: 2,
-        right: 50,
+        right: -50,
+        left:-50,
+        top: -60,
         width, 
         height,
         viewControl: {
@@ -243,7 +235,7 @@ const ChartPie3D: React.FC<IProps> = ({
 
   useEffect(() => {
     if (chartRef && chartRef.current) {
-      const options: any = getPie3D(optionsData, 0.8);
+      const options: any = getPie3D(data, 0.8);
       chartInstance.current = echarts.init(chartRef.current, null, {
         devicePixelRatio: 3,
       });

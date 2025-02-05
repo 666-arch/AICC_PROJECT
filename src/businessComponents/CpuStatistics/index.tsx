@@ -6,17 +6,34 @@ import NumberTween from "@/components/NumberTween";
 import { getLeftCPU } from "@/api";
 import { boxId, ip, port } from "@/util";
 import ChartPie3D from "@/components/ChartPie3D";
+// const optionsData = [
+//   {
+//     name: "未分配",
+//     value: 1961,
+//     itemStyle: {
+//       color: "#E9E9E9",
+//     },
+//   },
+//   {
+//     name: "已分配",
+//     value: 1594,
+//     itemStyle: {
+//       color: "#6a94fd",
+//     },
+//   },
+// ];
+
 const optionsData = [
   {
     name: "未分配",
-    value: 1961,
+    value: 98,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
     name: "已分配",
-    value: 1594,
+    value: 5,
     itemStyle: {
       color: "#6a94fd",
     },
@@ -42,7 +59,7 @@ function CpuStatistics() {
       <div className="cpu-statistics-main">
         <div className="cpu-statistics-left">
           {/* <Pie3d width={250} height={215} data={optionsData} /> */}
-          <ChartPie3D width={250} height={215} />
+          <ChartPie3D width={250} height={215} data={optionsData}/>
           <div className="pie-base-bg"></div>
           <div className="legend-box">
             <div>未分配</div>
