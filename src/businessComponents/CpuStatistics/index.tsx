@@ -26,14 +26,14 @@ import ChartPie3D from "@/components/ChartPie3D";
 const optionsData = [
   {
     name: "未分配",
-    value: 98,
+    value: 55.15,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
     name: "已分配",
-    value: 5,
+    value: 44.85,
     itemStyle: {
       color: "#6a94fd",
     },
