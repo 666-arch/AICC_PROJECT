@@ -3,7 +3,7 @@ import * as echarts from "echarts/core";
 import "echarts-gl";
 type dataType = {
   name: string;
-  value: number;
+  number: number;
 };
 interface IOptionsData {
   data: Array<dataType>;
