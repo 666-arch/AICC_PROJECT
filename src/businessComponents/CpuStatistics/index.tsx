@@ -49,7 +49,7 @@ function CpuStatistics() {
     params.append("boxId", boxId);
     const response = await getLeftCPU(params);
     if(response.code === 200){
-
+      
     }
   };
   useEffect(() => {
