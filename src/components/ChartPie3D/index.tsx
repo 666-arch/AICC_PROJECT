@@ -8,12 +8,15 @@ type dataType = {
 interface IProps {
   width: React.CSSProperties['width'];
   height: React.CSSProperties['height'];
-  data: Array<dataType>
+  data: Array<dataType>,
+  left?: number,
+  top?: number
 }
 const ChartPie3D: React.FC<IProps> = ({
   width,
   height,
-  data
+  data,
+  top
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<echarts.EChartsType | null>(null);
