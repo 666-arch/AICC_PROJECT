@@ -41,7 +41,7 @@ const CpuStatistics: React.FC<IdProps> = ({ id }) => {
     }
   };
   useEffect(() => {
-    initData();
+    id && initData();
   }, [id]);
   return (
     <div className="main-left-cpu-statistics">
