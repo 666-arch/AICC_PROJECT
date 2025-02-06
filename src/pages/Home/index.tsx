@@ -179,7 +179,9 @@ const HomePage = () => {
             id={boxIds.find((id) => id.name === "云平台CPU数据统计")?.id!}
           />
           {/* 内存统计数据 */}
-          <MemoryStatistics />
+          <MemoryStatistics 
+            id={boxIds.find((id) => id.name === "云平台内存统计数据")?.id!}
+          />
           {/* GPU统计数据 */}
           <GpuStatistics />
 

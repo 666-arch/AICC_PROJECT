@@ -2,7 +2,7 @@ import PanelWrapper from "@/components/PanelWrapper";
 import React, { useEffect, useRef, useState } from "react";
 import "./index.less";
 import NumberTween from "@/components/NumberTween";
-import { getLeftCPU } from "@/api";
+import { getConfigData } from "@/api";
 import { ip, port } from "@/util";
 import ChartPie3D from "@/components/ChartPie3D";
 const CpuStatistics: React.FC<IdProps> = ({ id }) => {
@@ -14,7 +14,7 @@ const CpuStatistics: React.FC<IdProps> = ({ id }) => {
     params.append("ip", ip);
     params.append("port", port);
     params.append("boxId", id);
-    const response = await getLeftCPU(params);
+    const response = await getConfigData(params);
     if (response.code === 200) {
       const dataSource = response.data as { content: string; title: string }[];
       const _pieDataSource = [...pieDataSource];
