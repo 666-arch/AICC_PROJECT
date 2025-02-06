@@ -6,3 +6,6 @@ declare type pieType = {
         color: string;
     }
 };
+declare type IdProps = {
+    id: string;
+}

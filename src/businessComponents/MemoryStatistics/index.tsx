@@ -19,6 +19,7 @@ const optionsData = [
     },
   },
 ];
+
 function MemoryStatistics() {
   return (
     <div className="main-left-memory-statistics">

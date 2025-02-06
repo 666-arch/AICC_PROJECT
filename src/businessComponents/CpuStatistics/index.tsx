@@ -5,10 +5,7 @@ import NumberTween from "@/components/NumberTween";
 import { getLeftCPU } from "@/api";
 import { ip, port } from "@/util";
 import ChartPie3D from "@/components/ChartPie3D";
-interface IProps {
-  id: string;
-}
-const CpuStatistics: React.FC<IProps> = ({ id }) => {
+const CpuStatistics: React.FC<IdProps> = ({ id }) => {
   const colors = ["#6a94fd", "#E9E9E9"];
   const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
   const totalNumRef = useRef<number>(0);
