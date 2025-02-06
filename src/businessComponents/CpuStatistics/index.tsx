@@ -1,7 +1,6 @@
 import PanelWrapper from "@/components/PanelWrapper";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./index.less";
-import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
 import { getLeftCPU } from "@/api";
 import { ip, port } from "@/util";
@@ -12,6 +11,7 @@ interface IProps {
 const CpuStatistics: React.FC<IProps> = ({ id }) => {
   const colors = ["#6a94fd", "#E9E9E9"];
   const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
+  const totalNumRef = useRef<number>(0);
   const initData = async () => {
     const params = new FormData();
     params.append("ip", ip);
@@ -25,7 +25,7 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
         (sum, item) => sum + Number(item.content),
         0
       );
-      console.log("totalNum", totalNum);
+      totalNumRef.current = totalNum;
       for (let i = 0; i < dataSource.length; i++) {
         const _dataSourceItem = dataSource[i];
         const item = {
@@ -40,7 +40,6 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
         };
         _pieDataSource.push(item);
       }
-      console.log("_pieDataSource", _pieDataSource);
       setPieDataSource(_pieDataSource);
     }
   };
@@ -52,7 +51,6 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
       <PanelWrapper width={362} height={27} content="CPU统计数据" />
       <div className="cpu-statistics-main">
         <div className="cpu-statistics-left">
-          {/* <Pie3d width={250} height={215} data={optionsData} /> */}
           <ChartPie3D width={250} height={215} data={pieDataSource} />
           <div className="pie-base-bg"></div>
           <div className="legend-box">
@@ -63,9 +61,8 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
         <div className="cpu-statistics-right">
           <div className="statistics-top">
             <div>提供</div>
-            <NumberTween value={3555} />
+            <NumberTween value={totalNumRef.current} />
           </div>
-
           <div className="statistics-mid-1">
             <div>已分配</div>
             <NumberTween
@@ -76,7 +73,6 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
             />
             <div className="statistics-mid-line"></div>
           </div>
-
           <div className="statistics-mid-2">
             <div>未分配</div>
             <NumberTween
