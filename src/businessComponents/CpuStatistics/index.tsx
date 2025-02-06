@@ -6,30 +6,12 @@ import NumberTween from "@/components/NumberTween";
 import { getLeftCPU } from "@/api";
 import { ip, port } from "@/util";
 import ChartPie3D from "@/components/ChartPie3D";
-const optionsData = [
-  {
-    name: "未分配",
-    number: 1961,
-    value: 55.15,
-    itemStyle: {
-      color: "#E9E9E9",
-    },
-  },
-  {
-    name: "已分配",
-    number: 1594,
-    value: 44.85,
-    itemStyle: {
-      color: "#6a94fd",
-    },
-  },
-];
 interface IProps {
   id: string;
 }
 const CpuStatistics: React.FC<IProps> = ({ id }) => {
-  const colors = ['#6a94fd', '#E9E9E9']
-  const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([])
+  const colors = ["#6a94fd", "#E9E9E9"];
+  const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
   const initData = async () => {
     const params = new FormData();
     params.append("ip", ip);
@@ -37,24 +19,29 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
     params.append("boxId", id);
     const response = await getLeftCPU(params);
     if (response.code === 200) {
-      const dataSource = response.data as {content: string, title: string}[];
+      const dataSource = response.data as { content: string; title: string }[];
       const _pieDataSource = [...pieDataSource];
-      const totalNum = dataSource.reduce((sum, item)=>sum + Number(item.content), 0);
-      console.log('totalNum',totalNum);
+      const totalNum = dataSource.reduce(
+        (sum, item) => sum + Number(item.content),
+        0
+      );
+      console.log("totalNum", totalNum);
       for (let i = 0; i < dataSource.length; i++) {
         const _dataSourceItem = dataSource[i];
         const item = {
           number: Number(_dataSourceItem.content),
           name: _dataSourceItem.title,
           itemStyle: {
-            color: colors[i]
+            color: colors[i],
           },
-          value: Number(((Number(_dataSourceItem.content) / totalNum) * 100).toFixed(2))
-        }
-        _pieDataSource.push(item)
+          value: Number(
+            ((Number(_dataSourceItem.content) / totalNum) * 100).toFixed(2)
+          ),
+        };
+        _pieDataSource.push(item);
       }
-      console.log('_pieDataSource',_pieDataSource);
-      setPieDataSource(_pieDataSource)
+      console.log("_pieDataSource", _pieDataSource);
+      setPieDataSource(_pieDataSource);
     }
   };
   useEffect(() => {
@@ -81,13 +68,23 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
 
           <div className="statistics-mid-1">
             <div>已分配</div>
-            <NumberTween value={44.85} decimal={2} />
+            <NumberTween
+              value={
+                pieDataSource.find((item) => item.name === "已分配")?.value!
+              }
+              decimal={2}
+            />
             <div className="statistics-mid-line"></div>
           </div>
 
           <div className="statistics-mid-2">
             <div>未分配</div>
-            <NumberTween value={55.15} decimal={2} />
+            <NumberTween
+              value={
+                pieDataSource.find((item) => item.name === "未分配")?.value!
+              }
+              decimal={2}
+            />
             <div className="statistics-mid-line"></div>
           </div>
         </div>
