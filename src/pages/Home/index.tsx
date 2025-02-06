@@ -151,7 +151,7 @@ const HomePage = () => {
       const response = await getBoxId(formData);
       if (response.code === 200) {
         const dataList = response.data as IdOptions[];
-        setBoxIds(dataList)
+        setBoxIds(dataList);
       }
     } catch (error) {}
   };
@@ -175,7 +175,9 @@ const HomePage = () => {
           </div>
 
           {/* CPU统计数据 */}
-          <CpuStatistics id={boxIds.find(id=>id.name === '云平台CPU数据统计')?.id!}/>
+          <CpuStatistics
+            id={boxIds.find((id) => id.name === "云平台CPU数据统计")?.id!}
+          />
           {/* 内存统计数据 */}
           <MemoryStatistics />
           {/* GPU统计数据 */}

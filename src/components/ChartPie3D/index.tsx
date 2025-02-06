@@ -1,14 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts/core";
 import "echarts-gl";
-type dataType = {
-  name: string;
-  value: number;
-};
 interface IProps {
   width: React.CSSProperties['width'];
   height: React.CSSProperties['height'];
-  data: Array<dataType>,
+  data: Array<pieType>,
   left?: number,
   top?: number
 }
@@ -248,7 +244,7 @@ const ChartPie3D: React.FC<IProps> = ({
     return () => {
       chartInstance && chartInstance.current?.dispose();
     };
-  }, []);
+  }, [data]);
   return <div ref={chartRef} style={{ width: "100%", height: "100%" }}></div>;
 }
 

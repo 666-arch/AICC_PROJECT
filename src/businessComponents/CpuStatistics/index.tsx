@@ -1,12 +1,11 @@
 import PanelWrapper from "@/components/PanelWrapper";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.less";
 import Pie3d from "@/components/Pie3d";
 import NumberTween from "@/components/NumberTween";
 import { getLeftCPU } from "@/api";
 import { ip, port } from "@/util";
 import ChartPie3D from "@/components/ChartPie3D";
-import useGlobalStore from "@/store";
 const optionsData = [
   {
     name: "未分配",
@@ -29,6 +28,8 @@ interface IProps {
   id: string;
 }
 const CpuStatistics: React.FC<IProps> = ({ id }) => {
+  const colors = ['#6a94fd', '#E9E9E9']
+  const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([])
   const initData = async () => {
     const params = new FormData();
     params.append("ip", ip);
@@ -36,7 +37,24 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
     params.append("boxId", id);
     const response = await getLeftCPU(params);
     if (response.code === 200) {
-      console.log("data", response.data);
+      const dataSource = response.data as {content: string, title: string}[];
+      const _pieDataSource = [...pieDataSource];
+      const totalNum = dataSource.reduce((sum, item)=>sum + Number(item.content), 0);
+      console.log('totalNum',totalNum);
+      for (let i = 0; i < dataSource.length; i++) {
+        const _dataSourceItem = dataSource[i];
+        const item = {
+          number: Number(_dataSourceItem.content),
+          name: _dataSourceItem.title,
+          itemStyle: {
+            color: colors[i]
+          },
+          value: Number(((Number(_dataSourceItem.content) / totalNum) * 100).toFixed(2))
+        }
+        _pieDataSource.push(item)
+      }
+      console.log('_pieDataSource',_pieDataSource);
+      setPieDataSource(_pieDataSource)
     }
   };
   useEffect(() => {
@@ -48,7 +66,7 @@ const CpuStatistics: React.FC<IProps> = ({ id }) => {
       <div className="cpu-statistics-main">
         <div className="cpu-statistics-left">
           {/* <Pie3d width={250} height={215} data={optionsData} /> */}
-          <ChartPie3D width={250} height={215} data={optionsData} />
+          <ChartPie3D width={250} height={215} data={pieDataSource} />
           <div className="pie-base-bg"></div>
           <div className="legend-box">
             <div>未分配</div>
