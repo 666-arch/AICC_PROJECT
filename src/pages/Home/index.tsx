@@ -209,7 +209,7 @@ const HomePage = () => {
             <RightCpuStatistics id={boxIds.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!}/>
 
             {/* GPU统计数据 */}
-            <RightGpuStatistics />
+            <RightGpuStatistics id={boxIds.find((id) => id.name === "HPC&AI平台-GPU统计数据")?.id!}/>
 
             <div style={{ display: "flex", gap: "20px" }}>
               <RightStoreSouce />

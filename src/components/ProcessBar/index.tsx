@@ -131,7 +131,7 @@ const ProcessBar: React.FC<IProps> = ({ width, height, value, data, left="-20", 
         ],
       });
     }
-  }, []);
+  }, [data]);
   return <div ref={divRef}></div>;
 };
 
