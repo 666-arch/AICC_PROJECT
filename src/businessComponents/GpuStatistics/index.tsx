@@ -32,7 +32,7 @@ const GpuStatistics: React.FC<IdProps> = ({ id }) => {
             <NumberTween value={Number(barDataSource.find(item=>item.title === '已使用')?.content)} />
           </div>
         </div>
-        <ProcessBar width={339} height={8} value={84} data={Number(barDataSource.find(item=>item.title === '提供L40sGPU卡')?.content)} />
+        <ProcessBar width={339} height={8} value={Number(barDataSource.find(item=>item.title === '已使用')?.content)} data={Number(barDataSource.find(item=>item.title === '提供L40sGPU卡')?.content)} />
       </div>
 
       <div className="gpu-statistics-card">
