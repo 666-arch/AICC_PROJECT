@@ -176,14 +176,16 @@ const HomePage = () => {
 
           {/* CPU统计数据 */}
           <CpuStatistics
-            id={boxIds.find((id) => id.name === "云平台CPU数据统计")?.id!}
+            id={boxIds.find((id) => id.name === "云平台-CPU统计数据")?.id!}
           />
           {/* 内存统计数据 */}
           <MemoryStatistics 
-            id={boxIds.find((id) => id.name === "云平台内存统计数据")?.id!}
+            id={boxIds.find((id) => id.name === "云平台-内存统计数据")?.id!}
           />
           {/* GPU统计数据 */}
-          <GpuStatistics />
+          <GpuStatistics 
+            id={boxIds.find((id) => id.name === "云平台-GPU统计数据")?.id!}
+          />
 
           <div style={{ display: "flex", gap: "15px" }}>
             {/* 储存数据 */}
