@@ -9,3 +9,8 @@ declare type pieType = {
 declare type IdProps = {
     id: string;
 }
+
+declare type typeData = {
+    title: string;
+    content: string;
+};

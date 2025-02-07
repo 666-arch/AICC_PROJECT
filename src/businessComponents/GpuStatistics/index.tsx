@@ -5,12 +5,8 @@ import NumberTween from "@/components/NumberTween";
 import React, { useEffect, useState } from "react";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-type typeBarData = {
-  title: string;
-  content: string;
-};
 const GpuStatistics: React.FC<IdProps> = ({ id }) => {
-  const [barDataSource, setBarDataSource] = useState<Array<typeBarData>>([]);
+  const [barDataSource, setBarDataSource] = useState<Array<typeData>>([]);
   const initData = async () => {
     const params = new FormData();
     params.append("ip", ip);
@@ -18,7 +14,7 @@ const GpuStatistics: React.FC<IdProps> = ({ id }) => {
     params.append("boxId", id);
     const response = await getConfigData(params);
     if (response.code === 200) {
-      const data = response.data as typeBarData[];
+      const data = response.data as typeData[];
       setBarDataSource(data);
     }
   };

@@ -189,7 +189,7 @@ const HomePage = () => {
 
           <div style={{ display: "flex", gap: "15px" }}>
             {/* 储存数据 */}
-            <StoreSource />
+            <StoreSource id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}/>
             {/* 储存容量 */}
             <StoreCapacity />
           </div>
@@ -206,7 +206,7 @@ const HomePage = () => {
             </div>
 
             {/* CPU统计数据 */}
-            <RightCpuStatistics />
+            <RightCpuStatistics id={boxIds.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!}/>
 
             {/* GPU统计数据 */}
             <RightGpuStatistics />
