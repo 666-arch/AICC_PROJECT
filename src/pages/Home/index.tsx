@@ -99,38 +99,6 @@ const optionsData = [
   },
 ];
 const HomePage = () => {
-  const totalLengendNum = optionsData.reduce(
-    (sum, item) => sum + item.value,
-    0
-  );
-  let totalPercentage = 0;
-  optionsData.forEach((item, index) => {
-    // let percentage;
-    // if (index < optionsData.length - 1) {
-    //   percentage = Math.floor((item.value / totalLengendNum) * 100);
-    //   totalPercentage += percentage;
-    // } else {
-    //   percentage = 100 - totalPercentage;
-    // }
-    // item.perValue = percentage;
-    // switch (index) {
-    //   case 0:
-    //     item.value = 57;
-    //     break;
-    //   case 1:
-    //     item.value = 21;
-    //     break;
-    //   case 2:
-    //     item.value = 14;
-    //     break;
-    //   case 3:
-    //     item.value = 8;
-    //     break;
-    //   default:
-    //     break;
-    // }
-  });
-
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
