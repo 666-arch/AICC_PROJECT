@@ -211,7 +211,7 @@ const HomePage = () => {
 
         {isPopupVisible ? (
           <div className="home-page-main-modal" ref={popupRef}>
-            <DayModal />
+            <DayModal id={boxIds.find((id) => id.name === "客户资源算力使用")?.id!}/>
           </div>
         ) : (
           <></>
