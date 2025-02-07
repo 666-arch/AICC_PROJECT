@@ -11,28 +11,6 @@ interface dataType {
 const DayModal: React.FC<IdProps> = ({ id }) => {
   const [dataSource, setDataSource] = useState<Array<dataType>>([]);
   const modalRef = useRef<HTMLDivElement>(null);
-  const list = [
-    {
-      content: "温度",
-      value: 22.89,
-      rate: "℃",
-    },
-    {
-      content: "湿度",
-      value: 50.67,
-      rate: "RH",
-    },
-    {
-      content: "电流/机柜",
-      value: 12.31,
-      rate: "A",
-    },
-    {
-      content: "电量",
-      value: 2190,
-      rate: "KWh",
-    },
-  ];
   const initData = async () => {
     const rates = ["℃", "RH", "A", "KWh"];
     const params = new FormData();
@@ -42,7 +20,6 @@ const DayModal: React.FC<IdProps> = ({ id }) => {
     const response = await getConfigData(params);
     if (response.code === 200) {
       const data = response.data as typeData[];
-      console.log("dddddddd", data);
       const _dataSource = [...dataSource];
       data.forEach((item, index) => {
         const _item = {
