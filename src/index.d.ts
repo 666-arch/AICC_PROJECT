@@ -1,6 +1,6 @@
 declare type pieType = {
-    name: string;
     value: number;
+    name?: string;
     number?: number;
     preValue?: number;
     textColor?: string;

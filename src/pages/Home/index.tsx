@@ -162,7 +162,9 @@ const HomePage = () => {
               id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}
             />
             {/* 储存容量 */}
-            <StoreCapacity />
+            <StoreCapacity 
+              id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}
+            />
           </div>
         </div>
 

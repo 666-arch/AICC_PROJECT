@@ -8,14 +8,12 @@ import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
 const optionsData = [
   {
-    name: "未分配",
     value: 55.15,
     itemStyle: {
       color: "#E9E9E9",
     },
   },
   {
-    name: "已分配",
     value: 44.85,
     itemStyle: {
       color: "#6a94fd",

@@ -54,13 +54,10 @@ const CustomerSource: React.FC<IdProps> = ({ id }) => {
     const response = await getConfigData(params);
     if (response.code === 200) {
       const data = response.data as typeData[];
-      console.log("d", data);
       const totalNum = data.reduce(
         (sum, item) => sum + Number(item.content),
         0
       );
-      console.log('totalNum', totalNum);
-      
       const _dataSource = [...dataSource];
       data.forEach((item, index)=>{
         const _item = {
