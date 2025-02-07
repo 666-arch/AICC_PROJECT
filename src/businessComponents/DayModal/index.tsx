@@ -20,6 +20,11 @@ const DayModal: React.FC<IdProps> = ({ id }) => {
     const response = await getConfigData(params);
     if (response.code === 200) {
       const data = response.data as typeData[];
+      const totalNum = data.reduce(
+        (sum, item) => sum + Number(item.content),
+        0
+      );
+      console.log("dddddddd", data);
       const _dataSource = [...dataSource];
       data.forEach((item, index) => {
         const _item = {

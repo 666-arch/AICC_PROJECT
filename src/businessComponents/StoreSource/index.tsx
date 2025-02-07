@@ -6,20 +6,6 @@ import ChartPie3D from "@/components/ChartPie3D";
 import React, { useEffect, useState } from "react";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-const optionsData = [
-  {
-    value: 55.15,
-    itemStyle: {
-      color: "#E9E9E9",
-    },
-  },
-  {
-    value: 44.85,
-    itemStyle: {
-      color: "#6a94fd",
-    },
-  },
-];
 const StoreSource: React.FC<IdProps> = ({ id }) => {
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
   const initData = async () => {
@@ -29,7 +15,6 @@ const StoreSource: React.FC<IdProps> = ({ id }) => {
     params.append("boxId", id);
     const response = await getConfigData(params);
     if (response.code === 200) {
-      console.log("d", response.data);
       const data = response.data as typeData[];
       const totalNum = Number(data[0].content) + Number(data[0].subtitle);
       const _dataSource = [
@@ -46,6 +31,9 @@ const StoreSource: React.FC<IdProps> = ({ id }) => {
           },
         },
       ];
+      if(Number(data[0].content) === Number(data[0].subtitle)){
+        _dataSource.splice(0, 1);
+      }
       setDataSource(_dataSource);
     }
   };

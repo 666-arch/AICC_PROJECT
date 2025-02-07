@@ -163,7 +163,7 @@ const HomePage = () => {
             />
             {/* 储存容量 */}
             <StoreCapacity 
-              id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}
+              id={boxIds.find((id) => id.name === "云平台-储存容量")?.id!}
             />
           </div>
         </div>
@@ -211,7 +211,7 @@ const HomePage = () => {
 
         {isPopupVisible ? (
           <div className="home-page-main-modal" ref={popupRef}>
-            <DayModal id={boxIds.find((id) => id.name === "客户资源算力使用")?.id!}/>
+            <DayModal id={boxIds.find((id) => id.name === "动环数据")?.id!}/>
           </div>
         ) : (
           <></>
