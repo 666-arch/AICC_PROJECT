@@ -21,82 +21,83 @@ import ChartPie3D from "@/components/ChartPie3D";
 import { getBoxId } from "@/api";
 import { ip, port } from "@/util";
 import useGlobalStore, { IdOptions } from "@/store";
-const optionsData = [
-  {
-    name: "神州问学：",
-    value: 57,
-    textColor: "#415DFF",
-    itemStyle: {
-      color: "#E9E9E9",
-    },
-  },
-  {
-    name: "科技公司：",
-    value: 21,
-    textColor: "#4187CB",
-    itemStyle: {
-      color: "#6a94fd",
-    },
-  },
-  {
-    name: "科研机构：",
-    value: 14,
-    textColor: "#7A56E3",
-    itemStyle: {
-      color: "#6a94fd",
-    },
-  },
-  {
-    name: "制造业：",
-    value: 8,
-    textColor: "#2B60E0",
-    itemStyle: {
-      color: "#6a94fd",
-    },
-  },
-];
+import CustomerSource from "@/businessComponents/Customer";
 // const optionsData = [
 //   {
 //     name: "神州问学：",
-//     // value: 260,
-//     value: 570,
-//     perValue: 0,
+//     value: 57,
 //     textColor: "#415DFF",
 //     itemStyle: {
-//       color: "#80A4FF",
+//       color: "#E9E9E9",
 //     },
 //   },
 //   {
 //     name: "科技公司：",
-//     // value: 330,
-//     value: 210,
-//     perValue: 0,
+//     value: 21,
 //     textColor: "#4187CB",
 //     itemStyle: {
-//       color: "#5E9AD3",
+//       color: "#6a94fd",
 //     },
 //   },
 //   {
 //     name: "科研机构：",
-//     // value: 200,
-//     value: 140,
-//     perValue: 0,
+//     value: 14,
 //     textColor: "#7A56E3",
 //     itemStyle: {
-//       color: "#A096FF",
+//       color: "#6a94fd",
 //     },
 //   },
 //   {
 //     name: "制造业：",
-//     // value: 500,
-//     value: 80,
-//     perValue: 0,
+//     value: 8,
 //     textColor: "#2B60E0",
 //     itemStyle: {
-//       color: "#4170E3",
+//       color: "#6a94fd",
 //     },
 //   },
 // ];
+const optionsData = [
+  {
+    name: "神州问学：",
+    // value: 260,
+    value: 57,
+    perValue: 0,
+    textColor: "#415DFF",
+    itemStyle: {
+      color: "#80A4FF",
+    },
+  },
+  {
+    name: "科技公司：",
+    // value: 330,
+    value: 21,
+    perValue: 0,
+    textColor: "#4187CB",
+    itemStyle: {
+      color: "#5E9AD3",
+    },
+  },
+  {
+    name: "科研机构：",
+    // value: 200,
+    value: 14,
+    perValue: 0,
+    textColor: "#7A56E3",
+    itemStyle: {
+      color: "#A096FF",
+    },
+  },
+  {
+    name: "制造业：",
+    // value: 500,
+    value: 8,
+    perValue: 0,
+    textColor: "#2B60E0",
+    itemStyle: {
+      color: "#4170E3",
+    },
+  },
+];
 const HomePage = () => {
   const totalLengendNum = optionsData.reduce(
     (sum, item) => sum + item.value,
@@ -218,76 +219,9 @@ const HomePage = () => {
           </div>
 
           <div className="home-page-main-right-bot">
-            <div className="main-right-customer-platform">
-              <div className="main-right-title-box">
-                <div className="title-box-icon"></div>
-                <div>客户资源算力使用</div>
-              </div>
-              <div className="main-right-title-line"></div>
-            </div>
-
-            <div className="main-right-bot-chart">
-              <div className="chart-left">
-                <ChartPie3D
-                  width={290}
-                  height={255}
-                  data={optionsData}
-                  left={-60}
-                  top={-70}
-                />
-                <div className="pie-base-bg"></div>
-              </div>
-              <div className="chart-right">
-                {optionsData.map((item, index) => {
-                  return (
-                    <div className="chart-item" key={item.itemStyle.color}>
-                      <div
-                        style={
-                          index !== 3
-                            ? {
-                                width: "5px",
-                                height: "5px",
-                                borderRadius: "50%",
-                                marginRight: "8px",
-                                backgroundColor: item.textColor,
-                              }
-                            : {
-                                width: "5px",
-                                height: "5px",
-                                borderRadius: "50%",
-                                marginLeft: "14px",
-                                backgroundColor: item.textColor,
-                              }
-                        }
-                      ></div>
-                      <div style={index === 3 ? { paddingLeft: "8px" } : {}}>
-                        {item.name}
-                      </div>
-                      <div
-                        style={{
-                          color: item.textColor,
-                        }}
-                      >
-                        <NumberTween value={item.value} />
-                      </div>
-                      <div
-                        style={{
-                          color: item.textColor,
-                          fontFamily: " Source Han Sans CN",
-                          fontSize: "13px",
-                          fontWeight: "350",
-                          lineHeight: "11px",
-                          marginTop: "8px",
-                        }}
-                      >
-                        %
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <CustomerSource/>
           </div>
+
         </div>
 
         <div className="button-base " ref={btnRef}>
