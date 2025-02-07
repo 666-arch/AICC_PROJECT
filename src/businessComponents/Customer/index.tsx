@@ -1,6 +1,7 @@
 import ChartPie3D from "@/components/ChartPie3D";
 import "./index.less";
 import NumberTween from "@/components/NumberTween";
+import React from "react";
 const optionsData = [
   {
     name: "神州问学：",
@@ -43,8 +44,9 @@ const optionsData = [
     },
   },
 ];
-const CustomerSource = () => {
-  return (
+const CustomerSource: React.FC<IdProps> = ({ id }) => {
+  
+   return (
     <>
       <div className="main-right-customer-platform">
         <div className="main-right-title-box">

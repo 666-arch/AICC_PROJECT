@@ -180,17 +180,19 @@ const HomePage = () => {
             id={boxIds.find((id) => id.name === "云平台-CPU统计数据")?.id!}
           />
           {/* 内存统计数据 */}
-          <MemoryStatistics 
+          <MemoryStatistics
             id={boxIds.find((id) => id.name === "云平台-内存统计数据")?.id!}
           />
           {/* GPU统计数据 */}
-          <GpuStatistics 
+          <GpuStatistics
             id={boxIds.find((id) => id.name === "云平台-GPU统计数据")?.id!}
           />
 
           <div style={{ display: "flex", gap: "15px" }}>
             {/* 储存数据 */}
-            <StoreSource id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}/>
+            <StoreSource
+              id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}
+            />
             {/* 储存容量 */}
             <StoreCapacity />
           </div>
@@ -207,10 +209,18 @@ const HomePage = () => {
             </div>
 
             {/* CPU统计数据 */}
-            <RightCpuStatistics id={boxIds.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!}/>
+            <RightCpuStatistics
+              id={
+                boxIds.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!
+              }
+            />
 
             {/* GPU统计数据 */}
-            <RightGpuStatistics id={boxIds.find((id) => id.name === "HPC&AI平台-GPU统计数据")?.id!}/>
+            <RightGpuStatistics
+              id={
+                boxIds.find((id) => id.name === "HPC&AI平台-GPU统计数据")?.id!
+              }
+            />
 
             <div style={{ display: "flex", gap: "20px" }}>
               <RightStoreSouce />
@@ -219,9 +229,10 @@ const HomePage = () => {
           </div>
 
           <div className="home-page-main-right-bot">
-            <CustomerSource/>
+            <CustomerSource
+              id={boxIds.find((id) => id.name === "客户资源算力使用")?.id!}
+            />
           </div>
-
         </div>
 
         <div className="button-base " ref={btnRef}>
