@@ -1,11 +1,12 @@
 import ChartPie3D from "@/components/ChartPie3D";
 import "./index.less";
 import NumberTween from "@/components/NumberTween";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getConfigData } from "@/api";
+import { ip, port } from "@/util";
 const optionsData = [
   {
     name: "神州问学：",
-    // value: 260,
     value: 57,
     perValue: 0,
     textColor: "#415DFF",
@@ -15,7 +16,6 @@ const optionsData = [
   },
   {
     name: "科技公司：",
-    // value: 330,
     value: 21,
     perValue: 0,
     textColor: "#4187CB",
@@ -25,7 +25,6 @@ const optionsData = [
   },
   {
     name: "科研机构：",
-    // value: 200,
     value: 14,
     perValue: 0,
     textColor: "#7A56E3",
@@ -35,7 +34,6 @@ const optionsData = [
   },
   {
     name: "制造业：",
-    // value: 500,
     value: 8,
     perValue: 0,
     textColor: "#2B60E0",
@@ -45,8 +43,44 @@ const optionsData = [
   },
 ];
 const CustomerSource: React.FC<IdProps> = ({ id }) => {
-  
-   return (
+  const textColors = ['#415DFF', '#4187CB', '#7A56E3', '#2B60E0']
+  const itemColors = ['#80A4FF', '#5E9AD3', '#A096FF', '#4170E3']
+  const [dataSource, setDataSource] = useState<Array<pieType>>([]);
+  const initData = async () => {
+    const params = new FormData();
+    params.append("ip", ip);
+    params.append("port", port);
+    params.append("boxId", id);
+    const response = await getConfigData(params);
+    if (response.code === 200) {
+      const data = response.data as typeData[];
+      console.log("d", data);
+      const totalNum = data.reduce(
+        (sum, item) => sum + Number(item.content),
+        0
+      );
+      console.log('totalNum', totalNum);
+      
+      const _dataSource = [...dataSource];
+      data.forEach((item, index)=>{
+        const _item = {
+            name: item.title,
+            value: ((Number(item.content) / totalNum) * 100),
+            perValue: 0,
+            textColor: textColors[index],
+            itemStyle: {
+                color: itemColors[index]
+            }
+        }
+        _dataSource.push(_item);
+      })
+      setDataSource(_dataSource);
+    }
+  };
+  useEffect(() => {
+    id && initData();
+  }, [id]);
+  return (
     <>
       <div className="main-right-customer-platform">
         <div className="main-right-title-box">
@@ -61,14 +95,14 @@ const CustomerSource: React.FC<IdProps> = ({ id }) => {
           <ChartPie3D
             width={290}
             height={255}
-            data={optionsData}
+            data={dataSource}
             left={-60}
             top={-70}
           />
           <div className="pie-base-bg"></div>
         </div>
         <div className="chart-right">
-          {optionsData.map((item, index) => {
+          {dataSource.map((item, index) => {
             return (
               <div className="chart-item" key={item.itemStyle.color}>
                 <div
