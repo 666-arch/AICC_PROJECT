@@ -15,6 +15,8 @@ const ChartPie3D: React.FC<IProps> = ({
   left = -50,
   top = -60
 }) => {
+  console.log('PPPPPPPPPPPPP',data);
+  
   const chartRef = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<echarts.EChartsType | null>(null);
   function getPie3D(pieData: string | any[], internalDiameterRatio: number) {

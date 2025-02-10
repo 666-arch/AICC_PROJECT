@@ -6,7 +6,7 @@ import { getConfigData } from "@/api";
 import { ip, port } from "@/util";
 import ChartPie3D from "@/components/ChartPie3D";
 import websocket from "@/websocket";
-const CpuStatistics: React.FC<IdProps> = ({ id }) => {
+const CpuStatistics: React.FC<IdProps> = ({ id, dataVersion }) => {
   const colors = ["#6a94fd", "#E9E9E9"];
   const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
   const totalNumRef = useRef<number>(0);
@@ -18,7 +18,7 @@ const CpuStatistics: React.FC<IdProps> = ({ id }) => {
     const response = await getConfigData(params);
     if (response.code === 200) {
       const dataSource = response.data as { content: string; title: string }[];
-      const _pieDataSource = [...pieDataSource];
+      let _pieDataSource: pieType[] = []; 
       const totalNum = dataSource.reduce(
         (sum, item) => sum + Number(item.content),
         0
@@ -43,7 +43,7 @@ const CpuStatistics: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, dataVersion]);
   
   return (
     <div className="main-left-cpu-statistics">

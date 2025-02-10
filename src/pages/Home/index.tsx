@@ -20,7 +20,7 @@ import { ip, port } from "@/util";
 import { IdOptions } from "@/store";
 import CustomerSource from "@/businessComponents/Customer";
 import websocket from "@/websocket";
-type ChildNames = 'child1' | 'child2' | 'child3';
+type ChildNames = "child1" | "child2" | "child3";
 const HomePage = () => {
   const [bId, setbId] = useState(0);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -57,10 +57,7 @@ const HomePage = () => {
   useEffect(() => {
     initBoxId();
   }, []);
-
-  const [key1, setKey1] = useState(0)
-  const [key2, setKey2] = useState(0)
-  const [key3, setKey3] = useState(0)
+  const [dataVersion, setDataVersion] = useState(0);
 
   //update_78
   const fetchDataForItem = async (item: string) => {
@@ -89,7 +86,7 @@ const HomePage = () => {
           console.error("解析boxId失败:", e);
         }
       } else {
-        
+        setDataVersion((prev) => prev + 1);
       }
     };
     websocket.setOnReceivedUdp(handleUdpMessage);
@@ -111,15 +108,18 @@ const HomePage = () => {
 
           {/* CPU统计数据 */}
           <CpuStatistics
+            dataVersion={dataVersion}
             id={boxIds?.find((id) => id.name === "云平台-CPU统计数据")?.id!}
           />
           {/* 内存统计数据 */}
           <MemoryStatistics
-          id={boxIds?.find((id) => id.name === "云平台-内存统计数据")?.id!}
+            dataVersion={dataVersion}
+            id={boxIds?.find((id) => id.name === "云平台-内存统计数据")?.id!}
           />
           {/* GPU统计数据 */}
           <GpuStatistics
-          id={boxIds?.find((id) => id.name === "云平台-GPU统计数据")?.id!}
+            dataVersion={dataVersion}
+            id={boxIds?.find((id) => id.name === "云平台-GPU统计数据")?.id!}
           />
 
           <div style={{ display: "flex", gap: "15px" }}>
