@@ -7,7 +7,7 @@ import axios, {
 } from 'axios'
 import { ResultData } from './interface'
 const axiosConfig = {
-    baseURL: '/api',
+    baseURL: process.env.NODE_ENV === 'development' ? '/api' : 'http://192.168.1.10',
     timeout: 50000,
     headers: {
         "Content-Type": "multipart/form-data",
