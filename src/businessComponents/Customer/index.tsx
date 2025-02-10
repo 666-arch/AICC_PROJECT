@@ -4,45 +4,7 @@ import NumberTween from "@/components/NumberTween";
 import React, { useEffect, useState } from "react";
 import { getConfigData } from "@/api";
 import { ip, port } from "@/util";
-const optionsData = [
-  {
-    name: "神州问学：",
-    value: 57,
-    perValue: 0,
-    textColor: "#415DFF",
-    itemStyle: {
-      color: "#80A4FF",
-    },
-  },
-  {
-    name: "科技公司：",
-    value: 21,
-    perValue: 0,
-    textColor: "#4187CB",
-    itemStyle: {
-      color: "#5E9AD3",
-    },
-  },
-  {
-    name: "科研机构：",
-    value: 14,
-    perValue: 0,
-    textColor: "#7A56E3",
-    itemStyle: {
-      color: "#A096FF",
-    },
-  },
-  {
-    name: "制造业：",
-    value: 8,
-    perValue: 0,
-    textColor: "#2B60E0",
-    itemStyle: {
-      color: "#4170E3",
-    },
-  },
-];
-const CustomerSource: React.FC<IdProps> = ({ id }) => {
+const CustomerSource: React.FC<IdProps> = ({ id, refreshKey }) => {
   const textColors = ['#415DFF', '#4187CB', '#7A56E3', '#2B60E0']
   const itemColors = ['#80A4FF', '#5E9AD3', '#A096FF', '#4170E3']
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
@@ -71,12 +33,13 @@ const CustomerSource: React.FC<IdProps> = ({ id }) => {
         }
         _dataSource.push(_item);
       })
+      setDataSource([])
       setDataSource(_dataSource);
     }
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, refreshKey]);
   return (
     <>
       <div className="main-right-customer-platform">

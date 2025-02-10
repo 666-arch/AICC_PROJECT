@@ -6,6 +6,7 @@ import ChartPie3D from "@/components/ChartPie3D";
 import React, { useEffect, useState, useRef } from "react";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
+import websocket from "@/websocket";
 const optionsData = [
   {
     name: "未分配",
@@ -24,14 +25,15 @@ const optionsData = [
 ];
 
 const MemoryStatistics: React.FC<IdProps> = ({ id }) => {
+  
   const colors = ["#6a94fd", "#E9E9E9"];
   const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
   const totalNumRef = useRef<number>(0);
-  const initData = async () => {
+  const initData = async (nId?: number) => {
     const params = new FormData();
     params.append("ip", ip);
     params.append("port", port);
-    params.append("boxId", id);
+    params.append("boxId", id ?? nId);
     const response = await getConfigData(params);
     if (response.code === 200) {
       const dataSource = response.data as { content: string; title: string }[];
@@ -62,6 +64,7 @@ const MemoryStatistics: React.FC<IdProps> = ({ id }) => {
   useEffect(() => {
     id && initData();
   }, [id]);
+  
   return (
     <div className="main-left-memory-statistics">
       <div>

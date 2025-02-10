@@ -5,7 +5,7 @@ import NumberTween from "@/components/NumberTween";
 import React, { useEffect, useState } from "react";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-const GpuStatistics: React.FC<IdProps> = ({ id }) => {
+const GpuStatistics: React.FC<IdProps> = ({ id, refreshKey }) => {
   const [barDataSource, setBarDataSource] = useState<Array<typeData>>([]);
   const initData = async () => {
     const params = new FormData();
@@ -20,7 +20,7 @@ const GpuStatistics: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, refreshKey]);
   return (
     <div className="main-left-gpu-statistics">
       <PanelWrapper width={362} height={27} content="GPU统计数据" />

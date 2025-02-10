@@ -19,8 +19,9 @@ import { getBoxId } from "@/api";
 import { ip, port } from "@/util";
 import { IdOptions } from "@/store";
 import CustomerSource from "@/businessComponents/Customer";
+import websocket from "@/websocket";
 const HomePage = () => {
-
+  const [refreshKey, setRefreshKey] = useState(0);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
@@ -33,7 +34,8 @@ const HomePage = () => {
     setIsPopupVisible(false);
   }, [popupRef, btnRef]);
 
-  const [boxIds, setBoxIds] = useState<Array<IdOptions>>([]);
+  const [boxIds, setBoxIds] = useState<Array<IdOptions> | undefined>([]);
+  const [nId, setNId] = useState<number>(0)
   const initBoxId = async () => {
     try {
       const formData = new FormData();
@@ -72,25 +74,30 @@ const HomePage = () => {
 
           {/* CPU统计数据 */}
           <CpuStatistics
-            id={boxIds.find((id) => id.name === "云平台-CPU统计数据")?.id!}
+            refreshKey={refreshKey}
+            id={boxIds?.find((id) => id.name === "云平台-CPU统计数据")?.id!}
           />
           {/* 内存统计数据 */}
           <MemoryStatistics
-            id={boxIds.find((id) => id.name === "云平台-内存统计数据")?.id!}
+            refreshKey={refreshKey}
+            id={boxIds?.find((id) => id.name === "云平台-内存统计数据")?.id!}
           />
           {/* GPU统计数据 */}
           <GpuStatistics
-            id={boxIds.find((id) => id.name === "云平台-GPU统计数据")?.id!}
+            refreshKey={refreshKey}
+            id={boxIds?.find((id) => id.name === "云平台-GPU统计数据")?.id!}
           />
 
           <div style={{ display: "flex", gap: "15px" }}>
             {/* 储存数据 */}
             <StoreSource
-              id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}
+              refreshKey={refreshKey}
+              id={boxIds?.find((id) => id.name === "云平台-储存数据")?.id!}
             />
             {/* 储存容量 */}
             <StoreCapacity
-              id={boxIds.find((id) => id.name === "云平台-储存容量")?.id!}
+              refreshKey={refreshKey}
+              id={boxIds?.find((id) => id.name === "云平台-储存容量")?.id!}
             />
           </div>
         </div>
@@ -107,27 +114,31 @@ const HomePage = () => {
 
             {/* CPU统计数据 */}
             <RightCpuStatistics
+              refreshKey={refreshKey}
               id={
-                boxIds.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!
+                boxIds?.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!
               }
             />
 
             {/* GPU统计数据 */}
             <RightGpuStatistics
+              refreshKey={refreshKey}
               id={
-                boxIds.find((id) => id.name === "HPC&AI平台-GPU统计数据")?.id!
+                boxIds?.find((id) => id.name === "HPC&AI平台-GPU统计数据")?.id!
               }
             />
 
             <div style={{ display: "flex", gap: "20px" }}>
               <RightStoreSouce
+                refreshKey={refreshKey}
                 id={
-                  boxIds.find((id) => id.name === "HPC&AI平台-储存数据")?.id!
+                  boxIds?.find((id) => id.name === "HPC&AI平台-储存数据")?.id!
                 }
               />
               <RightStoreCapacity
+                refreshKey={refreshKey}
                 id={
-                  boxIds.find((id) => id.name === "HPC&AI平台-储存容量")?.id!
+                  boxIds?.find((id) => id.name === "HPC&AI平台-储存容量")?.id!
                 }
               />
             </div>
@@ -135,7 +146,8 @@ const HomePage = () => {
 
           <div className="home-page-main-right-bot">
             <CustomerSource
-              id={boxIds.find((id) => id.name === "客户资源算力使用")?.id!}
+              refreshKey={refreshKey}
+              id={boxIds?.find((id) => id.name === "客户资源算力使用")?.id!}
             />
           </div>
         </div>
@@ -146,7 +158,7 @@ const HomePage = () => {
 
         {isPopupVisible ? (
           <div className="home-page-main-modal" ref={popupRef}>
-            <DayModal id={boxIds.find((id) => id.name === "动环数据")?.id!} />
+            <DayModal id={boxIds?.find((id) => id.name === "动环数据")?.id!} />
           </div>
         ) : (
           <></>

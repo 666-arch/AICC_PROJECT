@@ -6,7 +6,7 @@ import NumberTween from "@/components/NumberTween";
 import ChartPie3D from "@/components/ChartPie3D";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-const RightStoreSouce: React.FC<IdProps> = ({ id }) => {
+const RightStoreSouce: React.FC<IdProps> = ({ id, refreshKey }) => {
   const preValueRef = useRef<number>(0)
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
   const initData = async () => {
@@ -37,7 +37,7 @@ const RightStoreSouce: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, refreshKey]);
   return (
     <div className="main-right-store-source">
       <PanelWrapper width={170.5} height={27} content="储存数据" />

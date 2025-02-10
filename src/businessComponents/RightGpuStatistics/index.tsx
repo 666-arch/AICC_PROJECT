@@ -5,7 +5,7 @@ import ProcessBar from "@/components/ProcessBar";
 import NumberTween from "@/components/NumberTween";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-const RightGpuStatistics: React.FC<IdProps> = ({ id }) => {
+const RightGpuStatistics: React.FC<IdProps> = ({ id, refreshKey }) => {
   const [dataSource, setDataSource] = useState<Array<typeData>>([]);
   const initData = async () => {
     const params = new FormData();
@@ -20,7 +20,7 @@ const RightGpuStatistics: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, refreshKey]);
   return (
     <div className="main-right-gpu-statistics">
       <PanelWrapper width={362} height={27} content="GPU统计数据" />

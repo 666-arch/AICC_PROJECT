@@ -6,7 +6,7 @@ import ChartPie3D from "@/components/ChartPie3D";
 import React, { useEffect, useRef, useState } from "react";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-const StoreSource: React.FC<IdProps> = ({ id }) => {
+const StoreSource: React.FC<IdProps> = ({ id, nId }) => {
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
   const preValueRef = useRef<number>(0)
   const initData = async () => {
@@ -37,7 +37,7 @@ const StoreSource: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, nId]);
   return (
     <div className="main-left-store-source">
       <PanelWrapper width={170.5} height={27} content="储存数据" />
