@@ -8,8 +8,6 @@ import RightCpuStatistics from "@/businessComponents/RightCpuStatistics";
 import RightGpuStatistics from "@/businessComponents/RightGpuStatistics";
 import RightStoreSouce from "@/businessComponents/RightStoreSouce";
 import RightStoreCapacity from "@/businessComponents/RightStoreCapacity";
-import Pie3d from "@/components/Pie3d";
-import NumberTween from "@/components/NumberTween";
 import DayModal from "@/businessComponents/DayModal";
 import ButtonBase from "@/components/ButtonBase";
 import { useEffect, useRef, useState } from "react";
@@ -17,12 +15,10 @@ import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
-import ChartPie3D from "@/components/ChartPie3D";
 import { getBoxId } from "@/api";
 import { ip, port } from "@/util";
-import useGlobalStore, { IdOptions } from "@/store";
+import { IdOptions } from "@/store";
 import CustomerSource from "@/businessComponents/Customer";
-import websocket from "@/websocket";
 const HomePage = () => {
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
