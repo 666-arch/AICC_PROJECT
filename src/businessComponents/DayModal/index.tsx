@@ -24,7 +24,6 @@ const DayModal: React.FC<IdProps> = ({ id }) => {
         (sum, item) => sum + Number(item.content),
         0
       );
-      console.log("dddddddd", data);
       const _dataSource = [...dataSource];
       data.forEach((item, index) => {
         const _item = {

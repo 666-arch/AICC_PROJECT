@@ -34,7 +34,7 @@ async function render() {
   });
 
   const basename = contextOpts.basename || '/';
-  const historyType = contextOpts.historyType || 'browser';
+  const historyType = contextOpts.historyType || 'hash';
 
   const history = createHistory({
     type: historyType,

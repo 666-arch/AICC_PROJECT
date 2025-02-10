@@ -3,7 +3,7 @@
   "open": false,
   "proxy": {
     "/api": {
-      "target": "http://192.168.2.117:9801",
+      "target": "http://192.168.2.147:8899",
       "changeOrigin": true,
       "pathRewrite": {
         "^/api": ""

@@ -3,7 +3,7 @@ const { proxy } = require("./buildConfig.json")
 
 export default defineConfig({
   history: {
-    type: "browser",
+    type: "hash",
   },
   deadCode: {},
   dva: {},

@@ -22,7 +22,9 @@ import { getBoxId } from "@/api";
 import { ip, port } from "@/util";
 import useGlobalStore, { IdOptions } from "@/store";
 import CustomerSource from "@/businessComponents/Customer";
+import websocket from "@/websocket";
 const HomePage = () => {
+
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
@@ -48,14 +50,19 @@ const HomePage = () => {
       }
     } catch (error) {}
   };
+
   useEffect(() => {
     initBoxId();
   }, []);
-
+  
   return (
     <div className="home-page-content">
       <div className="home-page-header">
-        <div className="home-page-title">AICC算力数据监测系统</div>
+        <div
+          className="home-page-title"
+        >
+          AICC算力数据监测系统
+        </div>
       </div>
       <div className="home-page-main">
         <div className="home-page-main-left">
@@ -86,7 +93,7 @@ const HomePage = () => {
               id={boxIds.find((id) => id.name === "云平台-储存数据")?.id!}
             />
             {/* 储存容量 */}
-            <StoreCapacity 
+            <StoreCapacity
               id={boxIds.find((id) => id.name === "云平台-储存容量")?.id!}
             />
           </div>
@@ -117,8 +124,16 @@ const HomePage = () => {
             />
 
             <div style={{ display: "flex", gap: "20px" }}>
-              <RightStoreSouce />
-              <RightStoreCapacity />
+              <RightStoreSouce
+                id={
+                  boxIds.find((id) => id.name === "HPC&AI平台-储存数据")?.id!
+                }
+              />
+              <RightStoreCapacity
+                id={
+                  boxIds.find((id) => id.name === "HPC&AI平台-储存容量")?.id!
+                }
+              />
             </div>
           </div>
 
@@ -135,7 +150,7 @@ const HomePage = () => {
 
         {isPopupVisible ? (
           <div className="home-page-main-modal" ref={popupRef}>
-            <DayModal id={boxIds.find((id) => id.name === "动环数据")?.id!}/>
+            <DayModal id={boxIds.find((id) => id.name === "动环数据")?.id!} />
           </div>
         ) : (
           <></>

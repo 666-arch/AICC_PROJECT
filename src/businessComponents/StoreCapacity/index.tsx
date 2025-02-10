@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./index.less";
 import PanelWrapper from "@/components/PanelWrapper";
 import Pie3d from "@/components/Pie3d";
@@ -8,6 +8,7 @@ import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
 const StoreCapacity: React.FC<IdProps> = ({ id }) => {
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
+  const preValueRef = useRef<number>(0)
   const initData = async () => {
     const params = new FormData();
     params.append("ip", ip);
@@ -15,23 +16,22 @@ const StoreCapacity: React.FC<IdProps> = ({ id }) => {
     params.append("boxId", id);
     const response = await getConfigData(params);
     if (response.code === 200) {
-      console.log("d", response.data);
       const data = response.data as typeData[];
-      const totalNum = Number(data[0].content) + Number(data[0].subtitle);
-      const _dataSource = [
+      const _dataSource: pieType[] = [
         {
-          value: (Number(data[0].content) / totalNum) * 100,
+          value: 100 - Number(data[0].content),
           itemStyle: {
             color: "#E9E9E9",
           },
         },
         {
-          value: (Number(data[0].subtitle) / totalNum) * 100,
+          value: Number(data[0].content),
           itemStyle: {
             color: "#6a94fd",
           },
         },
       ];
+      preValueRef.current = _dataSource[1].value
       setDataSource(_dataSource);
     }
   };
@@ -42,7 +42,7 @@ const StoreCapacity: React.FC<IdProps> = ({ id }) => {
     <div className="main-left-store-capacity">
       <PanelWrapper width={170.5} height={27} content="储存容量" />
       <div className="capacity-num">
-        <NumberTween value={9} />
+        <NumberTween value={preValueRef.current} />
       </div>
       <ChartPie3D
         width={165}

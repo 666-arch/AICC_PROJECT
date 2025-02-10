@@ -7,6 +7,7 @@ declare type pieType = {
     number?: number;
     preValue?: number;
     textColor?: string;
+    content?: string;
 };
 declare type IdProps = {
     id: string;

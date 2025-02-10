@@ -7,7 +7,8 @@ import axios, {
 } from 'axios'
 import { ResultData } from './interface'
 const axiosConfig = {
-    baseURL: process.env.NODE_ENV === 'development' ? '/api' : 'http://192.168.1.10',
+    // baseURL: process.env.NODE_ENV === 'development' ? '/api' : 'http://192.168.1.10',
+    baseURL: '/api',
     timeout: 50000,
     headers: {
         "Content-Type": "multipart/form-data",
@@ -27,7 +28,6 @@ class HttpRequest {
             },
             (error: AxiosError) => {
                 const { response } = error
-                console.log('error', error)
                 if (response) {
                 }
                 return Promise.reject(error)
