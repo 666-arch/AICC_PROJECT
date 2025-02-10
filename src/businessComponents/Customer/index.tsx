@@ -20,7 +20,7 @@ const CustomerSource: React.FC<IdProps> = ({ id, dataVersion }) => {
         (sum, item) => sum + Number(item.content),
         0
       );
-      let _dataSource = [];
+      let _dataSource: pieType[] = [];
 
       data.forEach((item, index)=>{
         const _item = {
