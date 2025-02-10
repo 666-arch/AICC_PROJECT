@@ -4,7 +4,7 @@ import './index.less'
 import NumberTween from '@/components/NumberTween'
 import { ip, port } from '@/util'
 import { getConfigData } from '@/api'
-const RightCpuStatistics:React.FC<IdProps> = ({ id }) => {
+const RightCpuStatistics:React.FC<IdProps> = ({ id, dataVersion }) => {
   const [dataSource, setDataSource] = useState<Array<typeData>>([])
   const initData = async () => {
     const params = new FormData();
@@ -19,7 +19,7 @@ const RightCpuStatistics:React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, dataVersion]);
   return (
     <div className="main-right-cpu-statistics">
       <PanelWrapper width={362} height={27} content="CPU统计数据" />

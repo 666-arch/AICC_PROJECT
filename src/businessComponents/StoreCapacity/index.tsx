@@ -7,7 +7,7 @@ import ChartPie3D from "@/components/ChartPie3D";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
 import websocket from "@/websocket";
-const StoreCapacity: React.FC<IdProps> = ({ id }) => {
+const StoreCapacity: React.FC<IdProps> = ({ id, dataVersion }) => {
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
   const preValueRef = useRef<number>(0)
   const initData = async (bId?: number) => {
@@ -38,7 +38,7 @@ const StoreCapacity: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, dataVersion]);
   
   return (
     <div className="main-left-store-capacity">

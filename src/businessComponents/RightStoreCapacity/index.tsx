@@ -6,7 +6,7 @@ import ChartPie3D from '@/components/ChartPie3D';
 import React, { useEffect, useRef, useState } from 'react';
 import { getConfigData } from '@/api';
 import { ip, port } from '@/util';
-const RightStoreCapacity: React.FC<IdProps> = ({ id }) => {
+const RightStoreCapacity: React.FC<IdProps> = ({ id, dataVersion }) => {
   const preValueRef = useRef<number>(0)
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
   const initData = async () => {
@@ -37,7 +37,7 @@ const RightStoreCapacity: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, dataVersion]);
   return (
     <div className='main-right-store-capacity'>
       <PanelWrapper width={170.5} height={27} content="储存容量" />

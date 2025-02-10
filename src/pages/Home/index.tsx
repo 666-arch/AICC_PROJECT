@@ -125,10 +125,12 @@ const HomePage = () => {
           <div style={{ display: "flex", gap: "15px" }}>
             {/* 储存数据 */}
             <StoreSource
+              dataVersion={dataVersion}
               id={boxIds?.find((id) => id.name === "云平台-储存数据")?.id!}
             />
             {/* 储存容量 */}
             <StoreCapacity
+              dataVersion={dataVersion}
               id={boxIds?.find((id) => id.name === "云平台-储存容量")?.id!}
             />
           </div>
@@ -146,6 +148,7 @@ const HomePage = () => {
 
             {/* CPU统计数据 */}
             <RightCpuStatistics
+              dataVersion={dataVersion}
               id={
                 boxIds?.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!
               }
@@ -153,6 +156,7 @@ const HomePage = () => {
 
             {/* GPU统计数据 */}
             <RightGpuStatistics
+              dataVersion={dataVersion}
               id={
                 boxIds?.find((id) => id.name === "HPC&AI平台-GPU统计数据")?.id!
               }
@@ -160,11 +164,13 @@ const HomePage = () => {
 
             <div style={{ display: "flex", gap: "20px" }}>
               <RightStoreSouce
+                dataVersion={dataVersion}
                 id={
                   boxIds?.find((id) => id.name === "HPC&AI平台-储存数据")?.id!
                 }
               />
               <RightStoreCapacity
+                dataVersion={dataVersion}
                 id={
                   boxIds?.find((id) => id.name === "HPC&AI平台-储存容量")?.id!
                 }

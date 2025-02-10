@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
 import websocket from "@/websocket";
-const StoreSource: React.FC<IdProps> = ({ id }) => {
+const StoreSource: React.FC<IdProps> = ({ id, dataVersion }) => {
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
   const preValueRef = useRef<number>(0)
   const initData = async (bId?: number) => {
@@ -38,7 +38,7 @@ const StoreSource: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, dataVersion]);
   
   
   return (
