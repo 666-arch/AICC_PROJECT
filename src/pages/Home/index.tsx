@@ -180,6 +180,7 @@ const HomePage = () => {
 
           <div className="home-page-main-right-bot">
             <CustomerSource
+              dataVersion={dataVersion}
               id={boxIds?.find((id) => id.name === "客户资源算力使用")?.id!}
             />
           </div>

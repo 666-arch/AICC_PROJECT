@@ -4,7 +4,7 @@ import NumberTween from "@/components/NumberTween";
 import React, { useEffect, useState } from "react";
 import { getConfigData } from "@/api";
 import { ip, port } from "@/util";
-const CustomerSource: React.FC<IdProps> = ({ id }) => {
+const CustomerSource: React.FC<IdProps> = ({ id, dataVersion }) => {
   const textColors = ['#415DFF', '#4187CB', '#7A56E3', '#2B60E0']
   const itemColors = ['#80A4FF', '#5E9AD3', '#A096FF', '#4170E3']
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
@@ -20,7 +20,8 @@ const CustomerSource: React.FC<IdProps> = ({ id }) => {
         (sum, item) => sum + Number(item.content),
         0
       );
-      const _dataSource = [...dataSource];
+      let _dataSource = [];
+
       data.forEach((item, index)=>{
         const _item = {
             name: item.title,
@@ -39,7 +40,7 @@ const CustomerSource: React.FC<IdProps> = ({ id }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id]);
+  }, [id, dataVersion]);
   return (
     <>
       <div className="main-right-customer-platform">
