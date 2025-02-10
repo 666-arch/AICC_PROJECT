@@ -6,10 +6,11 @@ import NumberTween from "@/components/NumberTween";
 import ChartPie3D from "@/components/ChartPie3D";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-const StoreCapacity: React.FC<IdProps> = ({ id, refreshKey }) => {
+import websocket from "@/websocket";
+const StoreCapacity: React.FC<IdProps> = ({ id }) => {
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
   const preValueRef = useRef<number>(0)
-  const initData = async () => {
+  const initData = async (bId?: number) => {
     const params = new FormData();
     params.append("ip", ip);
     params.append("port", port);
@@ -37,7 +38,16 @@ const StoreCapacity: React.FC<IdProps> = ({ id, refreshKey }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id, refreshKey]);
+  }, [id]);
+  
+  useEffect(() => {
+    websocket.initWebSocket();
+    websocket.setOnReceivedUdp((data) => {
+      const bId = JSON.parse(data).data[0];
+      initData(bId)
+    });
+  }, []);
+  
   return (
     <div className="main-left-store-capacity">
       <PanelWrapper width={170.5} height={27} content="储存容量" />

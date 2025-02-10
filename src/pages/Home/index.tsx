@@ -35,7 +35,7 @@ const HomePage = () => {
   }, [popupRef, btnRef]);
 
   const [boxIds, setBoxIds] = useState<Array<IdOptions> | undefined>([]);
-  const [nId, setNId] = useState<number>(0)
+  const [nId, setNId] = useState<number>(0);
   const initBoxId = async () => {
     try {
       const formData = new FormData();
@@ -44,6 +44,10 @@ const HomePage = () => {
       const response = await getBoxId(formData);
       if (response.code === 200) {
         const dataList = response.data as IdOptions[];
+        localStorage.setItem(
+          "boxId",
+          JSON.stringify(dataList.map((item) => item.id))
+        );
         setBoxIds(dataList);
       }
     } catch (error) {}
@@ -52,15 +56,11 @@ const HomePage = () => {
   useEffect(() => {
     initBoxId();
   }, []);
-  
+
   return (
     <div className="home-page-content">
       <div className="home-page-header">
-        <div
-          className="home-page-title"
-        >
-          AICC算力数据监测系统
-        </div>
+        <div className="home-page-title">AICC算力数据监测系统</div>
       </div>
       <div className="home-page-main">
         <div className="home-page-main-left">
@@ -74,29 +74,24 @@ const HomePage = () => {
 
           {/* CPU统计数据 */}
           <CpuStatistics
-            refreshKey={refreshKey}
             id={boxIds?.find((id) => id.name === "云平台-CPU统计数据")?.id!}
           />
           {/* 内存统计数据 */}
           <MemoryStatistics
-            refreshKey={refreshKey}
             id={boxIds?.find((id) => id.name === "云平台-内存统计数据")?.id!}
           />
           {/* GPU统计数据 */}
           <GpuStatistics
-            refreshKey={refreshKey}
             id={boxIds?.find((id) => id.name === "云平台-GPU统计数据")?.id!}
           />
 
           <div style={{ display: "flex", gap: "15px" }}>
             {/* 储存数据 */}
             <StoreSource
-              refreshKey={refreshKey}
               id={boxIds?.find((id) => id.name === "云平台-储存数据")?.id!}
             />
             {/* 储存容量 */}
             <StoreCapacity
-              refreshKey={refreshKey}
               id={boxIds?.find((id) => id.name === "云平台-储存容量")?.id!}
             />
           </div>

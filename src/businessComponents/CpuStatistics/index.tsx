@@ -5,11 +5,12 @@ import NumberTween from "@/components/NumberTween";
 import { getConfigData } from "@/api";
 import { ip, port } from "@/util";
 import ChartPie3D from "@/components/ChartPie3D";
-const CpuStatistics: React.FC<IdProps> = ({ id, refreshKey }) => {
+import websocket from "@/websocket";
+const CpuStatistics: React.FC<IdProps> = ({ id }) => {
   const colors = ["#6a94fd", "#E9E9E9"];
   const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
   const totalNumRef = useRef<number>(0);
-  const initData = async () => {
+  const initData = async (bId?: number) => {
     const params = new FormData();
     params.append("ip", ip);
     params.append("port", port);
@@ -42,7 +43,15 @@ const CpuStatistics: React.FC<IdProps> = ({ id, refreshKey }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id, refreshKey]);
+  }, [id]);
+  
+  useEffect(() => {
+    websocket.initWebSocket();
+    websocket.setOnReceivedUdp((data) => {
+      const bId = JSON.parse(data).data[0];
+      initData(bId)
+    });
+  }, []);
   return (
     <div className="main-left-cpu-statistics">
       <PanelWrapper width={362} height={27} content="CPU统计数据" />

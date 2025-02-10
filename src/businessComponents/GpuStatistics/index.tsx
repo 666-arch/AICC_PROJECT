@@ -5,13 +5,14 @@ import NumberTween from "@/components/NumberTween";
 import React, { useEffect, useState } from "react";
 import { ip, port } from "@/util";
 import { getConfigData } from "@/api";
-const GpuStatistics: React.FC<IdProps> = ({ id, refreshKey }) => {
+import websocket from "@/websocket";
+const GpuStatistics: React.FC<IdProps> = ({ id }) => {
   const [barDataSource, setBarDataSource] = useState<Array<typeData>>([]);
-  const initData = async () => {
+  const initData = async (bId?: number) => {
     const params = new FormData();
     params.append("ip", ip);
     params.append("port", port);
-    params.append("boxId", id);
+    params.append("boxId", id ?? bId);
     const response = await getConfigData(params);
     if (response.code === 200) {
       const data = response.data as typeData[];
@@ -20,7 +21,16 @@ const GpuStatistics: React.FC<IdProps> = ({ id, refreshKey }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id, refreshKey]);
+  }, [id]);
+  
+  useEffect(() => {
+    websocket.initWebSocket();
+    websocket.setOnReceivedUdp((data) => {
+      const bId = JSON.parse(data).data[0];
+      initData(bId)
+    });
+  }, []);
+
   return (
     <div className="main-left-gpu-statistics">
       <PanelWrapper width={362} height={27} content="GPU统计数据" />

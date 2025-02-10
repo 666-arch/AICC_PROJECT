@@ -5,7 +5,7 @@ import NumberTween from "@/components/NumberTween";
 import ChartPie3D from "@/components/ChartPie3D";
 import React, { useEffect, useState, useRef } from "react";
 import { ip, port } from "@/util";
-import { getConfigData } from "@/api";
+import { changeSuccessData, getConfigData } from "@/api";
 import websocket from "@/websocket";
 const optionsData = [
   {
@@ -29,11 +29,11 @@ const MemoryStatistics: React.FC<IdProps> = ({ id }) => {
   const colors = ["#6a94fd", "#E9E9E9"];
   const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
   const totalNumRef = useRef<number>(0);
-  const initData = async (nId?: number) => {
+  const initData = async (bId?: number) => {
     const params = new FormData();
     params.append("ip", ip);
     params.append("port", port);
-    params.append("boxId", id ?? nId);
+    params.append("boxId", id ?? bId);
     const response = await getConfigData(params);
     if (response.code === 200) {
       const dataSource = response.data as { content: string; title: string }[];
@@ -65,6 +65,19 @@ const MemoryStatistics: React.FC<IdProps> = ({ id }) => {
     id && initData();
   }, [id]);
   
+  
+  useEffect(() => {
+    websocket.initWebSocket();
+    websocket.setOnReceivedUdp((data) => {
+      const bId = JSON.parse(data).data[0];
+      initData(bId)
+      
+      const sucFormData = new FormData();
+      sucFormData.append("boxId", bId)
+      // changeSuccessData(sucFormData)
+    });
+  }, []);
+
   return (
     <div className="main-left-memory-statistics">
       <div>
