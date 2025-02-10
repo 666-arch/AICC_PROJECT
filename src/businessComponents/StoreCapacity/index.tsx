@@ -40,14 +40,6 @@ const StoreCapacity: React.FC<IdProps> = ({ id }) => {
     id && initData();
   }, [id]);
   
-  useEffect(() => {
-    websocket.initWebSocket();
-    websocket.setOnReceivedUdp((data) => {
-      const bId = JSON.parse(data).data[0];
-      initData(bId)
-    });
-  }, []);
-  
   return (
     <div className="main-left-store-capacity">
       <PanelWrapper width={170.5} height={27} content="储存容量" />

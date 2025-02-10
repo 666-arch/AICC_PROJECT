@@ -15,14 +15,16 @@ import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
-import { getBoxId } from "@/api";
+import { changeSuccessData, getBoxId, getConfigData } from "@/api";
 import { ip, port } from "@/util";
 import { IdOptions } from "@/store";
 import CustomerSource from "@/businessComponents/Customer";
 import websocket from "@/websocket";
+type ChildNames = 'child1' | 'child2' | 'child3';
 const HomePage = () => {
-  const [refreshKey, setRefreshKey] = useState(0);
+  const [bId, setbId] = useState(0);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
   };
@@ -35,7 +37,6 @@ const HomePage = () => {
   }, [popupRef, btnRef]);
 
   const [boxIds, setBoxIds] = useState<Array<IdOptions> | undefined>([]);
-  const [nId, setNId] = useState<number>(0);
   const initBoxId = async () => {
     try {
       const formData = new FormData();
@@ -57,6 +58,42 @@ const HomePage = () => {
     initBoxId();
   }, []);
 
+  const [key1, setKey1] = useState(0)
+  const [key2, setKey2] = useState(0)
+  const [key3, setKey3] = useState(0)
+
+  //update_78
+  const fetchDataForItem = async (item: string) => {
+    const params = new FormData();
+    params.append("boxId", item);
+    await changeSuccessData(params);
+  };
+  const fetchDataForArray = async (items: Array<string>) => {
+    try {
+      const response = await Promise.all(items.map(fetchDataForItem));
+      return response;
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    websocket.initWebSocket();
+    const handleUdpMessage = (data: string) => {
+      const jsonData = localStorage.getItem("boxId");
+      const boxIds = JSON.parse(jsonData!);
+      if (data === "update_78") {
+        if (!jsonData) return;
+        try {
+          const uniqueBoxIds = Array.from(new Set(boxIds)) as string[];
+          fetchDataForArray(uniqueBoxIds);
+        } catch (e) {
+          console.error("解析boxId失败:", e);
+        }
+      } else {
+        
+      }
+    };
+    websocket.setOnReceivedUdp(handleUdpMessage);
+  }, []);
   return (
     <div className="home-page-content">
       <div className="home-page-header">
@@ -78,11 +115,11 @@ const HomePage = () => {
           />
           {/* 内存统计数据 */}
           <MemoryStatistics
-            id={boxIds?.find((id) => id.name === "云平台-内存统计数据")?.id!}
+          id={boxIds?.find((id) => id.name === "云平台-内存统计数据")?.id!}
           />
           {/* GPU统计数据 */}
           <GpuStatistics
-            id={boxIds?.find((id) => id.name === "云平台-GPU统计数据")?.id!}
+          id={boxIds?.find((id) => id.name === "云平台-GPU统计数据")?.id!}
           />
 
           <div style={{ display: "flex", gap: "15px" }}>
@@ -109,7 +146,6 @@ const HomePage = () => {
 
             {/* CPU统计数据 */}
             <RightCpuStatistics
-              refreshKey={refreshKey}
               id={
                 boxIds?.find((id) => id.name === "HPC&AI平台-CPU统计数据")?.id!
               }
@@ -117,7 +153,6 @@ const HomePage = () => {
 
             {/* GPU统计数据 */}
             <RightGpuStatistics
-              refreshKey={refreshKey}
               id={
                 boxIds?.find((id) => id.name === "HPC&AI平台-GPU统计数据")?.id!
               }
@@ -125,13 +160,11 @@ const HomePage = () => {
 
             <div style={{ display: "flex", gap: "20px" }}>
               <RightStoreSouce
-                refreshKey={refreshKey}
                 id={
                   boxIds?.find((id) => id.name === "HPC&AI平台-储存数据")?.id!
                 }
               />
               <RightStoreCapacity
-                refreshKey={refreshKey}
                 id={
                   boxIds?.find((id) => id.name === "HPC&AI平台-储存容量")?.id!
                 }
@@ -141,7 +174,6 @@ const HomePage = () => {
 
           <div className="home-page-main-right-bot">
             <CustomerSource
-              refreshKey={refreshKey}
               id={boxIds?.find((id) => id.name === "客户资源算力使用")?.id!}
             />
           </div>

@@ -7,25 +7,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { ip, port } from "@/util";
 import { changeSuccessData, getConfigData } from "@/api";
 import websocket from "@/websocket";
-const optionsData = [
-  {
-    name: "未分配",
-    value: 55.15,
-    itemStyle: {
-      color: "#E9E9E9",
-    },
-  },
-  {
-    name: "已分配",
-    value: 44.85,
-    itemStyle: {
-      color: "#6a94fd",
-    },
-  },
-];
-
 const MemoryStatistics: React.FC<IdProps> = ({ id }) => {
-  
   const colors = ["#6a94fd", "#E9E9E9"];
   const [pieDataSource, setPieDataSource] = useState<Array<pieType>>([]);
   const totalNumRef = useRef<number>(0);
@@ -65,19 +47,6 @@ const MemoryStatistics: React.FC<IdProps> = ({ id }) => {
     id && initData();
   }, [id]);
   
-  
-  useEffect(() => {
-    websocket.initWebSocket();
-    websocket.setOnReceivedUdp((data) => {
-      const bId = JSON.parse(data).data[0];
-      initData(bId)
-      
-      const sucFormData = new FormData();
-      sucFormData.append("boxId", bId)
-      // changeSuccessData(sucFormData)
-    });
-  }, []);
-
   return (
     <div className="main-left-memory-statistics">
       <div>
@@ -85,8 +54,7 @@ const MemoryStatistics: React.FC<IdProps> = ({ id }) => {
       </div>
       <div className="memory-statistics-main">
         <div className="memory-statistics-left">
-          {/* <Pie3d width={250} height={215} data={optionsData} /> */}
-          <ChartPie3D width={250} height={215} data={optionsData} />
+          <ChartPie3D width={250} height={215} data={pieDataSource} />
           <div className="pie-base-bg"></div>
           <div className="legend-box">
             <div>未分配</div>

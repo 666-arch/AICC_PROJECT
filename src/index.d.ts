@@ -11,8 +11,7 @@ declare type pieType = {
 };
 declare type IdProps = {
     id: string;
-    refreshKey?: number;
-    nId?: number;
+    bId?: number;
 }
 
 declare type typeData = {

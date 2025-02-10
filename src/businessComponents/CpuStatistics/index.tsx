@@ -45,13 +45,6 @@ const CpuStatistics: React.FC<IdProps> = ({ id }) => {
     id && initData();
   }, [id]);
   
-  useEffect(() => {
-    websocket.initWebSocket();
-    websocket.setOnReceivedUdp((data) => {
-      const bId = JSON.parse(data).data[0];
-      initData(bId)
-    });
-  }, []);
   return (
     <div className="main-left-cpu-statistics">
       <PanelWrapper width={362} height={27} content="CPU统计数据" />

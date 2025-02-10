@@ -23,13 +23,6 @@ const GpuStatistics: React.FC<IdProps> = ({ id }) => {
     id && initData();
   }, [id]);
   
-  useEffect(() => {
-    websocket.initWebSocket();
-    websocket.setOnReceivedUdp((data) => {
-      const bId = JSON.parse(data).data[0];
-      initData(bId)
-    });
-  }, []);
 
   return (
     <div className="main-left-gpu-statistics">

@@ -4,7 +4,7 @@ import NumberTween from "@/components/NumberTween";
 import React, { useEffect, useState } from "react";
 import { getConfigData } from "@/api";
 import { ip, port } from "@/util";
-const CustomerSource: React.FC<IdProps> = ({ id, refreshKey }) => {
+const CustomerSource: React.FC<IdProps> = ({ id }) => {
   const textColors = ['#415DFF', '#4187CB', '#7A56E3', '#2B60E0']
   const itemColors = ['#80A4FF', '#5E9AD3', '#A096FF', '#4170E3']
   const [dataSource, setDataSource] = useState<Array<pieType>>([]);
@@ -39,7 +39,7 @@ const CustomerSource: React.FC<IdProps> = ({ id, refreshKey }) => {
   };
   useEffect(() => {
     id && initData();
-  }, [id, refreshKey]);
+  }, [id]);
   return (
     <>
       <div className="main-right-customer-platform">
