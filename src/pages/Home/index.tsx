@@ -20,9 +20,7 @@ import { ip, port } from "@/util";
 import { IdOptions } from "@/store";
 import CustomerSource from "@/businessComponents/Customer";
 import websocket from "@/websocket";
-type ChildNames = "child1" | "child2" | "child3";
 const HomePage = () => {
-  const [bId, setbId] = useState(0);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const togglePopup = () => {
@@ -75,23 +73,42 @@ const HomePage = () => {
   useEffect(() => {
     websocket.initWebSocket();
     const handleUdpMessage = (data: string) => {
-      const jsonData = localStorage.getItem("boxId");
-      const boxIds = JSON.parse(jsonData!);
-      if (data === "update_78") {
-        if (!jsonData) return;
-        try {
-          const uniqueBoxIds = Array.from(new Set(boxIds)) as string[];
-          fetchDataForArray(uniqueBoxIds);
-        } catch (e) {
-          console.error("解析boxId失败:", e);
+      const isUpdate78 = data === "update_78";
+      try {
+        const jsonData = isUpdate78 ? localStorage.getItem("boxId") : data;
+        if (!jsonData) {
+          return;
         }
-      } else {
-        setDataVersion((prev) => prev + 1);
-        const boxIds = JSON.parse(data!);
-        fetchDataForArray(boxIds);
+        const boxIds = JSON.parse(jsonData);
+        const uniqueBoxIds = isUpdate78 ? Array.from(new Set(boxIds)) : boxIds;
+        // 调用 fetchDataForArray 加载数据
+        fetchDataForArray(uniqueBoxIds);
+        // 如果不是 update_78，更新 dataVersion
+        if (!isUpdate78) {
+          setDataVersion((prev) => prev + 1);
+        }
+      } catch (e) {
+        console.error("处理 UDP 消息失败:", e);
       }
     };
     websocket.setOnReceivedUdp(handleUdpMessage);
+    // const handleUdpMessage = (data: string) => {
+    //   const jsonData = localStorage.getItem("boxId");
+    //   const boxIds = JSON.parse(jsonData!);
+    //   if (data === "update_78") {
+    //     if (!jsonData) return;
+    //     try {
+    //       const uniqueBoxIds = Array.from(new Set(boxIds)) as string[];
+    //       fetchDataForArray(uniqueBoxIds);
+    //     } catch (e) {
+    //       console.error("解析boxId失败:", e);
+    //     }
+    //   } else {
+    //     setDataVersion((prev) => prev + 1);
+    //     const boxIds = JSON.parse(data!);
+    //     fetchDataForArray(boxIds);
+    //   }
+    // };
   }, []);
   return (
     <div className="home-page-content">
