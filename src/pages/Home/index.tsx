@@ -1,4 +1,3 @@
-import "./index.less";
 import MemoryStatistics from "@/businessComponents/MemoryStatistics";
 import CpuStatistics from "@/businessComponents/CpuStatistics";
 import GpuStatistics from "@/businessComponents/GpuStatistics";
@@ -15,11 +14,12 @@ import SvgLine from "@/components/SvgLine";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import BtnSvgLine from "@/components/BtnSvgLine";
 import { useClickAway } from "ahooks";
-import { changeSuccessData, getBoxId, getConfigData } from "@/api";
+import { changeSuccessData, getBoxId } from "@/api";
 import { ip, port } from "@/util";
 import { IdOptions } from "@/store";
 import CustomerSource from "@/businessComponents/Customer";
 import websocket from "@/websocket";
+import "./index.less";
 const HomePage = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const togglePopup = () => setIsPopupVisible(!isPopupVisible);
@@ -77,7 +77,7 @@ const HomePage = () => {
           return;
         }
         const boxIds = JSON.parse(jsonData);
-        const uniqueBoxIds = isUpdate78 ? Array.from(new Set(boxIds)) : boxIds;
+        const uniqueBoxIds = isUpdate78 ? Array.from(new Set(boxIds)) : boxIds.data;
         // 调用 fetchDataForArray 加载数据
         fetchDataForArray(uniqueBoxIds);
         // 如果不是 update_78，更新 dataVersion
