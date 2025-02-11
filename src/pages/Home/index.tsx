@@ -92,23 +92,6 @@ const HomePage = () => {
       }
     };
     websocket.setOnReceivedUdp(handleUdpMessage);
-    // const handleUdpMessage = (data: string) => {
-    //   const jsonData = localStorage.getItem("boxId");
-    //   const boxIds = JSON.parse(jsonData!);
-    //   if (data === "update_78") {
-    //     if (!jsonData) return;
-    //     try {
-    //       const uniqueBoxIds = Array.from(new Set(boxIds)) as string[];
-    //       fetchDataForArray(uniqueBoxIds);
-    //     } catch (e) {
-    //       console.error("解析boxId失败:", e);
-    //     }
-    //   } else {
-    //     setDataVersion((prev) => prev + 1);
-    //     const boxIds = JSON.parse(data!);
-    //     fetchDataForArray(boxIds);
-    //   }
-    // };
   }, []);
   return (
     <div className="home-page-content">
