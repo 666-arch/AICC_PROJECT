@@ -87,6 +87,8 @@ const HomePage = () => {
         }
       } else {
         setDataVersion((prev) => prev + 1);
+        const boxIds = JSON.parse(data!);
+        fetchDataForArray(boxIds);
       }
     };
     websocket.setOnReceivedUdp(handleUdpMessage);
