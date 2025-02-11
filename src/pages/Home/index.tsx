@@ -22,10 +22,7 @@ import CustomerSource from "@/businessComponents/Customer";
 import websocket from "@/websocket";
 const HomePage = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-
-  const togglePopup = () => {
-    setIsPopupVisible(!isPopupVisible);
-  };
+  const togglePopup = () => setIsPopupVisible(!isPopupVisible);
 
   // 使用弹窗 DOM
   const popupRef = useRef<HTMLDivElement>(null);
